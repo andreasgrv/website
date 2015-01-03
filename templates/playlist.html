@@ -1,0 +1,24 @@
+{% extends 'listen.html' %}
+{% block playlist %}
+				<table class="table table-striped">
+					<thead>
+						<th>#</th>
+						<th>Name</th>
+						<th>Play</th>
+					</thead>
+                    <tbody>
+                    {% for num, music in music_files %}
+                        <tr>
+                            <td>{{num + 1}}</td>
+                            <td>{{music.title()}}</td>
+                            <td>
+                                <audio controls>
+                                    <source src="{{ music_dir + '/' + music + '.mp3' }}" type="audio/mp3">
+                                    Your browser does not support this audio element
+                                </audio>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+{% endblock %}

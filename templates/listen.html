@@ -31,36 +31,7 @@
                 </div>
             </div>
 			<div class="well">
-				<table class="table table-striped">
-					<thead>
-						<th>#</th>
-						<th>Name</th>
-						<th>Play</th>
-					</thead>
-					<tbody>
-						<tr>
-							<td>1</td>
-							<td>Our eternal walls</td>
-							<td>
-								<audio controls>
-									<source src="{{ url_for("static", filename = "music/oureternalwalls.mp3") }}" type="audio/mp3">
-									Your browser does not support this audio element.
-								</audio>
-							</td>
-						</tr>	
-						<tr>
-							<td>2</td>
-							<td>Denied</td>
-							<td>
-								<audio controls>
-									<source src="{{ url_for("static", filename = "music/denied.mp3") }}" type="audio/mp3">
-									Your browser does not support this audio element.
-								</audio>
-							</td>
-						</tr>	
-					</tbody>
-
-				</table>
+                {% block playlist %} {% endblock %}
 			</div>
 		</div><!-- /.container -->
 		{{super()}}
