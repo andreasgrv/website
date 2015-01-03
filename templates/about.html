@@ -11,7 +11,6 @@
 						<li class="active"><a href="about">About</a></li>
 						<li><a href="read">Read</a></li>
 						<li><a href="listen">Listen</a></li>
-						<li><a href="contact">Contact</a></li>
 					</ul>
 				</div><!--/.nav-collapse -->
 			</div>
@@ -20,12 +19,28 @@
 
 {% block content %}
 		<div class="container main">
-			<div class="jumbotron">
-				<h2>self.getStats()</h2>
-			</div>
-				My favourite programming languages are Python and C++. <br>
-				My favourite editor is Vim.<br>
-				My favourite food is Spaghetti.<br>
+            <div class="row">
+                <div class="col-lg-1">
+                </div>
+                <div class="col-lg-10">
+                    <div class="jumbotron text-center">
+                        <h2>Some facts about myself</h2>
+                    </div>
+                </div>
+                <div class="col-lg-1">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3">
+                </div>
+                <div class="col-lg-6">
+                    My favourite programming languages are Python and C++. <br>
+                    My favourite editor is <a href="http://www.vim.org/Vim">Vim</a>.<br>
+                    My favourite food is Spaghetti.<br>
+                </div>
+                <div class="col-lg-3">
+                </div>
+            </div>
 		</div><!-- /.container -->
 		{{super()}}
 {% endblock %}
