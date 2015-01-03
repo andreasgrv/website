@@ -4,7 +4,7 @@ html{
 
 body{
 	height:100%;
-	background-image: url("images/lines.png");
+	background-image: url("images/triangles.png");
 	background-repeat:repeat;
 	background-attachment: fixed;
 }
@@ -16,16 +16,47 @@ body{
 	border-radius: 10px;
 	padding-bottom: 40px;
 	padding-top: 20px;
-	margin-top: 20px;
+	margin-top: 10px;
 	margin-bottom: 60px;
 }
 
 .white{
-	color: #f5f5fc; 
+	color: snow; 
+}
+
+.blue{
+    background: #060811;
+}
+
+.transparent{
+    background: transparent;
+}
+
+.navbar-collapse
+{
+    width: 100%;
+    text-align: center;
 }
 
 .footer{
 	height:40px;
 	margin-top:-40px;
 	padding-top:8px;
+}
+
+
+.navbar-collapse > a{
+    color:snow !important;
+}
+
+.well > a{
+    color:orange !important;
+}
+
+.content > a{
+    color:orange !important;
+}
+
+a:hover{
+    color:#1d84f9 !important;
 }
