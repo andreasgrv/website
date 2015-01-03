@@ -1,0 +1,31 @@
+html{
+	height:100%;
+}
+
+body{
+	height:100%;
+	background-image: url("images/lines.png");
+	background-repeat:repeat;
+	background-attachment: fixed;
+}
+
+.main{
+	/*background-color: #040404;*/
+	min-height:100%;
+	background-color: #f5f5fc;
+	border-radius: 10px;
+	padding-bottom: 40px;
+	padding-top: 20px;
+	margin-top: 20px;
+	margin-bottom: 60px;
+}
+
+.white{
+	color: #f5f5fc; 
+}
+
+.footer{
+	height:40px;
+	margin-top:-40px;
+	padding-top:8px;
+}

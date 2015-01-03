@@ -1,0 +1,31 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/fixes.html" as fixes %}
+{% block title %}Home{% endblock %}
+
+{% block navbar %}
+{% endblock %}
+
+{% block content %}
+		<div class="footer navbar-default">
+			<div class="container text-center white">
+				<small>Created by Andreas Grivas using Flask, Bootstrap & Bootswatch </small>
+			</div>
+		</div>
+{% endblock %}
+
+{%block styles %}
+{{super()}}
+<link rel="stylesheet" href="{{url_for('.static', filename="flatly.min.css")}}">
+<link rel="stylesheet" href="{{url_for('.static', filename="font-awesome.min.css")}}">
+<link rel="stylesheet" href="{{url_for('.static', filename="style.css")}}">
+{% endblock %}
+
+{% block scripts %}
+	<script src="{{url_for('.static', filename='prefixfree.min.js')}}"></script>
+{{super()}}
+{% endblock %}</script>
+
+{%block head %}
+{{super()}}
+{{fixes.ie8()}}
+{% endblock %}

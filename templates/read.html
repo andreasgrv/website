@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+{% block title %}Home{% endblock %}
+
+{% block navbar %}
+		<div class="navbar-default">
+			<div class="container">
+				<a class="navbar-brand" href="/">Andreas Grivas</a>
+				<div class="collapse navbar-collapse">
+					<ul class="nav navbar-nav">
+						<li><a href="/">Home</a></li>
+						<li><a href="about">About</a></li>
+						<li class="active"><a href="read">Read</a></li>
+						<li><a href="listen">Listen</a></li>
+						<li><a href="contact">Contact</a></li>
+					</ul>
+				</div><!--/.nav-collapse -->
+			</div>
+		</div>
+{% endblock %}
+
+{% block content %}
+		<div class="container main">
+			<div class="alert alert-dismissable alert-info">
+				<button type="button" class="close" data-dismiss="alert"><i class="fa fa-times-circle"></i></button>
+				<strong>Disclaimer:</strong> This page may contain nerdy content. Gnashing of teeth, incoherent mumbling
+				and gazing at the pixels on the screen are well known side effects.
+			</div>
+			<div class="jumbotron">
+				<h2>A sample of my drivel</h2>
+			</div>
+			<div class="well">
+				There will be more content here soon<br>
+			</div>
+			<div class="bs-docs-section">
+				<div class="row">
+					<div class="col-lg-3">
+					</div>
+					<div class="col-lg-6">
+						<div class="bs-component">
+                            <h2>Benedictus</h2><br>
+							<p> I once found a little owl playing amongst the thicket</p>
+							<p>he curiously waved a little stick and then began to lick it</p>
+							<p>of all your toes I do oppose you having only three</p>
+							<p>To this request, the owl got dressed and flew up to the tree</p>
+							<p>the thicket then in mighty woe began to stir and fidget </p>
+							<p>for it had lost its only friend Benedictus the midget</p>
+							<p>But hold on now, you don't suppose the owl was Benedictus </p>
+							<p>it had toes three, flew up a tree if we held sticks it licked us </p>
+							<p>His seemly rather eccentric ways evolved when he was younger </p>
+							<p>hadn't he been the pope you see, he would have died of hunger </p>
+							<p>Two were the source of his belief, three toes he now had sprouted </p>
+							<p>and that's the reason, little bee, that he had always shouted </p>
+							<p>I'm not a bee, I hold no stick, I claim to be the reader </p>
+							<p>Your claim then is by far unjust, for books aren't merely made of dust </p>
+							<p>They're made of withered sticks and sap, I bid farewell to you old chap  </p>
+							<p>And if by chance you were a bee, you are a true believer </p>
+						</div>
+					</div>
+					<div class="col-lg-3">
+					</div>
+				</div>
+			</div>
+		</div><!-- /.container -->
+		{{super()}}
+{% endblock %}
