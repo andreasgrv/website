@@ -13,24 +13,24 @@ music_dir = 'static/music'
 music_files = [f.split('.')[0] for f in os.listdir(music_dir)
                if f.endswith('.mp3')]
 
-@app.route('/')
+@app.route('/grv')
 def homepage():
     return render_template('homepage.html')
 
-@app.route('/about')
+@app.route('/grv/about')
 def about():
     return render_template('about.html')
 
-@app.route('/read')
+@app.route('/grv/read')
 def reading():
     return render_template('read.html')
 
-@app.route('/listen')
+@app.route('/grv/listen')
 def listen():
     return render_template('playlist.html', music_dir=music_dir,
                            music_files=enumerate(music_files))
 
-@app.route('/<fname>')
+@app.route('/grv/<fname>')
 def download_file(fname):
     return send_from_directory(directory='files', filename=fname,
                                as_attachment=True)
