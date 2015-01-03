@@ -15,8 +15,7 @@ body{
 	background-color: #f5f5fc;
 	border-radius: 10px;
 	padding-bottom: 40px;
-	padding-top: 20px;
-	margin-top: 10px;
+	padding-top: 30px;
 	margin-bottom: 60px;
 }
 
@@ -32,21 +31,36 @@ body{
     background: transparent;
 }
 
-.navbar-collapse
-{
-    width: 100%;
-    text-align: center;
-}
-
 .footer{
 	height:40px;
-	margin-top:-40px;
-	padding-top:8px;
+	margin-top:-30px;
+	padding-top:10px;
 }
 
+.navbar-default{
+    margin-top:5px;
+    margin-bottom:5px;
+}
 
-.navbar-collapse > a{
+.navbar-nav > li > a{
     color:snow !important;
+}
+
+.navbar-nav > li > a{
+    border-radius:10px !important;
+}
+
+.navbar-nav > li > a:hover{
+    color:#1d84f9 !important;
+}
+
+.navbar-nav > .active > a{
+    background: #060811 !important;
+    opacity: 0.75;
+}
+
+.navbar-nav > .active > a:hover{
+    color:#1d84f9 !important;
 }
 
 .well > a{
