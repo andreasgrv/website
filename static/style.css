@@ -71,6 +71,10 @@ body{
     color:orange !important;
 }
 
+.navbar-brand > a{
+    color:snow;
+}
+
 a:hover{
     color:#1d84f9 !important;
 }
