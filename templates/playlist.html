@@ -13,7 +13,7 @@
                             <td>{{music.title()}}</td>
                             <td>
                                 <audio controls>
-                                    <source src="{{ music_dir + '/' + music + '.mp3' }}" type="audio/mp3">
+                                    <source src="{{ url_for('static', filename='music/' + music + '.mp3') }}" type="audio/mp3">
                                     Your browser does not support this audio element
                                 </audio>
                             </td>

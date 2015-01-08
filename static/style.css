@@ -71,8 +71,8 @@ body{
     color:orange !important;
 }
 
-.navbar-brand > a{
-    color:snow;
+.navbar-default > a{
+    color:snow !important;
 }
 
 a:hover{
