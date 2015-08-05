@@ -1,0 +1,55 @@
+html{
+	height:100%;
+}
+
+body{
+	height:100%;
+	/* background-image: url("images/triangles.png"); */
+	/* background-repeat:repeat; */
+	/* background-attachment: fixed; */
+	font-family: 'Skyhook Mono', monospace;
+}
+
+h1, h2, h3, h4, h5, h6{
+	font-family: 'Skyhook Mono', monospace;
+}
+
+div pre{
+	background-color: inherit;
+	font-family: inherit;
+}
+
+.main{
+	/*background-color: #040404;*/
+	min-height:100%;
+	/* background-color: #f5f5fc; */
+	/* border-radius: 10px; */
+	/* padding-bottom: 40px; */
+	/* padding-top: 30px; */
+	margin-bottom: 60px;
+}
+
+.typed-cursor{
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+
+@-webkit-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+
+@-moz-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}

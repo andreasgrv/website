@@ -21,33 +21,25 @@ POST_DIR = 'posts'
 
 # create our application :)
 app = Flask(__name__)
+# we want bootstrap!
+Bootstrap(app)
 # use flatpages for blog
 flatpages = FlatPages(app)
 # apply freezer to generate static pages
 freezer = Freezer(app)
-app.config.from_object(__name__)
-# we want bootstrap!
-Bootstrap(app)
 
-music_dir = 'static/music'
+app.config.from_object(__name__)
+
+music_dir = 'files/music'
 music_files = [f.split('.')[0] for f in os.listdir(music_dir)
                if f.endswith('.mp3')]
 
 
 @app.route('/')
 def homepage():
-    return render_template('homepage.html')
-
-
-@app.route('/posts')
-def posts():
-    """Get the posts from folder
-    :returns: The page of the posts
-
-    """
     posts = [p for p in flatpages if p.path.startswith(POST_DIR)]
     posts.sort(key=lambda item: item['date'], reverse=False)
-    return render_template('posts.html', posts=posts)
+    return render_template('homepage.html', posts=posts, enumerate=enumerate)
 
 
 @app.route('/posts/<name>/')
@@ -84,10 +76,6 @@ def download_file(fname):
     return send_from_directory(directory='files', filename=fname,
                                as_attachment=True)
 
-
-@app.route('/pygments.css')
-def pygments_css():
-    return pygments_style_defs('tango'), 200, {'Content-Type': 'text/css'}
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Run server or freeze")

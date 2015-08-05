@@ -7,54 +7,41 @@
                 <div class="col-lg-1">
                 </div>
                 <div class="col-lg-10">
-                    <div class="jumbotron text-center">
-                        <h2>Welcome to a served copy of my web page! </h2>
+                    <div class="page-header text-center">
+						<h2 class="typed" style="white-space:pre">Welcome to a served copy of my webpage!<br> Here is what I've been thinking about recently..</h2>
                     </div>
                 </div>
                 <div class="col-lg-1">
                 </div>
 			</div>
 			<div class="row">
-				<div class="col-lg-5">
-					<img style="padding-top:40px; padding-left:47px" src="{{url_for('.static', filename="images/me.png")}}"></img>
-				</div>
-				<div class="col-lg-6">
-					<p class="lead"><br>My name is Andreas, and
-					I am currently working as a research associate at <a href="http://persona.iit.demokritos.gr" target="_blank"> NCSR Demokritos</a>, a member of the Persona group. <br></p>
-					<p> My interests are scattered all over the place, but if I had to choose a few labels to stick here - buzzwords included 
-                    , they would be Machine Learning and Natural Language Processing. If these labels are not familiar, do not despair,
-                    I have created my own definitions for them!</p>
-                    <li> Machine Learning : A fancier and more pretentious name for pattern recognition in data carried out in order to extract information and rules and see
-                    how close to 100% we can get two numbers to be when using these rules on new data. </li>
-                    <li> Natural Language Processing : Playing with human input data that represents written text in some human language,
-                    and trying to understand why the computer is so bad at analyzing it compared to us. </li>
-				</div>
-				<div class="col-lg-1">
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-lg-1">
-				</div>
-				<div class="col-lg-10">
-                    <p><br>Behind the wishful naming and overstatements however, 
-                    these areas of Computer Science are extremely interesting and include many fascinating problems
-                    one can work upon.</p>
-					<p>In my B.Sc. Thesis I worked on word and phrase similarity and tried to align sentences according to 
-                    word similarities based on word relationships like synonymy, antonymy etc. </p>
-                    <br>
-				</div>
-				<div class="col-lg-1">
-				</div>
-			</div>
-            <div class="row">
                 <div class="col-lg-1">
                 </div>
                 <div class="col-lg-10">
-                    <div class="well">
-						You can download my CV <a href="/CV.pdf">here</a>.<br>
-						You can download my B.Sc. Thesis in Greek <a href="/sentencealignment.pdf">here</a>.<br>
-						Find me on <a href="https://github.com/andreasgrv" target="_blank">github</a> <i class="fa fa-github"></i>.
-					</div>
+					<table class="table table-striped table-hover ">
+					  <!-- <thead> -->
+						<!-- <tr> -->
+						  <!-- <th>#</th> -->
+						  <!-- <th>Title</th> -->
+						  <!-- <th>Published</th> -->
+						<!-- </tr> -->
+					  <!-- </thead> -->
+					  <tbody>
+						{% for index, post in enumerate(posts) %}
+							<tr>
+								<!-- <td>{{ index + 1 }}</td> -->
+								<td>
+									<a href="{{ url_for('post', name=post.path.replace('posts/', '')) }}">
+									{{ post.title }}
+									</a>
+								</td>
+								<td>
+									<small>{{ post.date }}</small>
+								</td>
+							</tr>
+						{% endfor %}
+					  </tbody>
+					</table> 
 				</div>
                 <div class="col-lg-1">
                 </div>

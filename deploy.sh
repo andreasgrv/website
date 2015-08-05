@@ -1,3 +1,3 @@
 #!/bin/bash
 
-authbind gunicorn -w 4 -b 0.0.0.0:80 mysite:app 
+gunicorn -w 4 -b localhost:8000 mysite:app 
