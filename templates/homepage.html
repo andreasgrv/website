@@ -1,4 +1,4 @@
-{% extends "navbar.html" %}
+{% extends "base.html" %}
 {% block title %}Home{% endblock %}
 
 {% block content %}
@@ -19,13 +19,12 @@
 					<img style="padding-top:40px; padding-left:47px" src="{{url_for('.static', filename="images/me.png")}}"></img>
 				</div>
 				<div class="col-lg-6">
-					<p class="lead"><br>Andreas is the name that has been vested upon me.
-                    When people enquire who I am and what I do, I shrug my shoulders and 
-                    reply that I am a graduate of Informatics and Telematics, Harokopeio University of Athens.<br></p>
+					<p class="lead"><br>My name is Andreas, and
+					I am currently working as a research associate at <a href="http://persona.iit.demokritos.gr" target="_blank"> NCSR Demokritos</a>, a member of the Persona group. <br></p>
 					<p> My interests are scattered all over the place, but if I had to choose a few labels to stick here - buzzwords included 
                     , they would be Machine Learning and Natural Language Processing. If these labels are not familiar, do not despair,
                     I have created my own definitions for them!</p>
-                    <li> Machine Learning : A fancier and more pretentious name for pattern recognition in data carried out in order to extract rules and see
+                    <li> Machine Learning : A fancier and more pretentious name for pattern recognition in data carried out in order to extract information and rules and see
                     how close to 100% we can get two numbers to be when using these rules on new data. </li>
                     <li> Natural Language Processing : Playing with human input data that represents written text in some human language,
                     and trying to understand why the computer is so bad at analyzing it compared to us. </li>
@@ -52,8 +51,8 @@
                 </div>
                 <div class="col-lg-10">
                     <div class="well">
-						You can download my CV <a href="/grv/CV.pdf">here</a>.<br>
-						You can download my B.Sc. Thesis in Greek <a href="/grv/sentencealignment.pdf">here</a>.<br>
+						You can download my CV <a href="/CV.pdf">here</a>.<br>
+						You can download my B.Sc. Thesis in Greek <a href="/sentencealignment.pdf">here</a>.<br>
 						Find me on <a href="https://github.com/andreasgrv" target="_blank">github</a> <i class="fa fa-github"></i>.
 					</div>
 				</div>
