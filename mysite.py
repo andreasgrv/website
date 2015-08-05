@@ -91,7 +91,7 @@ def pygments_css():
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Run server or freeze")
-    parser.add_argument('--freeze', type=bool,
+    parser.add_argument('--freeze', action='store_true',
                         dest='freeze', help='whether to create a static copy')
     args = parser.parse_args()
     if args.freeze:
