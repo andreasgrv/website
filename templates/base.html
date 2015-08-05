@@ -1,0 +1,43 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/fixes.html" as fixes %}
+{% block title %}Home{% endblock %}
+
+{% block navbar %}
+    <div class="navbar-default transparent container">
+        <a class="navbar-brand" href="/">Andreas Grivas</a>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li{%if request.path == '/' %} class="active"{% endif %}><a href="/">Home</a></li>
+                <li{%if request.path == '/about' %} class="active" {% endif %}><a href="/about">About</a></li>
+                <li{%if request.path == '/read' %} class="active" {% endif %}><a href="/read">Read</a></li>
+                <li{%if request.path == '/listen' %} class="active" {% endif %}><a href="/listen">Listen</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+{% endblock %}
+
+{% block content %}
+		<div class="footer blue">
+			<div class="container text-center white">
+				<small>Created by Andreas Grivas using Flask, Bootstrap & Bootswatch </small>
+			</div>
+		</div>
+{% endblock %}
+
+{%block styles %}
+{{super()}}
+<link rel="stylesheet" href="{{url_for('.static', filename="spacelab.min.css")}}">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+<!-- <link rel="stylesheet" href="{{url_for('.static', filename="font-awesome.min.css")}}"> -->
+<link rel="stylesheet" href="{{url_for('.static', filename="style.css")}}">
+{% endblock %}
+
+{% block scripts %}
+	<script src="{{url_for('.static', filename='prefixfree.min.js')}}"></script>
+{{super()}}
+{% endblock %}</script>
+
+{%block head %}
+{{super()}}
+{{fixes.ie8()}}
+{% endblock %}
