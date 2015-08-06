@@ -30,7 +30,8 @@ freezer = Freezer(app)
 
 app.config.from_object(__name__)
 
-music_dir = 'files/music'
+# music_dir = 'files/music'
+music_dir = 'static/music'
 music_files = [f.split('.')[0] for f in os.listdir(music_dir)
                if f.endswith('.mp3')]
 
