@@ -22,4 +22,4 @@ As far as ways to stop yourself from being chaotic and expanding your search ide
 
 Here is where it gets recursively entertaining. Being a programmer, and therefore a realist, you need to pick your tools. Guess where we are at again, the temptation of overthinking and overanalyzing implementation specific ideas. You can be extremely fussy about the tools you use! You want them all set up correctly in a way that makes you productive, because in the end, isn't that why we have programming in the first place? Then, when you begin fine tuning your tools you are unwillingly exposed to many general ideas that you slam into while searching implementation specific details on the web, and can't help but think: Interesting! How does he do that?. 
 
-Congratulations, You have just created a chaotic soup of links in your head, you talk to yourself when you are alone don't you? Know you know why.
+Congratulations, You have just created a chaotic soup of links in your head, you talk to yourself when you are alone don't you? Now you know why.
