@@ -85,4 +85,4 @@ if __name__ == '__main__':
     args = parser.parse_args()
     if args.freeze:
         freezer.freeze()
-    app.run(host='46.101.23.192', port=8000, debug=True)
+    app.run(host='localhost', port=8000, debug=True)
