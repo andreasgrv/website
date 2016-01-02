@@ -18,6 +18,8 @@ FLATPAGES_AUTO_RELOAD = DEBUG
 FLATPAGES_EXTENSION = '.md'
 FLATPAGES_ROOT = 'content'
 POST_DIR = 'posts'
+# serve bootstrap locally
+BOOTSTRAP_SERVE_LOCAL = True
 
 # create our application :)
 app = Flask(__name__)
