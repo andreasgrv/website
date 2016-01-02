@@ -1,3 +1,4 @@
 #!/bin/bash
 
-gunicorn -w 4 -b localhost:8000 mysite:app 
+source .env/bin/activate
+gunicorn -w 2 -b 0.0.0.0:8000 mysite:app 
