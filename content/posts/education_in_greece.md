@@ -125,7 +125,7 @@ Finally, I would like to attempt to debunk a few precarious predispositions.
 
 	1. You simply aren't mature enough to write a proper essay before high school in your native language,
 	let alone in a foreign one.
-	2. Foreign universities require you take the language exam 1-2 years prior to your application, this means
+	2. Foreign universities require you take the language exam 1-2 years prior to your application. This means
 	that your certificate is useless for applications to foreign universities by the time you reach the right
 	age.
 	3. Greek public schools already teach basic English language lessons as a primary foreign language
@@ -134,4 +134,4 @@ Finally, I would like to attempt to debunk a few precarious predispositions.
 	thus rendering the public lessons boring repeats, echoes of things the child was taught on another afternoon
 	of what would otherwise be his spare time.
 	4. Greek high school is flooding kids with content as it is, there is already little time to spare on their
-	frantic schedule without the inclusion of private foreign language lessons.
+	frantic schedule without the inclusion of foreign private language lessons.

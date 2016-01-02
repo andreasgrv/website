@@ -41,7 +41,7 @@ music_files = [f.split('.')[0] for f in os.listdir(music_dir)
 @app.route('/')
 def homepage():
     posts = [p for p in flatpages if p.path.startswith(POST_DIR)]
-    posts.sort(key=lambda item: item['date'], reverse=False)
+    posts.sort(key=lambda item: item['date'], reverse=True)
     return render_template('homepage.html', posts=posts, enumerate=enumerate)
 
 
