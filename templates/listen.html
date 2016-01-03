@@ -1,22 +1,22 @@
 {% extends "base.html" %}
-{% block title %}Home{% endblock %}
+{% block title %}Listen{% endblock %}
 
 {% block content %}
-		<div class="container main">
-            <div class="row">
-                <div class="col-lg-1">
-                </div>
-                <div class="col-lg-10">
-                    <div class="page-header text-center">
-                        <h2 class="typed">Some of my looney tunes</h2>
-                    </div>
-                </div>
-                <div class="col-lg-1">
-                </div>
-            </div>
-			<div class="well">
-                {% block playlist %} {% endblock %}
-			</div>
-		</div><!-- /.container -->
-		{{super()}}
+    <div class="main">
+      <div class="row">
+        <div class="col-lg-1">
+        </div>
+        <div class="col-lg-10">
+          <div class="page-header text-center">
+            <h3 class="typed">Some of my looney tunes</h3>
+          </div>
+        </div>
+        <div class="col-lg-1">
+        </div>
+      </div>
+      <div>
+        {% block playlist %} {% endblock %}
+      </div>
+    </div><!-- /.main -->
+    {{super()}}
 {% endblock %}

@@ -1,38 +1,113 @@
 html{
-	height:100%;
+    height:100%;
 }
 
 body{
-	height:100%;
-	/* background-image: url("images/triangles.png"); */
-	/* background-repeat:repeat; */
-	/* background-attachment: fixed; */
-	font-family: 'Skyhook Mono', monospace;
+    height:100%;
+    /* background-image: url("images/triangles.png"); */
+    /* background-repeat:repeat; */
+    /* background-attachment: fixed; */
+    font-family: 'Skyhook Mono', monospace;
 }
 
-h1, h2, h3, h4, h5, h6{
-	font-family: 'Skyhook Mono', monospace;
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Skyhook Mono', monospace;
 }
 
 div pre{
-	background-color: inherit;
-	font-family: inherit;
+    background-color: inherit;
+    font-family: inherit;
+}
+
+/* my own css classes */
+
+.command-line {
+
 }
 
 .main{
-	/*background-color: #040404;*/
-	min-height:100%;
-	/* background-color: #f5f5fc; */
-	/* border-radius: 10px; */
-	/* padding-bottom: 40px; */
-	/* padding-top: 30px; */
-	margin-bottom: 60px;
+    /*background-color: #040404;*/
+    min-height:100%;
+    /* background-color: #f5f5fc; */
+    /* border-radius: 10px; */
+    /* padding-bottom: 40px; */
+    /* padding-top: 30px; */
+    margin-bottom: 60px;
+}
+
+.wally {
+    float: left;
+    padding-right: 4%;
+}
+
+.brand-symbol {
+    /* font-size: 20pt; */
+    animation: colorchange 30s; /* animation-name followed by duration in seconds*/
+    /* you could also use milliseconds (ms) or something like 2.5s */
+    -webkit-animation: colorchange 30s; /* Chrome and Safari */
+    -moz-animation: colorchange 30s; /* Chrome and Safari */
+    -o-animation: colorchange 30s; /* Chrome and Safari */
+}
+
+@keyframes colorchange
+{
+    0%   {color: orange;}
+    50%  {color: yellow;}
+    100%  {color: red;}
+}
+
+@-webkit-keyframes colorchange /* Safari and Chrome - necessary duplicate */
+{
+    0%   {color: orange;}
+    50%  {color: yellow;}
+    100%  {color: red;}
+}
+
+@-moz-keyframes colorchange /* Safari and Chrome - necessary duplicate */
+{
+    0%   {color: orange;}
+    50%  {color: yellow;}
+    100%  {color: red;}
+}
+
+@-o-keyframes colorchange /* Safari and Chrome - necessary duplicate */
+{
+    0%   {color: orange;}
+    50%  {color: yellow;}
+    100%  {color: red;}
+}
+
+/* overriding bootstrap and typed css classes */
+
+.page-header {
+    border-bottom: 0px;
+}
+
+td a {
+    text-decoration: none;
+}
+
+a {
+    -webkit-transition: color linear 700ms;
+    -moz-transition: color linear 700ms;
+    -o-transition: color linear 700ms;
+    transition: color linear 700ms;
+    color: orange;
+}
+
+a:hover {
+    color: #2f4;
+}
+
+table a:not(.btn), .table a:not(.btn) {
+    text-decoration: none;
 }
 
 .typed-cursor{
     opacity: 1;
     -webkit-animation: blink 0.7s infinite;
     -moz-animation: blink 0.7s infinite;
+    -o-animation: blink 0.7s infinite;
     animation: blink 0.7s infinite;
 }
 
