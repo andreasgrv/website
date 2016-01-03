@@ -43,6 +43,10 @@ div pre {
     padding-right: 4%;
 }
 
+.grvtext {
+    padding-top: 25px;
+}
+
 .brand-symbol {
     font-size: 120%;
     font-weight: bold;
@@ -87,6 +91,10 @@ div pre {
 }
 
 /* overriding bootstrap and typed css classes */
+
+.lead {
+    font-size: 120%;
+}
 
 .footer {
     position: absolute;
