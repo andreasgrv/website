@@ -44,12 +44,18 @@ div pre {
 }
 
 .brand-symbol {
-    /* font-size: 20pt; */
+    font-size: 120%;
+    font-weight: bold;
     animation: colorchange 30s; /* animation-name followed by duration in seconds*/
     /* you could also use milliseconds (ms) or something like 2.5s */
     -webkit-animation: colorchange 30s; /* Chrome and Safari */
     -moz-animation: colorchange 30s; /* Chrome and Safari */
     -o-animation: colorchange 30s; /* Chrome and Safari */
+
+    animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    -o-animation-iteration-count: infinite;
 }
 
 @keyframes colorchange
@@ -100,15 +106,32 @@ td a {
 }
 
 a {
-    -webkit-transition: color linear 700ms;
-    -moz-transition: color linear 700ms;
-    -o-transition: color linear 700ms;
-    transition: color linear 700ms;
+    -webkit-transition: color ease 1s;
+    -moz-transition: color ease 1s;
+    -o-transition: color ease 1s;
+    transition: color ease 1s;
     color: orange;
 }
 
 a:hover {
     color: #2f4;
+}
+
+.nav > li > a {
+    -webkit-transition: ease 1s;
+    -moz-transition: ease 1s;
+    -o-transition: ease 1s;
+    transition: ease 1s;
+    border-style: outset;
+    border-width: 2px;
+    border-color: #222;
+}
+
+.nav > li > a:hover {
+    background-color: inherit;
+    border-style: inset;
+    border-width: 2px;
+    border-color: orange;
 }
 
 table a:not(.btn), .table a:not(.btn) {
