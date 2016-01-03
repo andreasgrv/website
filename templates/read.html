@@ -1,12 +1,15 @@
 {% extends "base.html" %}
 {% block title %}Read{% endblock %}
 
+{% block alerts %}
+    <div class="alert alert-dismissable alert-warning">
+      <button type="button" class="close" data-dismiss="alert"><i class="fa fa-times-circle"></i></button>
+      <strong>Disclaimer:</strong> This page may contain nerdy and incomprehensible content.
+    </div>
+{% endblock %}
+
 {% block content %}
     <div class="main">
-      <div class="alert alert-dismissable alert-warning">
-        <button type="button" class="close" data-dismiss="alert"><i class="fa fa-times-circle"></i></button>
-        <strong>Disclaimer:</strong> This page may contain nerdy and incomprehensible content.
-      </div>
       <div class="row">
         <div class="col-lg-1">
         </div>
