@@ -21,8 +21,8 @@ for sons and daughters.
 They only spend time on computer games and television. And they fail, and it's their fault because I told
 them to study and they didn't."
 
-This attitude has been prevalent in Greek society up to the time of writing, and really gets on my nerves,
-and it gets on my nerves for several reasons.
+This attitude has been prevalent in Greek society up to the time of writing, and really annoys me,
+and it annoys me for several reasons.
 
 1. Parents need to understand that they have no stake in the outcome, and should therefore act accordingly. Yes Greek Ma,
 you have no stake in the outcome, get over it and be more compassionate.
@@ -31,7 +31,7 @@ There is also nothing wrong with not going to university, and there is also noth
 Many people that didn't go to university are more skilled and educated than people that did, labels and 
 etiquette aren't important, the relationship with your child is.
 
-2. It is absurd when parents are strict and unforgiving on their children although they themselves never studied, or
+2. It is absurd when parents are strict and unforgiving with their children although they themselves never studied, or
 learned how to learn. How can they themselves be uncompromising, uncompassionate
 and consider themselves as infallible as the pope?
 
@@ -39,13 +39,13 @@ and consider themselves as infallible as the pope?
 difficult task, it is not merely a matter of counting "staring at book" minutes.
 People learn different things, at different rates, from various sources.
 And anyhow, even tests and exams can fail at capturing how much someone has learned. However, somehow 
-a Greek mana (mother) can tell by counting how long her child has been in its room.
+a Greek mana (mother) can tell by counting how long her child has been in the bedroom.
 
 4. Computer games and the telly, ironically, sometimes have more to offer than several books. This is likely
 if you know what to look for and especially likely if the books are badly written in the first place
 like many of the Greek educational system books are.
 
-5. The Greek educational system vastly strengthens social inertia by retaining it's inherent inconsistencies and
+5. The Greek educational system vastly strengthens social inertia by retaining its inherent inconsistencies and
 contradictions. It manages in such a way to be easily refutable by anyone, and therefore to lack even
 basic credibility, making parents take matters into their hands
 and leveraging the weight of education to private schools and lessons (which vastly exploit and exacerbate the problem towards their own interests).
@@ -56,7 +56,7 @@ To expand a bit on point 5:
 lessons. This makes the parents view of studying consistent, since "learning" does truly depend linearly on
 the time spent over a book. It also encourages plagiarism, for which the poor student will be penalised should he
 continue to plagiarise in university. Thus the student is praised by the system only to later find himself rejected
-for the very same practice. Thus the system babbles on incoherently from junior to senior.
+for the very same practice. And the system babbles on and on incoherently from todays junior to tomorrows senior.
 
 * Students are tested on a limited predefined fixed part of the Greek system's book, external sources are unheard of 
 and thus memorising text is encouraged.
