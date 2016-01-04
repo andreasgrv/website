@@ -4,7 +4,7 @@
 {% block body %}
   {% block alerts %}
   {% endblock alerts %}
-  <div class="container">
+  <div class="container-fluid">
     {{super()}}
   </div><!-- .container -->
   <div class="footer">
@@ -29,10 +29,26 @@
       <div class="row">
         <div class="text-center">
           <ul class="nav navbar-nav" style="display: inline-block; float: none">
-            <li{%if request.path == '/' %} class="active"{% endif %}><a href="/">Blog</a></li>
-            <li{%if request.path == '/about' %} class="active" {% endif %}><a href="/about">About</a></li>
-            <li{%if request.path == '/read' %} class="active" {% endif %}><a href="/read">Read</a></li>
-            <li{%if request.path == '/listen' %} class="active" {% endif %}><a href="/listen">Listen</a></li>
+            <li{%if request.path == '/' %} class="active"{% endif %}>
+              <a href="/">
+                Blog
+              </a>
+            </li>
+            <li{%if request.path == '/about' %} class="active" {% endif %}>
+              <a href="/about">
+                About
+              </a>
+            </li>
+            <li{%if request.path == '/read' %} class="active" {% endif %}>
+              <a href="/read">
+                Read
+              </a>
+            </li>
+            <li{%if request.path == '/listen' %} class="active" {% endif %}>
+              <a href="/listen">
+                Listen
+              </a>
+            </li>
           </ul>
         </div>
       </div>
