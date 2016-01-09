@@ -9,7 +9,13 @@
   </div><!-- .container -->
   <div class="footer">
     <div class="text-center">
-      <small>Created by Andreas Grivas using Flask, Bootstrap &amp Bootswatch </small>
+      <h6>Created by Andreas Grivas using <a href="http://flask.pocoo.org/" target="_blank">Flask</a>,
+        <a href="https://bootswatch.com/" target="_blank">Bootswatch</a> and
+        <a href="http://www.mattboldt.com/demos/typed-js/" target="_blank">typed.js</a>.
+      <h6>
+      <h6>
+        Last edited on {{config.LAST_EDITED}}
+      </h6>
     </div>
   </div>
 {% endblock %}
@@ -60,8 +66,8 @@
     <link rel="stylesheet" href="{{ url_for('.static', filename="css/font-awesome.min.css") }}">
     <link rel="stylesheet" href="{{ url_for('.static', filename="css/darkly.min.css") }}">
     <link rel="stylesheet" href="{{ url_for('.static', filename="css/style.css") }}">
-    <link rel="stylesheet" href="{{ url_for('.static', filename="fonts/skyhook/SkyhookMono.ttf") }}">
     <link rel="stylesheet" href="{{ url_for('.static', filename="css/code.css") }}">
+    <link rel="stylesheet" href="{{ url_for('.static', filename="fonts/skyhook/SkyhookMono.ttf") }}">
 {% endblock %}
 
 {% block scripts %}

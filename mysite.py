@@ -6,6 +6,8 @@
 
 import os
 import argparse
+from datetime import datetime
+from glob import glob
 from flask import Flask, render_template, send_from_directory
 from flask_bootstrap import Bootstrap
 from flask_flatpages import FlatPages, pygments_style_defs
@@ -20,6 +22,12 @@ FLATPAGES_ROOT = 'content'
 POST_DIR = 'posts'
 # serve bootstrap locally
 BOOTSTRAP_SERVE_LOCAL = True
+
+# calculate most recent modification to files
+HTML_FILES = 'templates/*'
+TIME_FORMAT = '%Y-%m-%d %H:%M'
+MODIFIED = sorted(map(os.path.getmtime, glob(HTML_FILES)))[-1]
+LAST_EDITED = datetime.fromtimestamp(int(MODIFIED)).strftime(TIME_FORMAT)
 
 # create our application :)
 app = Flask(__name__)

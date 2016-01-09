@@ -10,7 +10,7 @@ body{
     /* background-attachment: fixed; */
     font-family: 'Skyhook Mono', monospace;
     /* reserve margin for footer */
-    margin-bottom: 25px;
+    margin-bottom: 50px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -129,7 +129,7 @@ div pre {
 .footer {
     position: absolute;
     bottom: 0px;
-    height: 25px;
+    height: 50px;
     width: 100%;
     padding-bottom: 5px;
 }
@@ -153,6 +153,7 @@ a {
 
 a:hover {
     color: #2f4;
+    text-decoration: none;
 }
 
 .nav > li > a {

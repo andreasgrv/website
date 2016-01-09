@@ -4,23 +4,23 @@
 {% block content %}
     <div class="main">
       <div class="row">
-        <div class="col-lg-1">
+        <div class="col-md-1">
         </div>
-        <div class="col-lg-10">
+        <div class="col-md-10">
           <div class="page-header text-center">
             <h4 class="typed">Some facts about myself</h4>
           </div>
         </div>
-        <div class="col-lg-1">
+        <div class="col-md-1">
         </div>
       </div>
       <div class="row">
-        <div class="col-lg-1">
+        <div class="col-md-1">
         </div>
-        <div class="col-lg-10 text-left">
+        <div class="col-md-10 text-left">
           <p class="lead">My name is Andreas, and
           I am currently working as a research associate at <a href="http://persona.iit.demokritos.gr" target="_blank"> NCSR Demokritos</a>, a member of the Persona group. <br></p>
-          <div class="col-lg-5">
+          <div class="col-md-5 col-lg-4">
             <img class="img-responsive wally"  src="{{url_for('.static', filename="images/me.png")}}"></img>
           </div>
           <p>My interests are scattered all over the place, but if I had to choose a few labels to stick here - buzzwords included 
@@ -31,13 +31,13 @@
           <li> Natural Language Processing : Playing with human input data that represents written text in some human language,
             and trying to understand why the computer is so bad at analyzing it compared to us. </li>
         </div>
-        <div class="col-lg-1">
+        <div class="col-md-1">
         </div>
       </div>
       <div class="row">
-        <div class="col-lg-1">
+        <div class="col-md-1">
         </div>
-        <div class="col-lg-10">
+        <div class="col-md-10">
           <p><br>Behind the wishful naming and overstatements however, 
           these areas of Computer Science are extremely interesting and include many fascinating problems
           one can work upon.</p>
@@ -45,30 +45,36 @@
           word similarities based on word relationships like synonymy, antonymy etc. </p>
           <br>
         </div>
-        <div class="col-lg-1">
+        <div class="col-md-1">
         </div>
       </div>
       <div class="row">
-        <div class="col-lg-1">
+        <div class="col-md-1">
         </div>
-        <div class="col-lg-10">
+        <div class="col-md-10">
           <div class="well">
             You can download my CV <a href="/CV.pdf">here</a>.<br>
             You can download my B.Sc. Thesis in Greek <a href="/sentencealignment.pdf">here</a>.<br>
             Find me on <a href="https://github.com/andreasgrv" target="_blank">github</a> <i class="fa fa-github"></i>.
           </div>
         </div>
-        <div class="col-lg-1">
+        <div class="col-md-1">
         </div>
       </div>
       <div class="row">
-        <div class="col-lg-1">
+        <div class="col-md-1">
         </div>
-        <div class="col-lg-10 content">
+        <div class="col-md-10 content">
           My favourite programming languages are Python and C++. <br>
-          My favourite editor is <a href="http://www.vim.org/Vim" target="_blank">Vim</a> - you can find my vimrc and  other dotfiles <a href="https://github.com/andreasgrv/dotfiles" target="_blank">here</a>.<br>
+          My favourite editor is 
+          <a href="http://www.vim.org" target="_blank">
+            <img style="margin-top:-15px" src="{{url_for('.static', filename="images/vim_on_fire.gif")}}" alt="Vim">
+            </img>
+          </a>
+          , you can find my vimrc and other dotfiles
+          <a href="https://github.com/andreasgrv/dotfiles" target="_blank">here</a>.<br>
         </div>
-        <div class="col-lg-1">
+        <div class="col-md-1">
         </div>
       </div>
     </div><!-- /.main -->
