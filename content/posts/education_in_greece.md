@@ -2,7 +2,7 @@ title: Education in Greece - it's all Greek to me
 date: 2016-01-02 17:16
 
 Having gone to Greek school and subsequently to Greek high school and university, I have witnessed the lot. I have
-recently had many reoccuring reflections on my Greek education and felt it was now the time to group
+recently had many reoccurring reflections on my Greek education and felt it was now the time to group
 all the inconsistencies, difficulties, peculiarities and misconceptions I have come across up to now into textual form
 in order to further annoy others. 
 This is by no means an objective account, it is merely my perspective of the Greek family
@@ -56,7 +56,7 @@ To expand a bit on point 5:
 lessons. This makes the parents view of studying consistent, since "learning" does truly depend linearly on
 the time spent over a book. It also encourages plagiarism, for which the poor student will be penalised should he
 continue to plagiarise in university. Thus the student is praised by the system only to later find himself rejected
-for the very same practice. And the system babbles on and on incoherently from todays junior to tomorrows senior.
+for the very same practice. And the system babbles on and on incoherently from today's junior to tomorrow's senior.
 
 * Students are tested on a limited predefined fixed part of the Greek system's book, external sources are unheard of 
 and thus memorising text is encouraged.
@@ -134,4 +134,4 @@ Finally, I would like to attempt to debunk a few precarious predispositions.
 	thus rendering the public lessons boring repeats, echoes of things the child was taught on another afternoon
 	of what would otherwise be his spare time.
 	4. Greek high school is flooding kids with content as it is, there is already little time to spare on their
-	frantic schedule without the inclusion of foreign private language lessons.
+	frantic schedule without the inclusion of private foreign language lessons.
