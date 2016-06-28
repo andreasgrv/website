@@ -176,10 +176,6 @@ a:hover {
     font-size: 120%;
 }
 
-.page-header {
-    border-bottom: 0px;
-}
-
 .nav > li > a {
     -webkit-transition: ease 1s;
     -moz-transition: ease 1s;
@@ -205,6 +201,16 @@ a:hover {
 
 table a:not(.btn), .table a:not(.btn) {
     text-decoration: none;
+}
+
+.typed-box{
+    height: 80px;
+    text-align: center;
+}
+
+.typed{
+    display: inline-block;
+    text-align: left;
 }
 
 .typed-cursor{
