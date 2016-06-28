@@ -5,10 +5,10 @@ html{
 
 body{
     height: 100%;
-    /* background-image: url("images/triangles.png"); */
-    /* background-repeat:repeat; */
-    /* background-attachment: fixed; */
-    font-family: 'Skyhook Mono', monospace;
+    background-image: url("/static/images/checker.png");
+    background-repeat:repeat;
+    background-attachment: fixed;
+    color: #d9cfc9;
     /* reserve margin for footer */
     margin-bottom: 50px;
 }
@@ -26,6 +26,11 @@ div pre {
 
 .container{
     min-height:100%;
+    /* background: rgb(22,22,26); */
+    /* background: rgba(22,22,26,0.75); */
+    /* background: #16161a linear-gradient(90deg, rgba(12,12,16,0.5) 0%, rgba(25,25,28,0.7) 20%, rgba(20, 20, 24, 0.7) 50%, rgba(25,25,28,0.7) 80%, rgba(12,12,16,0.5) 100%); */
+    background: #16161a linear-gradient(90deg, rgba(12,12,16,0.5) 0%, rgba(25,25,28,0.7) 20%, rgba(20, 20, 24, 0.7) 50%, rgba(25,25,28,0.7) 80%, rgba(12,12,16,0.5) 100%);
+    opacity: 40%;
     padding-bottom: 100px;
 }
 
@@ -71,47 +76,60 @@ div pre {
 
 @keyframes colorchange
 {
-    0%  {color: yellow;}
-    25%   {color: orange;}
-    50%  {color: red;}
-    75%   {color: orange;}
-    100%  {color: yellow;}
+    0%  {color: gold;}
+    25%   {color: yellow;}
+    50%  {color: orange;}
+    75%   {color: yellow;}
+    100%  {color: gold;}
 }
 
 @-webkit-keyframes colorchange /* Safari and Chrome - necessary duplicate */
 {
-    0%  {color: yellow;}
-    25%   {color: orange;}
-    50%  {color: red;}
-    75%   {color: orange;}
-    100%  {color: yellow;}
+    0%  {color: gold;}
+    25%   {color: yellow;}
+    50%  {color: orange;}
+    75%   {color: yellow;}
+    100%  {color: gold;}
 }
 
 @-moz-keyframes colorchange /* Safari and Chrome - necessary duplicate */
 {
-    0%  {color: yellow;}
-    25%   {color: orange;}
-    50%  {color: red;}
-    75%   {color: orange;}
-    100%  {color: yellow;}
+    0%  {color: gold;}
+    25%   {color: yellow;}
+    50%  {color: orange;}
+    75%   {color: yellow;}
+    100%  {color: gold;}
 }
 
 @-o-keyframes colorchange /* Safari and Chrome - necessary duplicate */
 {
-    0%  {color: yellow;}
-    25%   {color: orange;}
-    50%  {color: red;}
-    75%   {color: orange;}
-    100%  {color: yellow;}
+    0%  {color: gold;}
+    25%   {color: yellow;}
+    50%  {color: orange;}
+    75%   {color: yellow;}
+    100%  {color: gold;}
 }
 
 /* overriding bootstrap and typed css classes */
+
+a {
+    -webkit-transition: color ease 1s;
+    -moz-transition: color ease 1s;
+    -o-transition: color ease 1s;
+    transition: color ease 1s;
+    color: #dbb320;
+}
+
+td a {
+    text-decoration: none;
+}
 
 .nav > .inactive > a {
     transition: ease 1s;
     border-style: outset;
     border-width: 2px;
-    color: orange;
+    color: #dbb320;
+    background: #16161a linear-gradient(300deg, black 0%, #16161a 40%, #18181f 60%, #222229 80%, #25252f);
 }
 
 .nav > .active > a {
@@ -119,47 +137,35 @@ div pre {
     -moz-transition: ease 1s;
     -o-transition: ease 1s;
     transition: ease 1s;
-    color: #2f4;
+    color: lightskyblue;
+    background: #16161a linear-gradient(300deg, black 0%, #16161a 40%, #18181f 60%, #222229 80%, #25252f);
+}
+
+a:hover {
+    color: lightskyblue;
+    text-decoration: none;
 }
 
 .nav > .active > a:hover {
-    color: #2f4;
+    color: #b9bfd9;
     border-style: inset;
     border-width: 2px;
-    border-color: orange
+    border-color: gold;
+}
+
+.nav > .inactive > a:hover {
+    color: #b9bfd9;
+    border-style: inset;
+    border-width: 2px;
+    border-color: gold;
 }
 
 .lead {
     font-size: 120%;
 }
 
-.footer {
-    position: absolute;
-    bottom: 35px;
-    height: 35px;
-    width: 100%;
-}
-
-
 .page-header {
     border-bottom: 0px;
-}
-
-td a {
-    text-decoration: none;
-}
-
-a {
-    -webkit-transition: color ease 1s;
-    -moz-transition: color ease 1s;
-    -o-transition: color ease 1s;
-    transition: color ease 1s;
-    color: orange;
-}
-
-a:hover {
-    color: #2f4;
-    text-decoration: none;
 }
 
 .nav > li > a {
@@ -169,14 +175,20 @@ a:hover {
     transition: ease 1s;
     border-style: outset;
     border-width: 2px;
-    border-color: #222;
+    border-color: #334;
 }
 
 .nav > li > a:hover {
     background-color: inherit;
     border-style: inset;
     border-width: 2px;
-    border-color: orange;
+    border-color: #b9bfd9;
+    color: lightskyblue;
+    background: #16161a linear-gradient(300deg, black 0%, #16161a 40%, #18181f 60%, #222229 80%, #25252f);
+    -webkit-transition: ease 1s;
+    -moz-transition: ease 1s;
+    -o-transition: ease 1s;
+    transition: ease 1s;
 }
 
 table a:not(.btn), .table a:not(.btn) {
