@@ -1,3 +1,12 @@
+@font-face{
+    /* font on https://fontlibrary.org/en/font/intuitive */ 
+    /* copywrites: Bruno de Souza Leão 2011 */ 
+    font-family: IntuitiveRegular;
+    src: url('/static/fonts/intuitive.ttf');
+	font-weight: normal; 
+	font-style: normal;
+}
+
 html{
     height: 100%;
     width: 100%;
@@ -9,12 +18,15 @@ body{
     background-repeat:repeat;
     background-attachment: fixed;
     color: #d9cfc9;
-    /* reserve margin for footer */
-    margin-bottom: 50px;
+    font-family: 'IntuitiveRegular';
+    font-weight: normal;
+    font-style: normal;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Skyhook Mono', monospace;
+    font-family: 'IntuitiveRegular';
+    font-weight: normal;
+    font-style: normal;
 }
 
 div pre {

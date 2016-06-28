@@ -1,3 +1,15 @@
+@font-face{
+    /* https://github.com/belluzj/fantasque-sans */
+    font-family: FantasqueSansMonoRegular;
+    src: url('/static/fonts/FantasqueSansMono-Regular.ttf');
+	font-weight: normal; 
+	font-style: normal;
+}
+
+.codehilite { 
+    font-family: FantasqueSansMonoRegular;
+    font-weight: normal;
+}
 .codehilite .c { color: #75715e } /* Comment */
 .codehilite .err { color: #960050;} /* Error */
 .codehilite .k { color: #66d9ef } /* Keyword */
