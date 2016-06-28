@@ -1,64 +1,64 @@
 {% extends "bootstrap/base.html" %}
 {% import "bootstrap/fixes.html" as fixes %}
-
 {% block body %}
-  {% block alerts %}
-  {% endblock alerts %}
-  <div class="container-fluid">
-    {{super()}}
-  </div><!-- .container -->
-  <div class="footer">
-    <div class="text-center">
-      <h6>Created by Andreas Grivas using <a href="http://flask.pocoo.org/" target="_blank">Flask</a>,
-        <a href="https://bootswatch.com/" target="_blank">Bootswatch</a> and
-        <a href="http://www.mattboldt.com/demos/typed-js/" target="_blank">typed.js</a>.
-      <h6>
-      <h6>
-        Last edited on {{config.LAST_EDITED}}
-      </h6>
-    </div>
-  </div>
-{% endblock %}
-
-{% block navbar %}
-    <div class="navbar">
-      <div class="row">
-        <div class="col-md-6">
-          <a class="navbar-brand" href="/">
-            <span class="brand-symbol">></span>
-            andreasgrv@website
-          </a>
+    {% block alerts %}{% endblock alerts %}
+    <div class="container">
+    {% block navbar %}
+      <div class="navbar">
+        <div class="row">
+          <div class="col-md-6">
+            <a class="navbar-brand" href="/">
+              <span class="brand-symbol">></span>
+              andreasgrv@website
+            </a>
+          </div>
+          <div class="col-md-6">
+          </div>
         </div>
-        <div class="col-md-6">
-        </div>
-      </div>
-      <div class="row">
-        <div class="text-center">
-          <ul class="nav navbar-nav" style="display: inline-block; float: none">
-            <li{%if request.path == '/' %} class="active"{% endif %}>
-              <a href="/">
-                Blog
-              </a>
-            </li>
-            <li{%if request.path == '/about' %} class="active" {% endif %}>
-              <a href="/about">
-                About
-              </a>
-            </li>
-            <li{%if request.path == '/read' %} class="active" {% endif %}>
-              <a href="/read">
-                Read
-              </a>
-            </li>
-            <li{%if request.path == '/listen' %} class="active" {% endif %}>
-              <a href="/listen">
-                Listen
-              </a>
-            </li>
-          </ul>
+        <div class="row">
+          <div class="text-center">
+            <ul class="nav navbar-nav" style="display: inline-block; float: none">
+              <li{%if request.path == '/' %} class="active"{% endif %}>
+                <a href="/">
+                  Blog
+                </a>
+              </li>
+              <li{%if request.path == '/about' %} class="active" {% endif %}>
+                <a href="/about">
+                  About
+                </a>
+              </li>
+              <li{%if request.path == '/read' %} class="active" {% endif %}>
+                <a href="/read">
+                  Read
+                </a>
+              </li>
+              <li{%if request.path == '/listen' %} class="active" {% endif %}>
+                <a href="/listen">
+                  Listen
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
+    {% endblock %}
+    {% block content %}
+    {% endblock %}
+    </div><!-- .container -->
+    {% block footer %}
+    <div class="footer">
+      <div class="text-center">
+        <h6>Created by Andreas Grivas using <a href="http://flask.pocoo.org/" target="_blank">Flask</a>,
+          <a href="https://bootswatch.com/" target="_blank">Bootswatch</a> and
+          <a href="http://www.mattboldt.com/demos/typed-js/" target="_blank">typed.js</a>.
+        <h6>
+        <h6>
+          Last edited on {{config.LAST_EDITED}}
+        </h6>
+      </div>
     </div>
+    {% endblock %}
 {% endblock %}
 
 {%block styles %}
@@ -67,7 +67,6 @@
     <link rel="stylesheet" href="{{ url_for('.static', filename="css/darkly.min.css") }}">
     <link rel="stylesheet" href="{{ url_for('.static', filename="css/style.css") }}">
     <link rel="stylesheet" href="{{ url_for('.static', filename="css/code.css") }}">
-    <link rel="stylesheet" href="{{ url_for('.static', filename="fonts/skyhook/SkyhookMono.ttf") }}">
 {% endblock %}
 
 {% block scripts %}
