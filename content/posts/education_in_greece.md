@@ -1,12 +1,13 @@
 title: Education in Greece - it's all Greek to me
 date: 2016-01-02 17:16
 
-Having gone to Greek school and subsequently to Greek high school and university, I have witnessed the lot. I have
-recently had many reoccurring reflections on my Greek education and felt it was now the time to group
+I have recently had many reoccurring reflections on my Greek education and felt it was now the time to group
 all the inconsistencies, difficulties, peculiarities and misconceptions I have come across up to now into textual form
 in order to further annoy others. 
 This is by no means an objective account, it is merely my perspective of the Greek family
 and its relationship with education and my ideas and opinions on aspects I dislike.
+The following text was written in a rather ranty mood. Therefore, dear reader, if you aren't in such a mood
+or dislike rants, you needn't read on.
 
 Greek parents fantasise over the amount of time their children spend over a book. We become 
 "staring at book" minute counters that go off if the child hasn't remained for a long
