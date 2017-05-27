@@ -74,7 +74,7 @@ div pre {
 
 .wally {
     float: left;
-    padding: 5px 5px 5px 0px;
+    padding: 20px 5px 5px 0px;
     margin-right: 20px;
 }
 
@@ -258,6 +258,29 @@ table a:not(.btn), .table a:not(.btn) {
 
 .cv {
     margin: 30px 0px 30px 0px;
+}
+
+.stack-label-parent {
+    height: 80px;
+    width: 80px;
+    margin: 0 auto;
+}
+
+.stack-label-circle {
+    background: #a1a7af;
+    height: 50px;
+    width: 50px;
+    -moz-border-radius: 25px;
+    -webkit-border-radius: 25px;
+    border-radius: 25px;
+    margin: 25px 15px 5px 15px;
+}
+
+.stack-label {
+    padding-top: 8px;
+    text-align: center;
+    font-size: 1.4em;
+    color: #16161a;
 }
 
 @media screen and (min-width: 600px) and (max-width: 991px) {
