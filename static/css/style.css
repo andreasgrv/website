@@ -7,6 +7,13 @@
 	font-style: normal;
 }
 
+@font-face{
+    font-family: LatoLight;
+    src: url('/static/fonts/Lato-Regular.ttf');
+	font-weight: normal; 
+	font-style: normal;
+}
+
 html{
     height: 100%;
     width: 100%;
@@ -17,10 +24,14 @@ body{
     background-image: url("/static/images/checker.png");
     background-repeat:repeat;
     background-attachment: fixed;
-    color: #d9cfc9;
-    font-family: 'IntuitiveRegular';
+    color: #a1a7af;
+    font-family: 'LatoLight';
     font-weight: normal;
     font-style: normal;
+}
+
+p {
+    margin: 15px 0px 15px 0px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -36,18 +47,18 @@ div pre {
 
 /* my own css classes */
 
-.container{
+.main-container{
     min-height:100%;
     /* background: rgb(22,22,26); */
     /* background: rgba(22,22,26,0.75); */
     /* background: #16161a linear-gradient(90deg, rgba(12,12,16,0.5) 0%, rgba(25,25,28,0.7) 20%, rgba(20, 20, 24, 0.7) 50%, rgba(25,25,28,0.7) 80%, rgba(12,12,16,0.5) 100%); */
-    background: #16161a linear-gradient(90deg, rgba(12,12,16,0.5) 0%, rgba(25,25,28,0.7) 20%, rgba(20, 20, 24, 0.7) 50%, rgba(25,25,28,0.7) 80%, rgba(12,12,16,0.5) 100%);
-    opacity: 40%;
+    background: #16161a linear-gradient(90deg, rgba(18,15,20,0.5) 0%, rgba(19, 19, 21, 0.7) 10%, rgba(19,19,21,0.7) 90%, rgba(18,15,20,0.5) 100%);
     padding-bottom: 100px;
 }
 
 .footer{
     margin-top: -70px;
+    padding-bottom: 10px;
 }
 
 .command-line {
@@ -60,18 +71,29 @@ div pre {
     /* border-radius: 10px; */
     /* padding-bottom: 40px; */
     /* padding-top: 30px; */
+    padding: 10px;
+}
+
+.about-main {
+    padding: 10px;
 }
 
 .wally {
     float: left;
-    padding-right: 4%;
+    padding: 5px 5px 5px 0px;
+    margin-right: 20px;
 }
 
 .grvtext {
     padding-top: 25px;
 }
 
+.navbar-brand {
+    font-family: 'IntuitiveRegular';
+}
+
 .brand-symbol {
+    font-family: 'IntuitiveRegular';
     font-size: 120%;
     font-weight: bold;
     animation: colorchange 30s; /* animation-name followed by duration in seconds*/
@@ -86,8 +108,7 @@ div pre {
     -o-animation-iteration-count: infinite;
 }
 
-@keyframes colorchange
-{
+@keyframes colorchange {
     0%  {color: gold;}
     25%   {color: yellow;}
     50%  {color: orange;}
@@ -95,8 +116,7 @@ div pre {
     100%  {color: gold;}
 }
 
-@-webkit-keyframes colorchange /* Safari and Chrome - necessary duplicate */
-{
+@-webkit-keyframes colorchange {
     0%  {color: gold;}
     25%   {color: yellow;}
     50%  {color: orange;}
@@ -104,8 +124,7 @@ div pre {
     100%  {color: gold;}
 }
 
-@-moz-keyframes colorchange /* Safari and Chrome - necessary duplicate */
-{
+@-moz-keyframes colorchange {
     0%  {color: gold;}
     25%   {color: yellow;}
     50%  {color: orange;}
@@ -113,8 +132,7 @@ div pre {
     100%  {color: gold;}
 }
 
-@-o-keyframes colorchange /* Safari and Chrome - necessary duplicate */
-{
+@-o-keyframes colorchange {
     0%  {color: gold;}
     25%   {color: yellow;}
     50%  {color: orange;}
@@ -134,6 +152,12 @@ a {
 
 td a {
     text-decoration: none;
+}
+
+.nav {
+    font-family: 'IntuitiveRegular';
+    font-weight: normal;
+    font-style: normal;
 }
 
 .nav > .inactive > a {
@@ -204,7 +228,7 @@ table a:not(.btn), .table a:not(.btn) {
 }
 
 .typed-box{
-    height: 100px;
+    height: 150px;
     text-align: center;
 }
 
@@ -237,4 +261,14 @@ table a:not(.btn), .table a:not(.btn) {
     0% { opacity:1; }
     50% { opacity:0; }
     100% { opacity:1; }
+}
+
+.cv {
+    margin: 30px 0px 30px 0px;
+}
+
+@media screen and (min-width: 600px) and (max-width: 991px) {
+    .wally {
+        padding: 5px 55px 15px 55px;
+    }
 }

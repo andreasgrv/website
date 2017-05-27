@@ -2,7 +2,7 @@
 {% import "bootstrap/fixes.html" as fixes %}
 {% block body %}
     {% block alerts %}{% endblock alerts %}
-    <div class="container">
+    <div class="container main-container">
     {% block navbar %}
       <div class="navbar">
         <div class="row">
@@ -17,7 +17,7 @@
         </div>
         <div class="row">
           <div class="text-center">
-            <ul class="nav navbar-nav" style="display: inline-block; float: none">
+            <ul class="nav navbar-nav" style="display: inline-flex; float: none">
               <li{%if request.path == '/' %} class="active"{% endif %}>
                 <a href="/">
                   Blog
@@ -47,15 +47,17 @@
     {% endblock %}
     </div><!-- .container -->
     {% block footer %}
-    <div class="footer">
-      <div class="text-center">
-        <h6>Created by Andreas Grivas using <a href="http://flask.pocoo.org/" target="_blank">Flask</a>,
-          <a href="https://bootswatch.com/" target="_blank">Bootswatch</a> and
-          <a href="http://www.mattboldt.com/demos/typed-js/" target="_blank">typed.js</a>.
-        <h6>
-        <h6>
-          Last edited on {{config.LAST_EDITED}}
-        </h6>
+    <div class="container footer">
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2 text-center">
+          <h6>Created by Andreas Grivas using <a href="http://flask.pocoo.org/" target="_blank">Flask</a>,
+            <a href="https://bootswatch.com/" target="_blank">Bootswatch</a> and
+            <a href="http://www.mattboldt.com/demos/typed-js/" target="_blank">typed.js</a>.
+          <h6>
+          <h6>
+            Last edited on {{config.LAST_EDITED}}
+          </h6>
+        </div>
       </div>
     </div>
     {% endblock %}
