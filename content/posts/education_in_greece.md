@@ -133,6 +133,6 @@ Finally, I would like to attempt to debunk a few precarious predispositions.
 	and German or French lessons as a secondary foreign language. These lessons are thoroughly underrated
 	and undermined since everyone sends their children for private language lessons,
 	thus rendering the public lessons boring repeats, echoes of things the child was taught on another afternoon
-	of what would otherwise be his spare time.
+	of what would otherwise be its spare time.
 	4. Greek high school is flooding kids with content as it is, there is already little time to spare on their
 	frantic schedule without the inclusion of private foreign language lessons.

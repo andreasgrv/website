@@ -84,8 +84,9 @@ def listen():
 
 @app.route('/<fname>')
 def download_file(fname):
-    return send_from_directory(directory='files', filename=fname,
-                               as_attachment=True)
+    return send_from_directory(directory='files',
+                               filename=fname,
+                               as_attachment=False)
 
 
 if __name__ == '__main__':

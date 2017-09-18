@@ -18,7 +18,7 @@ body{
     background-repeat:repeat;
     background-attachment: fixed;
     color: #a1a7af;
-    font-family: 'Advent Pro';
+    font-family: 'Fira Sans Condensed', sans-serif;
     font-weight: normal;
     font-style: normal;
 }
@@ -28,7 +28,8 @@ p {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Sniglet';
+    /* font-family: 'Sniglet'; */
+    /* font-family: 'IntuitiveRegular'; */
     font-weight: normal;
     font-style: normal;
 }
@@ -83,7 +84,7 @@ div pre {
 }
 
 .navbar-brand {
-    font-family: 'IntuitiveRegular';
+    /* font-family: 'IntuitiveRegular'; */
 }
 
 .brand-symbol {
@@ -148,7 +149,7 @@ td a {
 }
 
 .nav {
-    font-family: 'IntuitiveRegular';
+    /* font-family: 'IntuitiveRegular'; */
     font-weight: normal;
     font-style: normal;
 }
