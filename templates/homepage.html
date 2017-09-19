@@ -11,24 +11,20 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-lg-8 col-lg-offset-2">
-            <table class="table">
-              <tbody>
-                {% for index, post in enumerate(posts) %}
-                <tr>
-                  <td>
-                    <a class="post-title" href="{{ url_for('post', name=post.path) }}">
-                      {{ post.title }}
-                    </a>
-                  </td>
-                  <td>
-                    <small>{{ post.date }}</small>
-                  </td>
-                </tr>
-                {% endfor %}
-              </tbody>
-            </table> 
+        <div class="col-sm-10 col-sm-offset-1">
+          {% for index, post in enumerate(posts) %}
+          <div class="row post-entry">
+            <div class="col-sm-6 col-lg-8">
+              <a class="post-title" href="{{ url_for('post', name=post.path) }}">
+                {{ post.title }}
+              </a>
+            </div>
+            <div class="col-sm-6 col-lg-4">
+                <small>{{ post.date }}</small>
+            </div>
           </div>
+          {% endfor %}
+        </div>
       </div>
     </div><!-- /.main -->
 {% endblock %}
