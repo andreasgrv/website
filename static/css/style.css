@@ -57,7 +57,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .post-entry {
     border-bottom: 1px dotted #ccc;
-    padding-bottom: 5px;
+    padding-bottom: 4px;
+    padding-top: 8px;
 }
 
 .post-title {
@@ -156,6 +157,10 @@ td a {
     background-color: transparent;
 }
 
+.nav > li > a {
+    padding: 10px 15px 10px 15px;
+}
+
 .nav > .inactive > a {
     transition: ease 1s;
     /* background: #16161a linear-gradient(300deg, black 0%, #16161a 40%, #18181f 60%, #222229 80%, #25252f); */
@@ -164,8 +169,7 @@ td a {
 .nav > .active > a {
     /* border-bottom: 2px dashed grey; */
 
-    border: 2px dotted #ccc;
-    border-radius: 35px 20px 35px 1px;
+    border-bottom: 1px dotted #999;
     /* background: #16161a linear-gradient(300deg, black 0%, #16161a 40%, #18181f 60%, #222229 80%, #25252f); */
 }
 
