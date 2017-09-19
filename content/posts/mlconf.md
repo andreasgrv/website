@@ -1,5 +1,5 @@
-title: mlconf, a python configuration module with machine learning in mind
-date: 2017-09-18 12:58
+mlconf, a python configuration module with machine learning in mind
+2017-09-18 12:58
 
 ### Machine Learning configuration - the ugly bits
 
@@ -12,7 +12,7 @@ Even after reading about other approaches and how others chose their hyperparame
 I still felt that most choices can only be reasoned about using trial and error.
 
 <a href="https://github.com/andreasgrv/mlconf" target="_blank">
-  <img class="img-responsive wally"
+  <img class="img-responsive"
     src="http://johnny.overfit.xyz/scrat-air.jpg" 
     alt="scrat feeling the direction of the air with his finger"/>
 </a>
@@ -31,7 +31,7 @@ You can no longer suppress the voice in your head urging you to put an end to th
 compromise, this solution you cannot be proud of, this tainted piece of code
 that lingers in the background as you unsuccessfully try to move on to something else.
 As ardently voiced by Raymond Hettinger:
-<h4><a href="https://www.youtube.com/watch?v=wf-BqAjZb8M&feature=youtu.be&t=1401" target="_blank">There must be a better way!!</a></h4>
+<a class="brand-symbol" href="https://www.youtube.com/watch?v=wf-BqAjZb8M&feature=youtu.be&t=1401" target="_blank">There must be a better way!!</a>
 
 ### So what is a good way ?
 
@@ -57,15 +57,17 @@ My approach was to write [mlconf](https://github.com/andreasgrv/mlconf), which d
 that you can easily override the defaults from the command line. Furthermore, mlconf wraps the returned object into a *Blueprint* object, which
 apart from python dictionary semantics also allows getting deep values by chaining the dot operator.
 
-	# if yaml file contained this
-	outer:
-		inner:
-			value: 5
-	
+```yaml
+# if yaml file contained this
+outer:
+	inner:
+		value: 5
 
-	# get the value like this:
-	bp = Blueprint.from_file(path_to_above)
-	bp.outer.inner.value # this is 5
+
+# get the value like this:
+bp = Blueprint.from_file(path_to_above)
+bp.outer.inner.value # this is 5
+```
 
 ### Give us an example then..
 
@@ -75,11 +77,13 @@ or module. For a simpler example with no external dependencies see the project's
 In order to be able to run the example we need to install mlconf and scikit-learn.
 
 #### Installation
-	git clone https://github.com/andreasgrv/mlconf
-	cd mlconf
-	virtualenv .env && activate .env/bin/activate
-	pip install .
-	pip install scikit-learn
+```bash
+git clone https://github.com/andreasgrv/mlconf
+cd mlconf
+virtualenv .env && activate .env/bin/activate
+pip install .
+pip install scikit-learn
+```
 
 #### Code
 
@@ -90,17 +94,19 @@ are reserved for specifying that this entry can be instantiated using the *build
 As we shall explain soon, the threshold option will be used to determine whether we use a large
 or small vocabulary.
 
-	threshold: 100
-	vectorizer:
-		$classname: CountVectorizer
-		$module: sklearn.feature_extraction.text
-		lowercase: False
-		vocabulary: '?' # we do not know this now (will know after data read)
-	model:
-		$classname: LinearSVC
-		$module: sklearn.svm
-		loss: 'hinge'
-		C: 10
+```yaml
+threshold: 100
+vectorizer:
+	$classname: CountVectorizer
+	$module: sklearn.feature_extraction.text
+	lowercase: False
+	vocabulary: '?' # we do not know this now (will know after data read)
+model:
+	$classname: LinearSVC
+	$module: sklearn.svm
+	loss: 'hinge'
+	C: 10
+```
 
 The python code we will run can be found in *tests/example.py*. Let's go through it step by step.
 
@@ -109,57 +115,69 @@ which extends the original argparse functionality. The mlconf.YAMLLoaderAction a
 the yaml file we pass to *--load_blueprint* when running the script and allow us to override
 all the values of these default attributes by specifying their value after the *--load_blueprint* argument.
 
-	import mlconf
+```python
+import mlconf
 
-	parser = mlconf.ArgumentParser(description='A text classifier.')
-	parser.add_argument('-i', '--input_file', default='README.md')
-	parser.add_argument('--load_blueprint', action=mlconf.YAMLLoaderAction)
+parser = mlconf.ArgumentParser(description='A text classifier.')
+parser.add_argument('-i', '--input_file', default='README.md')
+parser.add_argument('--load_blueprint', action=mlconf.YAMLLoaderAction)
 
-	conf = parser.parse_args() # This returns a Blueprint instance with . access
+conf = parser.parse_args() # This returns a Blueprint instance with . access
+```
 
 We continue by reading our input data (the README.md file) and choose a vocabulary for the bag of words based on the
 value of the threshold setting. We normally don't know our vocabulary for the bag of words before reading the data
 at runtime. We emulate this effect by choosing which vocabulary to use at runtime.
 
-	# set vocab for brevity, normally read from input
-	sm_vocab = ['acorns', 'tree']
-	lg_vocab = sm_vocab + ['ice', 'snow']
+```python
+# set vocab for brevity, normally read from input
+sm_vocab = ['acorns', 'tree']
+lg_vocab = sm_vocab + ['ice', 'snow']
 
-	with open(conf.input_file, 'r') as f:
-		lines = f.readlines()
+with open(conf.input_file, 'r') as f:
+	lines = f.readlines()
 
-	conf.vectorizer.vocabulary = lg_vocab if len(lines) > conf.threshold else sm_vocab
-	print('Using vocab: %r\n' % conf.vectorizer.vocabulary)
+conf.vectorizer.vocabulary = lg_vocab if len(lines) > conf.threshold else sm_vocab
+print('Using vocab: %r\n' % conf.vectorizer.vocabulary)
+```
 
 We then use the build method to instantiate any class representations we have
 in our YAML file. The fact that we only instantiate the CountVectorizer object after we
 call the *build* method on the blueprint, means that we can use values for
 our classes defined at runtime (such as the vocabulary in our case).
 
-	print('%s\n' % conf.vectorizer)       # this is a Blueprint object
-	built_conf = conf.build()             # instantiate the classes on a copy
-	print('%s\n' % built_conf.vectorizer) # this is now an instance of CountVectorizer
+```python
+print('%s\n' % conf.vectorizer)       # this is a Blueprint object
+built_conf = conf.build()             # instantiate the classes on a copy
+print('%s\n' % built_conf.vectorizer) # this is now an instance of CountVectorizer
+```
 
 What's next? "Training" of course! We first create our bag of words **X** and then fit
 our svm model to predict whether a given line contain the word "scrat".
 
-	X = built_conf.vectorizer.fit_transform(lines)
+```python
+X = built_conf.vectorizer.fit_transform(lines)
 
-	# target is to predict whether scrat is in the line of text
-	y = ['scrat' in line for line in lines]
+# target is to predict whether scrat is in the line of text
+y = ['scrat' in line for line in lines]
 
-	built_conf.model.fit(X, y) # fit model
+built_conf.model.fit(X, y) # fit model
+```
 
 Lastly, we use our model to predict whether the samples should contain the word "scrat".
 
-	# Predict on other data
-	samples = ['This is a tree', 'Ice ice baby']
-	X_test = built_conf.vectorizer.transform(samples)
-	print('Predicted: %r' % built_conf.model.predict(X_test))
+```python
+# Predict on other data
+samples = ['This is a tree', 'Ice ice baby']
+X_test = built_conf.vectorizer.transform(samples)
+print('Predicted: %r' % built_conf.model.predict(X_test))
+```
 
 In order to run the code we just walked through, you can type:
 
-	python tests/example.py --load_blueprint tests/data/model.yaml
+```bash
+python tests/example.py --load_blueprint tests/data/model.yaml
+```
 
 On my machine this is what the output looks like:
 
@@ -187,7 +205,10 @@ On my machine this is what the output looks like:
 
 To use the small vocabulary, you can simply change the vocabulary threshold as so:
 
-	python tests/example.py --load_blueprint tests/data/model.yaml --threshold 1000
+```bash
+python tests/example.py --load_blueprint tests/data/model.yaml --threshold 1000
+```
+
 
 Note that if you use a larger threshold your vocabulary is no longer on the
 rocks (no ice and snow) and the classification result should be different.
@@ -200,19 +221,26 @@ before *--load_blueprint* and *--model.C* after.
 We also carry out a simple type check based on the defaults, this should error
 as the default value is of type float, not string:
 
-	python tests/example.py --load_blueprint tests/data/model.yaml --model.C scrat
+```bash
+python tests/example.py --load_blueprint tests/data/model.yaml --model.C scrat
+```
 
 While the following will change the svm C to 0.1
 
-	python tests/example.py --load_blueprint tests/data/model.yaml --model.C 0.1
+```bash
+python tests/example.py --load_blueprint tests/data/model.yaml --model.C 0.1
+```
 
 Lastly, another handy feature of using mlconf this way is that you can get a list of
 the options at the command line using *--help* after the *--load_blueprint* option.
 
-	python tests/example.py --load_blueprint tests/data/model.yaml --help
+```bash
+python tests/example.py --load_blueprint tests/data/model.yaml --help
+```
 
 Should output:
 
+```text
 	usage:  example.py [-h] [-i INPUT_FILE] --load_blueprint BLUEPRINT_FILE
 					  [--opt1 val1] [--opt2 val2] ...
 
@@ -233,6 +261,7 @@ Should output:
 	  --vectorizer.lowercase bool (default: False)
 	  --vectorizer.strip_accents str (default: unicode)
 	  --vectorizer.vocabulary str (default: ?)
+```
 
 ### Drawbacks
 

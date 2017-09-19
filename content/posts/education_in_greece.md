@@ -1,5 +1,5 @@
-title: Education in Greece - it's all Greek to me
-date: 2016-01-02 17:16
+Education in Greece - it's all Greek to me
+2016-01-02 17:16
 
 I have recently had many reoccurring reflections on my Greek education and felt it was now the time to group
 all the inconsistencies, difficulties, peculiarities and misconceptions I have come across up to now into textual form
