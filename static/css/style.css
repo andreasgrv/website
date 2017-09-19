@@ -28,6 +28,8 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: normal;
     font-style: normal;
     color: #181a5a;
+    padding-top: .4em;
+    padding-bottom: .4em;
 }
 
 .table > tbody > tr > td {
@@ -47,11 +49,12 @@ h1, h2, h3, h4, h5, h6 {
 .footer > .row > .text-center > h6 {
     font-family: 'Life Savers', cursive;
     font-weight: 700;
+    padding: 0;
 }
 
 .main-container{
     padding: 10px;
-    padding-bottom: 70px;
+    padding-bottom: 100px;
     font-size: 1.3em;
 }
 
@@ -167,19 +170,7 @@ td a {
 }
 
 .nav > .active > a {
-}
-
-.nav > .active > a:before{
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background-repeat: repeat;
-  height: 3px;
-  background-size: 16px 16px;
-  background-image:
-    radial-gradient(circle at 10px -8px, blue 10px, lightblue 8px);
+    border-bottom: 1px dotted #aaa;
 }
 
 a:hover {

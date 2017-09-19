@@ -1,5 +1,5 @@
 title: mlconf, a python configuration module with machine learning in mind
-date: Monday 18 September 2017 at 12:58
+date: Monday, 18 September 2017 at 12:58
 
 ### Machine Learning configuration - the ugly bits
 
