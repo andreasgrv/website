@@ -1,5 +1,5 @@
 title: Python, a year along the way
-date: 2015-09-27 13:14
+date: Sunday 27 September 2015 at 13:14
 
 Recently I've been refactoring some of my code I wrote while learning python
 about a year ago.

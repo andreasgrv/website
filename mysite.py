@@ -25,7 +25,7 @@ FLATPAGES_MARKDOWN_EXTENSIONS = ['markdown.extensions.fenced_code', 'markdown.ex
 
 # calculate most recent modification to files
 HTML_FILES = 'templates/*'
-TIME_FORMAT = '%Y-%m-%d %H:%M'
+TIME_FORMAT = '%A %d %B %Y at %H:%M'
 MODIFIED = sorted(map(os.path.getmtime, glob(HTML_FILES)))[-1]
 LAST_EDITED = datetime.fromtimestamp(int(MODIFIED)).strftime(TIME_FORMAT)
 
@@ -49,7 +49,7 @@ music_files = [f.split('.')[0] for f in os.listdir(music_dir)
 @app.route('/')
 def homepage():
     posts = [p for p in flatpages]
-    posts.sort(key=lambda item: item['date'], reverse=True)
+    posts.sort(key=lambda item: datetime.strptime(item['date'], TIME_FORMAT), reverse=True)
     return render_template('homepage.html', posts=posts, enumerate=enumerate)
 
 

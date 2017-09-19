@@ -16,7 +16,6 @@
               <tbody>
                 {% for index, post in enumerate(posts) %}
                 <tr>
-                  <!-- <td>{{ index + 1 }}</td> -->
                   <td>
                     <a class="post-title" href="{{ url_for('post', name=post.path) }}">
                       {{ post.title }}
