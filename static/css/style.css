@@ -1,23 +1,12 @@
-@font-face{
-    /* font on https://fontlibrary.org/en/font/intuitive */ 
-    /* copywrites: Bruno de Souza Leão 2011 */ 
-    font-family: IntuitiveRegular;
-    src: url('/static/fonts/intuitive.ttf');
-	font-weight: normal; 
-	font-style: normal;
-}
-
 html{
     height: 100%;
     width: 100%;
 }
 
 body{
-    height: 100%;
-    background-image: url("/static/images/checker.png");
-    background-repeat:repeat;
-    background-attachment: fixed;
-    color: #a1a7af;
+    min-height: 100%;
+    position: relative;
+    background-color: #f7f8f9;
     font-family: 'Fira Sans Condensed', sans-serif;
     font-weight: normal;
     font-style: normal;
@@ -27,33 +16,59 @@ p {
     margin: 15px 0px 15px 0px;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    /* font-family: 'Sniglet'; */
-    /* font-family: 'IntuitiveRegular'; */
-    font-weight: normal;
-    font-style: normal;
+pre {
+    border: 0px solid transparent;
+    margin : 0;
+    padding : 5px;
+    line-height: 1.55;
 }
 
-div pre {
-    background-color: inherit;
-    font-family: inherit;
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Life Savers', cursive;
+    font-weight: normal;
+    font-style: normal;
+    color: #181a5a;
+}
+
+.table > tbody > tr > td {
+    border-top: 0px solid transparent;
+    border-bottom: 1px dotted #ccc;
 }
 
 /* my own css classes */
 
-.main-container{
-    min-height:100%;
-    /* background: rgb(22,22,26); */
-    /* background: rgba(22,22,26,0.75); */
-    /* background: #16161a linear-gradient(90deg, rgba(12,12,16,0.5) 0%, rgba(25,25,28,0.7) 20%, rgba(20, 20, 24, 0.7) 50%, rgba(25,25,28,0.7) 80%, rgba(12,12,16,0.5) 100%); */
-    background: #16161c linear-gradient(90deg, rgba(0,0,18,0.3) 0%, rgba(20, 20, 24, 0.7) 8%, rgba(20,20,24,0.7) 92%, rgba(0,0,18,0.3) 100%);
-    padding-bottom: 100px;
-    font-size: 1.2em;
+.footer{
+    position: absolute;
+    bottom: 0;
+    height: 70px;
+    width: 100%;
 }
 
-.footer{
-    margin-top: -70px;
-    padding-bottom: 10px;
+.footer > .row > .text-center > h6 {
+    font-family: 'Life Savers', cursive;
+    font-weight: 700;
+}
+
+.main-container{
+    padding: 10px;
+    padding-bottom: 70px;
+    font-size: 1.3em;
+}
+
+.post-title {
+    font-family: 'Life Savers', cursive;
+    font-weight: 700;
+}
+
+.navbar-brand {
+    font-family: 'Londrina Solid', cursive;
+    /* font-family: 'Bubblegum Sans', cursive; */
+    /* font-family: 'IntuitiveRegular'; */
+}
+
+.brand-symbol {
+    font-size: 120%;
+    font-weight: bold;
 }
 
 .command-line {
@@ -61,11 +76,6 @@ div pre {
 }
 
 .main{
-    /*background-color: #040404;*/
-    /* background-color: #f5f5fc; */
-    /* border-radius: 10px; */
-    /* padding-bottom: 40px; */
-    /* padding-top: 30px; */
     padding: 10px;
 }
 
@@ -83,178 +93,96 @@ div pre {
     padding-top: 25px;
 }
 
-.navbar-brand {
-    /* font-family: 'IntuitiveRegular'; */
+.navbar {
+    box-shadow: none;
 }
 
-.brand-symbol {
-    font-size: 120%;
-    font-weight: bold;
-    animation: colorchange 30s; /* animation-name followed by duration in seconds*/
-    /* you could also use milliseconds (ms) or something like 2.5s */
-    -webkit-animation: colorchange 30s; /* Chrome and Safari */
-    -moz-animation: colorchange 30s; /* Chrome and Safari */
-    -o-animation: colorchange 30s; /* Chrome and Safari */
-
-    animation-iteration-count: infinite;
-    -moz-animation-iteration-count: infinite;
-    -webkit-animation-iteration-count: infinite;
-    -o-animation-iteration-count: infinite;
-}
-
-@keyframes colorchange {
-    0%  {color: gold;}
-    25%   {color: yellow;}
-    50%  {color: orange;}
-    75%   {color: yellow;}
-    100%  {color: gold;}
-}
-
-@-webkit-keyframes colorchange {
-    0%  {color: gold;}
-    25%   {color: yellow;}
-    50%  {color: orange;}
-    75%   {color: yellow;}
-    100%  {color: gold;}
-}
-
-@-moz-keyframes colorchange {
-    0%  {color: gold;}
-    25%   {color: yellow;}
-    50%  {color: orange;}
-    75%   {color: yellow;}
-    100%  {color: gold;}
-}
-
-@-o-keyframes colorchange {
-    0%  {color: gold;}
-    25%   {color: yellow;}
-    50%  {color: orange;}
-    75%   {color: yellow;}
-    100%  {color: gold;}
-}
-
-/* overriding bootstrap and typed css classes */
 
 a {
+    /* color: #b31447; */
     -webkit-transition: color ease 1s;
     -moz-transition: color ease 1s;
     -o-transition: color ease 1s;
     transition: color ease 1s;
-    color: #dbb320;
+    /* color: #dbb3a0; */
+}
+
+a:hover {
+    text-decoration: none;
 }
 
 td a {
     text-decoration: none;
 }
 
+.nav > li {
+    padding: 0.2em;
+}
+
+@media screen and (max-width: 600px) {
+    .nav > li {
+        padding: 0;
+    }
+
+    .navbar {
+        margin: 0;
+    }
+
+    .page-header {
+        margin: 10px;
+    }
+}
+
 .nav {
-    /* font-family: 'IntuitiveRegular'; */
+    font-family: 'Londrina Solid', cursive;
+    /* font-family: 'Bubblegum Sans', cursive; */
+    font-size: 1.3em;
     font-weight: normal;
     font-style: normal;
 }
 
+.nav > li > a:hover {
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.nav > li > a:focus {
+    text-decoration: none;
+    background-color: transparent;
+}
+
 .nav > .inactive > a {
     transition: ease 1s;
-    border-style: outset;
-    border-width: 2px;
-    color: #dbb320;
-    background: #16161a linear-gradient(300deg, black 0%, #16161a 40%, #18181f 60%, #222229 80%, #25252f);
+    /* background: #16161a linear-gradient(300deg, black 0%, #16161a 40%, #18181f 60%, #222229 80%, #25252f); */
 }
 
 .nav > .active > a {
-    -webkit-transition: ease 1s;
-    -moz-transition: ease 1s;
-    -o-transition: ease 1s;
-    transition: ease 1s;
-    color: lightskyblue;
-    background: #16161a linear-gradient(300deg, black 0%, #16161a 40%, #18181f 60%, #222229 80%, #25252f);
+    /* border-bottom: 2px dashed grey; */
+
+    border: 2px dotted #ccc;
+    border-radius: 35px 20px 35px 1px;
+    /* background: #16161a linear-gradient(300deg, black 0%, #16161a 40%, #18181f 60%, #222229 80%, #25252f); */
 }
 
 a:hover {
-    color: lightskyblue;
-    text-decoration: none;
-}
-
-.nav > .active > a:hover {
-    color: #b9bfd9;
-    border-style: inset;
-    border-width: 2px;
-    border-color: gold;
-}
-
-.nav > .inactive > a:hover {
-    color: #b9bfd9;
-    border-style: inset;
-    border-width: 2px;
-    border-color: gold;
+    /* color: lightskyblue; */
+    /* text-decoration: none; */
 }
 
 .lead {
     font-size: 120%;
 }
 
-.nav > li > a {
-    -webkit-transition: ease 1s;
-    -moz-transition: ease 1s;
-    -o-transition: ease 1s;
-    transition: ease 1s;
-    border-style: outset;
-    border-width: 2px;
-    border-color: #334;
-}
-
-.nav > li > a:hover {
-    background-color: inherit;
-    border-style: inset;
-    border-width: 2px;
-    border-color: #b9bfd9;
-    color: lightskyblue;
-    background: #16161a linear-gradient(300deg, black 0%, #16161a 40%, #18181f 60%, #222229 80%, #25252f);
-    -webkit-transition: ease 1s;
-    -moz-transition: ease 1s;
-    -o-transition: ease 1s;
-    transition: ease 1s;
-}
-
 table a:not(.btn), .table a:not(.btn) {
     text-decoration: none;
 }
 
-.typed-box{
-    height: 150px;
+.mytitle{
     text-align: center;
 }
 
-.typed{
-    display: inline-block;
-    text-align: left;
-}
-
-.typed-cursor{
-    opacity: 1;
-    -webkit-animation: blink 0.7s infinite;
-    -moz-animation: blink 0.7s infinite;
-    -o-animation: blink 0.7s infinite;
-    animation: blink 0.7s infinite;
-}
-
-@keyframes blink{
-    0% { opacity:1; }
-    50% { opacity:0; }
-    100% { opacity:1; }
-}
-
-@-webkit-keyframes blink{
-    0% { opacity:1; }
-    50% { opacity:0; }
-    100% { opacity:1; }
-}
-
-@-moz-keyframes blink{
-    0% { opacity:1; }
-    50% { opacity:0; }
-    100% { opacity:1; }
+.main-title{
+    padding-bottom: 2em;
 }
 
 .cv {
@@ -268,20 +196,20 @@ table a:not(.btn), .table a:not(.btn) {
 }
 
 .stack-label-circle {
-    background: #a1a7af;
+    background: lightskyblue;
     height: 50px;
     width: 50px;
     -moz-border-radius: 25px;
     -webkit-border-radius: 25px;
     border-radius: 25px;
-    margin: 25px 15px 5px 15px;
+    margin: 20px 15px 10px 15px;
 }
 
 .stack-label {
-    padding-top: 8px;
+    padding-top: 0.3em;
     text-align: center;
     font-size: 1.4em;
-    color: #16161a;
+    color: #fff
 }
 
 @media screen and (min-width: 600px) and (max-width: 991px) {

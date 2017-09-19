@@ -50,9 +50,8 @@
     <div class="container footer">
       <div class="row">
         <div class="col-sm-8 col-sm-offset-2 text-center">
-          <h6>Created by Andreas Grivas using <a href="http://flask.pocoo.org/" target="_blank">Flask</a>,
-            <a href="https://bootswatch.com/" target="_blank">Bootswatch</a> and
-            <a href="http://www.mattboldt.com/demos/typed-js/" target="_blank">typed.js</a>.
+          <h6>Created by Andreas Grivas using <a href="http://flask.pocoo.org/" target="_blank">Flask</a> and
+            <a href="https://bootswatch.com/" target="_blank">Bootswatch</a>.
           <h6>
           <h6>
             Last edited on {{config.LAST_EDITED}}
@@ -73,10 +72,10 @@
 {%block styles %}
     {{super()}}
     <link rel="stylesheet" href="{{ url_for('.static', filename="css/font-awesome.min.css") }}">
-    <link rel="stylesheet" href="{{ url_for('.static', filename="css/darkly.min.css") }}">
+    <link rel="stylesheet" href="{{ url_for('.static', filename="css/paper.min.css") }}">
     <link rel="stylesheet" href="{{ url_for('.static', filename="css/style.css") }}">
     <link rel="stylesheet" href="{{ url_for('.static', filename="css/code.css") }}">
-    <link href="https://fonts.googleapis.com/css?family=Fira+Sans+Condensed:400|Sniglet" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans+Condensed:300|Londrina+Solid|Londrina+Shadow|Life+Savers" rel="stylesheet">
 {% endblock %}
 
 {%block head %}
