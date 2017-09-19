@@ -196,7 +196,7 @@ table a:not(.btn), .table a:not(.btn) {
 }
 
 .stack-label-circle {
-    background: lightskyblue;
+    background-color: gray;
     height: 50px;
     width: 50px;
     -moz-border-radius: 25px;
@@ -206,7 +206,7 @@ table a:not(.btn), .table a:not(.btn) {
 }
 
 .stack-label {
-    padding-top: 0.3em;
+    padding-top: 0.2em;
     text-align: center;
     font-size: 1.4em;
     color: #fff

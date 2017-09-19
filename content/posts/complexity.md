@@ -1,5 +1,5 @@
-Diversity, a curse or a blessing?
-2015-08-07 00:46
+title: Diversity, a curse or a blessing?
+date: 2015-08-07 00:46
 
 For the past days I've been reflecting on my choices made during the last months and how they relate to and can be explained by my personality. It is now clear to me that my soul is home to two very conflicting dispositions. On the one hand I'm a meticulous control freak that wants to be sure that whatever I do is the best I can and exactly as it pleases me down to the last detail. On the other hand, I get bored easily when working on the same thing, and find pleasure working on meaningless spontaneous ideas in various domains. I am addicted to having ideas and thinking about subjects and wondering about questions that interest me. And of course, the reason these two aspects of my personality are conflicting is time, which acts like a constant constraint, balancing their possible values. In this post I will expand my thoughts mostly around diversity, not because I have no time, as that would lead to a paradox that would implode this text in a spiral around the poles of infinity, but because (given that my time is constant) you can simply solve for the other side of the equation and imagine what the other post would read like. But I digress.
 

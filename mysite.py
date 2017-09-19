@@ -1,34 +1,40 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 # based on flask examples
+# static blog example below:
+# http://www.jamesharding.ca/posts/simple-static-markdown-blog-in-flask/
 
 import os
-import glob
 import argparse
 from datetime import datetime
+from glob import glob
 from flask import Flask, render_template, send_from_directory
 from flask_bootstrap import Bootstrap
+from flask_flatpages import FlatPages
 from flask_frozen import Freezer
-from blog_engine import post_to_markdown
+
 
 # global options
 DEBUG = True
+FLATPAGES_AUTO_RELOAD = DEBUG
+FLATPAGES_EXTENSION = '.md'
+FLATPAGES_ROOT = 'content/posts'
 # serve bootstrap locally
 BOOTSTRAP_SERVE_LOCAL = True
-
-BLOG_FOLDER = 'content'
-POST_DIR = 'posts'
+FLATPAGES_MARKDOWN_EXTENSIONS = ['markdown.extensions.fenced_code', 'markdown.extensions.codehilite']
 
 # calculate most recent modification to files
 HTML_FILES = 'templates/*'
 TIME_FORMAT = '%Y-%m-%d %H:%M'
-MODIFIED = sorted(map(os.path.getmtime, glob.glob(HTML_FILES)))[-1]
+MODIFIED = sorted(map(os.path.getmtime, glob(HTML_FILES)))[-1]
 LAST_EDITED = datetime.fromtimestamp(int(MODIFIED)).strftime(TIME_FORMAT)
 
 # create our application :)
 app = Flask(__name__)
 # we want bootstrap!
 Bootstrap(app)
+# use flatpages for blog
+flatpages = FlatPages(app)
 # apply freezer to generate static pages
 freezer = Freezer(app)
 
@@ -39,21 +45,15 @@ music_dir = 'static/music'
 music_files = [f.split('.')[0] for f in os.listdir(music_dir)
                if f.endswith('.mp3')]
 
-BLOG_POSTS = glob.glob('%s/%s/*.md' % (BLOG_FOLDER, POST_DIR))
-
-POST_OBJECTS = sorted([post_to_markdown(p) for p in BLOG_POSTS],
-                      key=lambda x: x.date,
-                      reverse=True)
-
-POST_HASH = dict([(p.path, p) for p in POST_OBJECTS])
-
 
 @app.route('/')
 def homepage():
-    return render_template('homepage.html', posts=POST_OBJECTS, enumerate=enumerate)
+    posts = [p for p in flatpages]
+    posts.sort(key=lambda item: item['date'], reverse=True)
+    return render_template('homepage.html', posts=posts, enumerate=enumerate)
 
 
-@app.route('/posts/<name>/')
+@app.route('/posts/<name>')
 def post(name):
     """A page for each post
 
@@ -61,7 +61,9 @@ def post(name):
     :returns: The rendered page of this post
 
     """
-    return render_template('post.html', post=POST_HASH[name])
+    print(name)
+    post = flatpages.get_or_404(name)
+    return render_template('post.html', post=post)
 
 
 @app.route('/about')

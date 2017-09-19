@@ -1,5 +1,5 @@
-mlconf, a python configuration module with machine learning in mind
-2017-09-18 12:58
+title: mlconf, a python configuration module with machine learning in mind
+date: 2017-09-18 12:58
 
 ### Machine Learning configuration - the ugly bits
 
@@ -181,6 +181,7 @@ python tests/example.py --load_blueprint tests/data/model.yaml
 
 On my machine this is what the output looks like:
 
+	:::text
 	Using vocab: ['acorns', 'tree', 'ice', 'snow']
 
 	Blueprint:
@@ -241,26 +242,26 @@ python tests/example.py --load_blueprint tests/data/model.yaml --help
 Should output:
 
 ```text
-	usage:  example.py [-h] [-i INPUT_FILE] --load_blueprint BLUEPRINT_FILE
-					  [--opt1 val1] [--opt2 val2] ...
+usage:  example.py [-h] [-i INPUT_FILE] --load_blueprint BLUEPRINT_FILE
+				  [--opt1 val1] [--opt2 val2] ...
 
-	YAMLLoader action help: info about arguments you can pass after
-	--load_blueprint. For more details on global opts use -h or --help before
-	--load_blueprint.
+YAMLLoader action help: info about arguments you can pass after
+--load_blueprint. For more details on global opts use -h or --help before
+--load_blueprint.
 
-	optional arguments:
-	  -h, --help            show this help message and exit
-	  --model.$classname str (default: LinearSVC)
-	  --model.$module str (default: sklearn.svm)
-	  --model.C float (default: 10.0)
-	  --model.loss str (default: hinge)
-	  --model.penalty str (default: l2)
-	  --threshold int (default: 100)
-	  --vectorizer.$classname str (default: CountVectorizer)
-	  --vectorizer.$module str (default: sklearn.feature_extraction.text)
-	  --vectorizer.lowercase bool (default: False)
-	  --vectorizer.strip_accents str (default: unicode)
-	  --vectorizer.vocabulary str (default: ?)
+optional arguments:
+  -h, --help            show this help message and exit
+  --model.$classname str (default: LinearSVC)
+  --model.$module str (default: sklearn.svm)
+  --model.C float (default: 10.0)
+  --model.loss str (default: hinge)
+  --model.penalty str (default: l2)
+  --threshold int (default: 100)
+  --vectorizer.$classname str (default: CountVectorizer)
+  --vectorizer.$module str (default: sklearn.feature_extraction.text)
+  --vectorizer.lowercase bool (default: False)
+  --vectorizer.strip_accents str (default: unicode)
+  --vectorizer.vocabulary str (default: ?)
 ```
 
 ### Drawbacks
