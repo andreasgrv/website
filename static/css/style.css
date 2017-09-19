@@ -159,18 +159,27 @@ td a {
 
 .nav > li > a {
     padding: 10px 15px 10px 15px;
+    position: relative;
 }
 
 .nav > .inactive > a {
     transition: ease 1s;
-    /* background: #16161a linear-gradient(300deg, black 0%, #16161a 40%, #18181f 60%, #222229 80%, #25252f); */
 }
 
 .nav > .active > a {
-    /* border-bottom: 2px dashed grey; */
+}
 
-    border-bottom: 1px dotted #999;
-    /* background: #16161a linear-gradient(300deg, black 0%, #16161a 40%, #18181f 60%, #222229 80%, #25252f); */
+.nav > .active > a:before{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-repeat: repeat;
+  height: 3px;
+  background-size: 16px 16px;
+  background-image:
+    radial-gradient(circle at 10px -8px, blue 10px, lightblue 8px);
 }
 
 a:hover {
@@ -185,7 +194,6 @@ a:hover {
 table a:not(.btn), .table a:not(.btn) {
     text-decoration: none;
 }
-
 .mytitle{
     text-align: center;
 }
@@ -205,11 +213,9 @@ table a:not(.btn), .table a:not(.btn) {
 }
 
 .stack-label-circle {
-    background-color: gray;
+    background-color: #1966a3;
     height: 50px;
     width: 50px;
-    -moz-border-radius: 25px;
-    -webkit-border-radius: 25px;
     border-radius: 25px;
     margin: 20px 15px 10px 15px;
 }
