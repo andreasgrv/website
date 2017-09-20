@@ -72,9 +72,8 @@ bp.outer.inner.value # this is 5
 ### Give us an example then..
 
 The following is a toy example of a bag of words model with a SVM classifier.
-We will use [scikit-learn](http://scikit-learn.org/stable/) to make this example more realistic, however the classes used could be from any library
-or module. For a simpler example with no external dependencies see the project's [README](https://github.com/andreasgrv/mlconf/blob/master/README.md) file on github.
-In order to be able to run the example we need to install mlconf and scikit-learn.
+We will use [scikit-learn](http://scikit-learn.org/stable/) to make this example more realistic.
+We therefore need to install mlconf and scikit-learn in order to be able to run it.
 
 #### Installation
 ```bash
@@ -95,7 +94,7 @@ As we shall explain soon, the threshold option will be used to determine whether
 or small vocabulary.
 
 ```yaml
-threshold: 100
+threshold: 40
 vectorizer:
 	$classname: CountVectorizer
 	$module: sklearn.feature_extraction.text
@@ -202,7 +201,7 @@ On my machine this is what the output looks like:
 			strip_accents='unicode', token_pattern='(?u)\\b\\w\\w+\\b',
 			tokenizer=None, vocabulary=['acorns', 'tree', 'ice', 'snow'])
 
-	Predicted: array([False,  True], dtype=bool)
+	Predicted: array([False, False], dtype=bool)
 
 To use the small vocabulary, you can simply change the vocabulary threshold as so:
 
@@ -256,7 +255,7 @@ optional arguments:
   --model.C float (default: 10.0)
   --model.loss str (default: hinge)
   --model.penalty str (default: l2)
-  --threshold int (default: 100)
+  --threshold int (default: 40)
   --vectorizer.$classname str (default: CountVectorizer)
   --vectorizer.$module str (default: sklearn.feature_extraction.text)
   --vectorizer.lowercase bool (default: False)
