@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 {% block title %}read{% endblock %}
 
-{% block alerts %}
-    <div class="alert alert-dismissable alert-warning">
-      <button type="button" class="close" data-dismiss="alert"><i class="fa fa-times-circle"></i></button>
-      <strong>Disclaimer:</strong> This page may contain nerdy and incomprehensible content.
-    </div>
-{% endblock %}
+{# {% block alerts %} #}
+{#     <div class="alert alert-dismissable alert-warning"> #}
+{#       <button type="button" class="close" data-dismiss="alert"><i class="fa fa-times-circle"></i></button> #}
+{#       <strong>Disclaimer:</strong> This page may contain nerdy and incomprehensible content. #}
+{#     </div> #}
+{# {% endblock %} #}
 
 {% block content %}
     <div class="main">
@@ -15,7 +15,7 @@
         </div>
         <div class="col-lg-8">
           <div class="page-header text-center">
-            <h3 class="mytitle">This is a sample of my nonsense</h3>
+            <h3 class="mytitle">This is a sample of my sillyness<sup><a href="#fnote1">[1]</a></sup></h3>
           </div>
         </div>
         <div class="col-lg-2">
@@ -48,7 +48,7 @@
         <div class="row">
           <div class="col-sm-12 col-lg-8 col-lg-offset-2">
             <div class="bs-component grvtext">
-              <h4>The ostentatious cucumber</h4><br>
+              <h3>The ostentatious cucumber</h3><br>
               "<i>All vegetables are immortal</i>". <br>
               The cucumber resolved his precarious remark with a flamboyant dance of virility. <br>
               He wavered his rod, and hammered a cod, who dazed had to walk back to Ility. <br>
@@ -121,5 +121,12 @@
         <!--   </div> -->
         </div>
       </div>
+      <div class="row">
+        <div class="col-sm-12 col-lg-8 col-lg-offset-2">
+          <div class="bs-component grvtext">
+            <p id="fnote1">[1] If <a href="https://en.wikipedia.org/wiki/Lewis_Carroll" target="_blank">Lewis Caroll</a> was allowed to be silly, I don't see why I should be serious.</p>
+          </div>
+        </div>
+      </div><!-- /.main -->
     </div><!-- /.main -->
 {% endblock %}

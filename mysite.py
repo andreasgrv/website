@@ -21,7 +21,9 @@ FLATPAGES_EXTENSION = '.md'
 FLATPAGES_ROOT = 'content/posts'
 # serve bootstrap locally
 BOOTSTRAP_SERVE_LOCAL = True
-FLATPAGES_MARKDOWN_EXTENSIONS = ['markdown.extensions.fenced_code', 'markdown.extensions.codehilite']
+FLATPAGES_MARKDOWN_EXTENSIONS = ['markdown.extensions.fenced_code',
+                                 'markdown.extensions.codehilite',
+                                 'markdown.extensions.footnotes']
 
 # calculate most recent modification to files
 HTML_FILES = 'templates/*'
