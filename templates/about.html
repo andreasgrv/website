@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}about grv{% endblock %}
+{% block title %}about me{% endblock %}
 
 {% block content %}
     <div class="main">
@@ -14,29 +14,43 @@
         <div class="col-sm-8 col-sm-offset-2">
           <div class="row">
             <div class="col-sm-12">
-              <p class="lead">My name is Andreas, and I am currently a Masters student digging deeper into
-             Machine Learning and Natural Language Processing at the <a href="http://www.ed.ac.uk/informatics"
-                                                                      target="_blank">University of Edinburgh</a>.
-             I previously worked as a research associate at
-             <a href="http://persona.iit.demokritos.gr" target="_blank"> NCSR Demokritos</a>,
-             as a member of <a href="http://persona.iit.demokritos.gr/" target="_blank">Persona</a>. <br>
-              </p>
+              <p class="lead">My name is Andreas and I am currently in search of a position
+              to work as a Natural Language Processing Engineer in and around Edinburgh.</p>
             </div>
           </div>
           <div class="row">
             <div class="col-sm-12">
               <img class="img-responsive wally"  src="{{url_for('.static', filename="images/me.png")}}"></img>
-              <p>My interests are generally scattered, but during my Masters I have focussed on
-              Natural Language Processing and applied Machine Learning. </p>
-              <p>More specifically, I have learned a lot about the dark art of training neural networks and have become familiar
-             with the language modelling and dependency parsing literature.</p>
-              <p>For my M.Sc. dissertation I implemented neural network models for syntactic analysis (Dependency Parsing) of morphologically rich languages.</p>
+              <p>
+               I recently finished my Masters at the 
+               <a href="http://www.ed.ac.uk/informatics" target="_blank">University of Edinburgh</a>
+               where I specialised in Natural Language Processing and applied Machine Learning.
+               </p>
+              <p>More specifically, I learned a lot about the dark art of training neural networks
+              and became familiar with the language modelling and dependency parsing literature.</p>
+               <p> My dissertation, 
+               supervised by <a href="https://alopez.github.io/" target="_blank">Adam Lopez</a> and
+               <a href="https://claravania.github.io/" target="_blank">Clara Vania</a>, 
+               was on analysing the syntactic structure of sentences
+               using neural network models for languages with rich morphology
+               (<a href="http://johnny.overfit.xyz" target="_blank">demo</a>,
+               <a href="http://github.com/andreasgrv/johnny" target="_blank">code</a>).
+               The results confirmed that for such languages, encoders which construct word representations
+               from characters significantly outperform others that
+               model the input on the word level.
+               </p>
+               <p>I am currently working on understanding what patterns
+               neural network character encoders capture in language
+               and on exploring the effect that multi-task learning can have on the learned representations.
+               </p>
             </div>
           </div>
           <div class="row">
             <div class="col-sm-12">
-              <p class="lead"><h4>History stack trace<h4></p>
+              <h4>Stack trace</h4>
             </div>
+          </div>
+          <div class="row">
             <div class="col-sm-2">
               <div class="stack-label-parent">
                 <div class="stack-label-circle">
@@ -47,50 +61,96 @@
               </div>
             </div>
             <div class="col-sm-10">
-              <p> In the year following my graduation I worked on
-                Author Profiling, Named Entity Recognition and Relation Extraction. Our team at NCSR Demokritos
-                placed third in Pan 2015 on the
-                <a href="http://pan.webis.de/clef15/pan15-web/author-profiling.html" target="_blank">
+              <p> Before my M.Sc. I was a research assistant at
+             <a href="http://persona.iit.demokritos.gr" target="_blank"> NCSR Demokritos</a>
+             under the supervision of
+             <a href="http://users.iit.demokritos.gr/~akrithara/"
+               target="_blank">Natasa Krithara</a> and
+             <a href="http://users.iit.demokritos.gr/~paliourg/index.shtml"
+               target="_blank">George Paliouras</a>.
+             I worked on text classification and 
+             extracting relations and entity mentions from streams of text.
+             Our submission placed <a href="http://www.uni-weimar.de/medien/webis/events/pan-15/pan15-papers-final/pan15-author-profiling/rangel15-overview.pdf#page=8" target="_blank">third</a>
+             at Pan 2015 on the <a href="http://pan.webis.de/clef15/pan15-web/author-profiling.html" target="_blank">
                   Author Profiling task</a>.
             </div>
+          </div>
+          <div class="row">
             <div class="col-sm-2">
               <div class="stack-label-parent">
                 <div class="stack-label-circle">
-                  <p class="stack-label"> 1 </p>
+                  <p class="stack-label">
+                    1
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-10">
+              <p>Before that I worked on named entity recognition
+              for Greek and Serbian under the supervision of
+              <a href="https://www.dit.hua.gr/~varlamis/" target="_blank">Iraklis Varlamis</a>.</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-2">
+              <div class="stack-label-parent">
+                <div class="stack-label-circle">
+                  <p class="stack-label"> 2 </p>
                 </div>
               </div>
             </div>
             <div class="col-sm-10">
               <p>I graduated from <a href="https://www.dit.hua.gr/index.php/en/" target="_blank">
-                Harokopeio University of Athens</a> in 2014.
-                In my B.Sc. dissertation I was interested in recognising textual entailment and contradiction
-                for comparing news items.
-                To this end, I worked on a measure of word similarity influenced by the
+                Harokopio University of Athens</a> in 2014.
+                For my B.Sc. dissertation, supervised by Rania Hatzi, Mara Nikolaidou
+                and <a href="http://galaxy.hua.gr/~dimosthe/" target="_blank">Dimosthenis Anagnostopoulos</a>,
+                I worked on a word similarity measure with the intent of discerning
+                whether two sentences could be aligned - were on the same topic.
+               The word representations I constructed were influenced by the
                 <a href="https://www.youtube.com/watch?v=j5ty2s1TZvE&list=PL068ES-0ca9CSIp5OPGI5RXB3k5XgYRxF"
-                   target="_blank">MIT lectures</a> of <a href="https://en.wikipedia.org/wiki/G%C3%B6del,_Escher,_Bach"
+                   target="_blank">lectures - reading</a> of the book 
+                 <a href="https://en.wikipedia.org/wiki/G%C3%B6del,_Escher,_Bach"
                   target="_blank">Gödel, Escher, Bach</a>. 
-                (I was not familiar with word2vec and other related approaches in the literature).
-                The word similarity measure was used to compute alignments for the RTE challenge
-                and was compared to other word similarity measures on the 
-                <a href="http://www.cs.technion.ac.il/~gabr/resources/data/wordsim353/wordsim353.html"
-                   target="_blank">wordsim353 dataset</a>.</p>
+                {# . #}
               </p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-2">
+              <div class="stack-label-parent">
+                <div class="stack-label-circle">
+                  <p class="stack-label">
+                    3
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-10">
+              I did my internship in 2013 at 
+              <a href="http://www.scify.gr/site/el/" target="_blank">Scify</a> under the supervision of 
+              <a href="http://users.iit.demokritos.gr/~ggianna/" target="_blank">George Giannakopoulos</a>,
+              who got me interested in Natural Language Processing.
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <h4>In case you haven't had enough of me</h4>
             </div>
           </div>
           <div class="row">
             <div class="col-sm-12">
               <div class="well cv">
-                You can download my CV <a href="/andreas-grivas.pdf">here</a>.<br>
                 <!-- You can download my B.Sc. Thesis in Greek <a href="/sentencealignment.pdf">here</a>.<br> -->
-                Find me on <a href="https://github.com/andreasgrv" target="_blank">github</a> <i class="fa fa-github"></i>.
+                <p>You can download my CV <a href="/andreas-grivas.pdf">here</a>.</p>
+                <p>My vimrc and other dotfiles can be found
+                <a href="https://github.com/andreasgrv/dotfiles" target="_blank">here</a>.</p>
               </div>
-              My favourite programming language is Python. <br>
-              My favourite editor is 
-              <a href="http://www.vim.org" target="_blank">
-                <img style="margin-top:-15px" src="{{url_for('.static', filename="images/vim_on_fire.gif")}}" alt="Vim">
-                </img>
-              </a>, you can find my vimrc and other dotfiles
-              <a href="https://github.com/andreasgrv/dotfiles" target="_blank">here</a>.<br>
+            </div>
+          </div>
+          <div class="row text-center">
+                <a href="https://www.linkedin.com/in/andreas-grivas" target="_blank"><i class="fa fa-linkedin mylink"></i></a>
+                <a href="https://github.com/andreasgrv" target="_blank"><i class="fa fa-github mylink"></i></a>
+                <a href="https://stackoverflow.com/users/4363401/andreas-grivas" target="_blank"><i class="fa fa-stack-overflow mylink"></i></a></h4>
             </div>
           </div>
         </div>
