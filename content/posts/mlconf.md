@@ -13,7 +13,7 @@ I still felt that most choices can only be reasoned about using trial and error.
 
 <a href="https://github.com/andreasgrv/mlconf" target="_blank">
   <img class="img-responsive"
-    src="http://johnny.overfit.xyz/scrat-air.jpg" 
+    src="http://grv.overfit.xyz/scrat-air.jpg" 
     alt="scrat feeling the direction of the air with his finger"/>
 </a>
 
