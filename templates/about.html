@@ -6,7 +6,7 @@
       <div class="row">
         <div class="col-sm-8 col-sm-offset-2">
           <div class="page-header text-center">
-            <h3>Some facts about myself</h3>
+            <h3>self.describe()</h3>
           </div>
         </div>
       </div>
@@ -14,14 +14,18 @@
         <div class="col-sm-8 col-sm-offset-2">
           <div class="row">
             <div class="col-sm-12">
-              <p class="lead">My name is Andreas and I am currently an R&amp;D Data Scientist at <a href="https://mudano.com/" target="_blank">Mudano</a>.</p>
+		    <p class="lead">I am Andreas and I am a Natural Language Processing engineer, currently employed
+		    as a Research Assistant at the <a href="http://web.inf.ed.ac.uk/ilcc" target="_blank">University of Edinburgh</a>.<p>
+		    <p>
+		    My current focus is on Named Entity Recognition and Relation Extraction from biomedical text
+		    under the supervision of <a href="http://homepages.inf.ed.ac.uk/balex/" target="_blank">Beatrice Alex</a>.</p>
             </div>
           </div>
           <div class="row">
             <div class="col-sm-12">
               <img class="img-responsive wally"  src="{{url_for('.static', filename="images/me.png")}}"></img>
-              <p>
-               I recently finished my Masters at the 
+	      <p>
+               In 2017 I finished my Masters at the 
                <a href="http://www.ed.ac.uk/informatics" target="_blank">University of Edinburgh</a>
                where I specialised in Natural Language Processing and applied Machine Learning.
                </p>
@@ -35,19 +39,16 @@
                (<a href="http://johnny.overfit.xyz" target="_blank">demo</a>,
                <a href="http://github.com/andreasgrv/johnny" target="_blank">code</a>).
                The results confirmed that for such languages, encoders which construct word representations
-               from characters significantly outperform others that
-               model the input on the word level.
-               </p>
-               <p>I am currently working on understanding what patterns
-               neural network character encoders capture in language
-               and on exploring the effect that multi-task learning can have on the learned representations.
+               from characters significantly outperform others that model the input on the word level.
                </p>
             </div>
           </div>
           <div class="row">
-            <div class="col-sm-12">
+            <div class="col-sm-3 text-center">
               <h4>Stack trace</h4>
             </div>
+            <div class="col-sm-9">
+	    </div>
           </div>
           <div class="row">
             <div class="col-sm-2">
@@ -55,6 +56,21 @@
                 <div class="stack-label-circle">
                   <p class="stack-label">
                     0
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-10">
+		    <p> After my M.Sc. I was an R&amp;D Data Scientist at <a href="https://mudano.com/" target="_blank">Mudano</a>, where
+		    I prototyped NLP &amp; ML algorithms supervised by <a href="https://twitter.com/euanwielewski?lang=en" target="_blank">Euan Wielewski</a>.</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-2">
+              <div class="stack-label-parent">
+                <div class="stack-label-circle">
+                  <p class="stack-label">
+                    1
                   </p>
                 </div>
               </div>
@@ -79,13 +95,13 @@
               <div class="stack-label-parent">
                 <div class="stack-label-circle">
                   <p class="stack-label">
-                    1
+                    2
                   </p>
                 </div>
               </div>
             </div>
             <div class="col-sm-10">
-              <p>Before that I worked on named entity recognition
+              <p>Before that I worked on Named Entity Recognition
               for Greek and Serbian under the supervision of
               <a href="https://www.dit.hua.gr/~varlamis/" target="_blank">Iraklis Varlamis</a>.</p>
             </div>
@@ -94,7 +110,7 @@
             <div class="col-sm-2">
               <div class="stack-label-parent">
                 <div class="stack-label-circle">
-                  <p class="stack-label"> 2 </p>
+                  <p class="stack-label"> 3 </p>
                 </div>
               </div>
             </div>
@@ -103,8 +119,8 @@
                 Harokopio University of Athens</a> in 2014.
                 For my B.Sc. dissertation, supervised by Rania Hatzi, Mara Nikolaidou
                 and <a href="http://galaxy.hua.gr/~dimosthe/" target="_blank">Dimosthenis Anagnostopoulos</a>,
-                I worked on a word similarity measure with the intent of discerning
-                whether two sentences could be aligned - were on the same topic.
+                I constructed a word similarity measure from synonym graphs with the intent
+		of aligning sentences to recognise textual entailment.
                The word representations I constructed were influenced by the
                 <a href="https://www.youtube.com/watch?v=j5ty2s1TZvE&list=PL068ES-0ca9CSIp5OPGI5RXB3k5XgYRxF"
                    target="_blank">lectures - reading</a> of the book 
@@ -119,7 +135,7 @@
               <div class="stack-label-parent">
                 <div class="stack-label-circle">
                   <p class="stack-label">
-                    3
+                    4
                   </p>
                 </div>
               </div>
@@ -132,8 +148,8 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-sm-12">
-              <h4>In case you haven't had enough of me</h4>
+            <div class="col-sm-12 text-center">
+              <h4>More text/code with low perplexity under my language model</h4>
             </div>
           </div>
           <div class="row">
@@ -147,9 +163,9 @@
             </div>
           </div>
           <div class="row text-center">
-                <a href="https://www.linkedin.com/in/andreas-grivas" target="_blank"><i class="fa fa-linkedin mylink"></i></a>
-                <a href="https://github.com/andreasgrv" target="_blank"><i class="fa fa-github mylink"></i></a>
-                <a href="https://stackoverflow.com/users/4363401/andreas-grivas" target="_blank"><i class="fa fa-stack-overflow mylink"></i></a></h4>
+                <a href="https://www.linkedin.com/in/andreas-grivas" target="_blank"><i class="fab fa-linkedin mylink"></i></a>
+                <a href="https://github.com/andreasgrv" target="_blank"><i class="fab fa-github mylink"></i></a>
+                <a href="https://stackoverflow.com/users/4363401/andreas-grivas" target="_blank"><i class="fab fa-stack-overflow mylink"></i></a></h4>
             </div>
           </div>
         </div>
