@@ -66,6 +66,7 @@
     {% endblock %}
     {% block scripts %}
       {{super()}}
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
       <script src="{{url_for('static', filename='js/prefixfree.min.js')}}"></script>
       <script src="{{url_for('static', filename='js/typed.js')}}"></script>
       <script src="{{url_for('static', filename='js/myjs.js')}}"></script>
