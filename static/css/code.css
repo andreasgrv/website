@@ -7,7 +7,8 @@
 }
 
 .codehilite { 
-    font-family: FantasqueSansMonoRegular;
+    font-family: 'FantasqueSansMonoRegular', monospace, monospace;
+    font-size: 80%;
     font-weight: normal;
     margin-top: 15px;
     margin-bottom: 15px;

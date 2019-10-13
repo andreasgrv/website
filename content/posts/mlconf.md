@@ -47,7 +47,7 @@ less clear than reading a configuration file that can contain comments and expre
 
 I have been a fan of [YAML](http://yaml.org/) for [quite some time now](https://github.com/andreasgrv/tictacs).
 I find it is easily readable, it can express structure in a clear way (I might be biased because of python - since it uses indentation)
-and it provides a concise snapshot of a machine learning approach. The latter feature is very important if you are into research due to
+and it provides a concise snapshot of a machine learning approach. The latter feature is very important if you are into research, due to
 the importance of reproducibility. By adding all the settings needed into the configuration file, you
 can make your results for each experiment easily reproducible. Each configuration file is in a way an experiment.
 

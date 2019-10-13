@@ -9,7 +9,6 @@ import argparse
 from datetime import datetime
 from glob import glob
 from flask import Flask, render_template, send_from_directory
-from flask_bootstrap import Bootstrap
 from flask_flatpages import FlatPages
 from flask_frozen import Freezer
 
@@ -33,8 +32,6 @@ LAST_EDITED = datetime.fromtimestamp(int(MODIFIED)).strftime(TIME_FORMAT)
 
 # create our application :)
 app = Flask(__name__)
-# we want bootstrap!
-Bootstrap(app)
 # use flatpages for blog
 flatpages = FlatPages(app)
 # apply freezer to generate static pages

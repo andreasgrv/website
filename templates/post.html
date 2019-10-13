@@ -1,25 +1,19 @@
 {% extends "base.html" %}
 {% block content %}
-    <div class="main">
-      <div class="row">
-          <div class="col-lg-2">
-          </div>
-          <div class="col-lg-8 text-center">
-              <span><h3>{{ post.title }}</h3></span>
-              <span><h4>{{ post.date }}</h4></span><br>
-          </div>
-          <div class="col-lg-2">
-          </div>
+  <header class="header">
+    <section class="container">
+      <div class="column text-center">
+        <span><h3>{{ post.title }}</h3></span>
+        <span><h6>{{ post.date }}</h6></span>
       </div>
-      <div class="row">
-				<div class="col-lg-2">
-				</div>
-				<div class="col-lg-8">
-					{{ post.html|safe }}
-				</div>
-				<div class="col-lg-2">
-				</div>
+    </section>
+  </header>
+  <section class="container">
+    <div class="row">
+      <div class="column">
+        {{ post.html|safe }}
       </div>
-    </div><!-- /.container -->
+    </div>
+  </section>
     {{super()}}
 {% endblock %}

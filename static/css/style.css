@@ -1,212 +1,137 @@
-html{
-    height: 100%;
-    width: 100%;
+.wrapper .container{max-width:80rem}
+.wrapper> .container{padding-bottom:7.5rem;padding-top:7.5rem}
+.header{
+    background-color: #efefef;
+    padding-top: 1rem;
 }
-
-body{
-    min-height: 100%;
-    position: relative;
-    background-color: #f7f8f9;
-    font-family: 'Fira Sans Condensed', sans-serif;
-    font-weight: normal;
-    font-style: normal;
+.navigation {
+    font-weight: 500;
 }
+@media(min-width:40rem){.header{padding-top:5rem}}
+.header+section{border-top:0}
+.header .container{border-top:0;padding-bottom:6.0rem;padding-top:6.0rem;position:relative;text-align:center}
+/* .header .title{font-family:Gotham Rounded A,Gotham Rounded B,Helvetica Neue,Arial,sans-serif} */
+.header .button{margin-bottom:4rem;margin-top:2rem}
+/* .footer .copyright{padding-right:6rem} */
+/* .footer .nav .link{display:inline-block;margin-left:1.2rem;padding:0} */
+/* .footer .nav .icon{fill:#9b4dca;height:2rem} */
+/* .footer .nav .icon:hover{fill:#606c76} */
+.navigation{background:#f4f5f6;border-bottom:.1rem solid #d1d1d1;display:block;height:5.2rem;left:0;max-width:100%;position:fixed;right:0;top:0;width:100%;z-index:1}
+.navigation .container{padding-bottom:0;padding-top:0}
+.navigation .navigation-list{list-style:none}
+@media(min-width:80rem){.navigation .navigation-list{margin-right:0}}
+.navigation .navigation-item{float:left;margin-bottom:0;margin-left:2.5rem;position:relative;list-style-type: none;}
+.navigation .img{fill:#9b4dca;height:2rem;position:relative;top:.3rem}
+.navigation .navigation-link, .navigation .navigation-title, .navigation .title{display:inline;font-size:110%;line-height:5.2rem;padding:0;text-decoration:none}
 
-p {
-    margin: 10px 0px 10px 0px;
-}
-
-pre {
-    border: 0px solid transparent;
-    margin : 0;
-    padding : 5px;
-    line-height: 1.55;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Life Savers', cursive;
-    font-weight: normal;
-    font-style: normal;
-    color: #181a5a;
-    padding-top: .4em;
-    padding-bottom: .4em;
-}
-
-.table > tbody > tr > td {
-    border-top: 0px solid transparent;
-    border-bottom: 1px dotted #ccc;
-}
-
-/* my own css classes */
-
-.footer{
-    position: absolute;
-    bottom: 0;
-    height: 100px;
-    width: 100%;
-}
-
-.footer > .row > .text-center > h6 {
-    font-family: 'Life Savers', cursive;
-    font-weight: 700;
-    padding: 0;
-}
-
-.main-container{
-    padding: 10px;
-    padding-bottom: 100px;
-    font-size: 1.3em;
+.page-header > h1, h2, h3, h4, h5, h6 {
+    color: #5a5a5a;
+    font-weight: 200;
 }
 
 .post-entry {
-    border-bottom: 1px dotted #ccc;
-    padding-bottom: 4px;
+    border-bottom: 1px solid #d1d1d1;
+    padding-bottom: 8px;
     padding-top: 8px;
 }
 
 .post-title {
-    font-family: 'Life Savers', cursive;
-    font-weight: 700;
+    font-weight: 500;
+    /* font-family: 'Life Savers', cursive; */
 }
 
-.navbar-brand {
-    font-family: 'Londrina Solid', cursive;
-    /* font-family: 'Bubblegum Sans', cursive; */
-    /* font-family: 'IntuitiveRegular'; */
-}
-
-.brand-symbol {
+.navigation .brand {
     font-size: 120%;
-    font-weight: bold;
+    font-weight: 600;
+    font-family: 'Life Savers', cursive;
 }
 
-.command-line {
-
-}
-
-.main{
-    padding: 10px;
-}
-
-.about-main {
-    padding: 10px;
+.post-date {
+    font-weight: 200;
+    font-size: 1.4rem;
 }
 
 .wally {
-    float: left;
-    padding: 15px 5px 15px 0px;
-    margin-right: 20px;
+    float: center;
+    /* padding: 15px; */
+    margin-bottom: 30px;
+    /* margin-right: 20px; */
+}
+
+.cv {
+    margin: 20px 0px 20px 0px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.well {
+    margin: 20px;
+}
+
+.footer-text {
+    margin: 8px;
+    font-size: 50%;
 }
 
 .grvtext {
     padding-top: 25px;
-}
-
-.navbar {
-    box-shadow: none;
-}
-
-
-a {
-    /* color: #b31447; */
-    -webkit-transition: color ease 1s;
-    -moz-transition: color ease 1s;
-    -o-transition: color ease 1s;
-    transition: color ease 1s;
-    /* color: #dbb3a0; */
-}
-
-a:hover {
-    text-decoration: none;
-}
-
-td a {
-    text-decoration: none;
-}
-
-.nav > li {
-    padding: 0.2em;
-}
-
-@media screen and (max-width: 600px) {
-    .nav > li {
-        padding: 0;
-    }
-
-    .navbar {
-        margin: 0;
-    }
-
-    .page-header {
-        margin: 10px;
-    }
-}
-
-.nav {
-    font-family: 'Londrina Solid', cursive;
-    /* font-family: 'Bubblegum Sans', cursive; */
-    font-size: 1.3em;
-    font-weight: normal;
-    font-style: normal;
-}
-
-.nav > li > a:hover {
-    text-decoration: none;
-    background-color: transparent;
-}
-
-.nav > li > a:focus {
-    text-decoration: none;
-    background-color: transparent;
-}
-
-.nav > li > a {
-    padding: 10px 15px 10px 15px;
-    position: relative;
-}
-
-.nav > .inactive > a {
-    transition: ease 1s;
-}
-
-.nav > .active > a {
-    border-bottom: 1px dotted #aaa;
-}
-
-a:hover {
-    /* color: lightskyblue; */
-    /* text-decoration: none; */
+    font-family: 'Life Savers', cursive;
 }
 
 .lead {
     font-size: 120%;
 }
 
-table a:not(.btn), .table a:not(.btn) {
-    text-decoration: none;
+.footer{
+    background-color:#efefef;
+    position: absolute;
+    bottom: 0;
+    height: 75px;
+    width: 100%;
 }
 
-.mytitle {
-    text-align: center;
+html{
+    height: 100%;
+    width: 100%;
+    background-color: #fff9f9;
 }
 
-.mylink {
-    font-size: 2.0em;
-    margin: 5px 20px 5px 20px;
+body{
+    /* font-size: 1.8rem; */
+    min-height: 100%;
+    position: relative;
+    font-weight: 200;
+    font-style: normal;
+    font-family: 'Dosis', 'Helvetica', sans-serif;
+    font-size: 1.6rem;
+    /* color: #1a7cd2; */
 }
 
-.myfind {
-    padding-top: 20px;
+ul li {
+    list-style-type: disc;
 }
 
-.main-title{
-    padding-bottom: 2em;
+ul li p {
+    display: inline;
+    white-space: normal;
 }
 
-.cv {
-    background-color: #ebedf3;
-    border-radius: 10px;
-    margin: 20px 0px 20px 0px;
+ol li p {
+    display: inline;
+    white-space: normal;
+}
+
+ol li::before {
+  content: "";
+  width: 5px;
+  display: inline-block;
+}
+
+.navigation-list > .active > a {
+    padding-bottom: 2px;
+    font-weight: 600;
 }
 
 .stack-label-parent {
@@ -216,22 +141,14 @@ table a:not(.btn), .table a:not(.btn) {
 }
 
 .stack-label-circle {
-    background-color: #1966a3;
+    background-color: #efefef;
     height: 50px;
     width: 50px;
     border-radius: 25px;
-    margin: 20px 15px 10px 15px;
 }
 
 .stack-label {
     padding-top: 0.2em;
     text-align: center;
     font-size: 1.4em;
-    color: #fff
-}
-
-@media screen and (min-width: 600px) and (max-width: 991px) {
-    .wally {
-        padding: 5px 55px 15px 55px;
-    }
 }

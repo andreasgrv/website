@@ -1,89 +1,58 @@
-{% extends "bootstrap/base.html" %}
-{% import "bootstrap/fixes.html" as fixes %}
-{% block body %}
-    {% block alerts %}{% endblock alerts %}
-    <div class="container main-container">
-    {% block navbar %}
-      <div class="navbar">
-        <div class="row">
-          <div class="col-md-6">
-            <a class="navbar-brand" href="/">
-              <span class="brand-symbol">></span>
-              andreasgrv@website
-            </a>
-          </div>
-          <div class="col-md-6">
-          </div>
-        </div>
-        <div class="row">
-          <div class="text-center">
-            <ul class="nav navbar-nav" style="display: inline-flex; float: none">
-              <li{%if request.path == '/' or '/posts' in request.path %} class="active"{% endif %}>
-                <a href="/">
-                  Log
-                </a>
+<html>
+  <head>
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Dosis:200,300,400,500,600|Life+Savers">
+    <link rel="stylesheet" href="{{ url_for('.static', filename="css/normalize.css") }}">
+    <link rel="stylesheet" href="{{ url_for('.static', filename="css/milligram.css") }}">
+    <link rel="stylesheet" href="{{ url_for('.static', filename="css/style.css") }}">
+    <link rel="stylesheet" href="{{ url_for('.static', filename="css/code.css") }}">
+    {# <link href="https://fonts.googleapis.com/css?family=Fira+Sans+Condensed:300|Londrina+Solid|Life+Savers" rel="stylesheet"> #}
+    {# <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> #}
+  </head>
+  <body>
+    <main class="wrapper">
+      {% block navbar %}
+        <nav class="navigation">
+          <section class="container">
+            <a class="navigation-title brand" href="/">andreasgrv@website</a>
+            <ul class="navigation-list float-right">
+              <li class="navigation-item {%if request.path == '/' or '/posts' in request.path %}active{% endif %}">
+                <a class="navigation-link" href="/">Log</a>
               </li>
-              <li{%if request.path == '/about' %} class="active" {% endif %}>
-                <a href="/about">
-                  About
-                </a>
+              <li class="navigation-item {%if request.path == '/about' %}active{% endif %}">
+                <a class="navigation-link" href="/about">About</a>
               </li>
-              <li{%if request.path == '/read' %} class="active" {% endif %}>
-                <a href="/read">
-                  Read
-                </a>
+              <li class="navigation-item {%if request.path == '/read' %}active{% endif %}">
+                <a class="navigation-link" href="/read">Read</a>
               </li>
-              {# <li{%if request.path == '/listen' %} class="active" {% endif %}> #}
+              {# <li class="navigation-item {%if request.path == '/listen' %}active{% endif %}"> #}
               {#   <a href="/listen"> #}
               {#     Listen #}
               {#   </a> #}
               {# </li> #}
             </ul>
-          </div>
-        </div>
-      </div>
-    {% endblock %}
-    {% block content %}
-    {% endblock %}
-    </div><!-- .container -->
+          </section>
+        </nav>
+      {% endblock navbar %}
+      {% block content %}{% endblock content %}
+    </main>
     {% block footer %}
-    <div class="container footer">
-      <div class="row">
-        <div class="col-sm-8 col-sm-offset-2 text-center">
-          <h6>Written in 
+    <footer class="footer">
+      <section class="container">
+        <nav class="nav">
+          <h6 class="footer-text text-center">
+          Written in 
               <a href="http://www.vim.org" target="_blank">
-                <img src="{{url_for('.static', filename="images/vim.png")}}" width="35px" alt="Vim">
-                </img> </a>
-            by Andreas Grivas using <a href="http://flask.pocoo.org/" target="_blank">Flask</a> and
-            <a href="https://bootswatch.com/" target="_blank">Bootswatch</a>.
-          <h6>
-          <h6>
+                <img src="{{url_for('.static', filename="images/vim.png")}}" width="25px" alt="Vim"></img>
+              </a>
+            by Andreas Grivas using <a href="http://flask.pocoo.org/" target="_blank">Flask</a>
+          </h6>
+          <h6 class="footer-text text-center">
             Last updated on {{config.LAST_EDITED}}
           </h6>
-        </div>
-      </div>
-    </div>
-    {% endblock %}
-    {% block scripts %}
-      {{super()}}
-      <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
-      <script src="{{url_for('static', filename='js/prefixfree.min.js')}}"></script>
-      <script src="{{url_for('static', filename='js/typed.js')}}"></script>
-      <script src="{{url_for('static', filename='js/myjs.js')}}"></script>
-    {% endblock %}</script>
-
-{% endblock %}
-
-{%block styles %}
-    {{super()}}
-    <link rel="stylesheet" href="{{ url_for('.static', filename="css/paper.min.css") }}">
-    <link rel="stylesheet" href="{{ url_for('.static', filename="css/style.css") }}">
-    <link rel="stylesheet" href="{{ url_for('.static', filename="css/code.css") }}">
-    <link href="https://fonts.googleapis.com/css?family=Fira+Sans+Condensed:300|Londrina+Solid|Life+Savers" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-{% endblock %}
-
-{%block head %}
-  {{super()}}
-  {{fixes.ie8()}}
-{% endblock %}
+        </nav>
+      </section>
+    </footer>
+  {% endblock footer %}
+  </body>
+</html>

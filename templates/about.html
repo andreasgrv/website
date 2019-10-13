@@ -2,29 +2,33 @@
 {% block title %}about me{% endblock %}
 
 {% block content %}
-    <div class="main">
-      <div class="row">
-        <div class="col-sm-8 col-sm-offset-2">
-          <div class="page-header text-center">
-            <h3>self.describe()</h3>
+    <header class="header">
+      <section class="container">
+        <div class="row">
+          <div class="column">
+            <div class="page-header text-center">
+              <h3><p class="title">I am Andreas and I am a Natural Language Processing engineer, currently working
+              as a Research Assistant in the <a href="https://www.ltg.ed.ac.uk" target="_blank">University of Edinburgh LTG group</a>.</h3>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
+    </header>
+    <section class="container">
       <div class="row about-main">
-        <div class="col-sm-8 col-sm-offset-2">
+        <div class="column">
           <div class="row">
-            <div class="col-sm-12">
-		    <p class="lead">I am Andreas and I am a Natural Language Processing engineer, currently working
-		    as a Research Assistant at the <a href="http://web.inf.ed.ac.uk/ilcc" target="_blank">University of Edinburgh</a>.<p>
-		    <p>
-		    My current focus is on Named Entity Recognition and Relation Extraction from biomedical text
-		    under the supervision of <a href="http://homepages.inf.ed.ac.uk/balex/" target="_blank">Beatrice Alex</a>.</p>
+            <div class="column">
+              My current focus is on Named Entity Recognition and Relation Extraction from biomedical text
+              under the supervision of <a href="http://homepages.inf.ed.ac.uk/balex/" target="_blank">Beatrice Alex</a>.</p>
             </div>
           </div>
           <div class="row">
-            <div class="col-sm-12">
-              <img class="img-responsive wally"  src="{{url_for('.static', filename="images/me.png")}}"></img>
-	      <p>
+            <div class="column">
+              <img class="wally"  src="{{url_for('.static', filename="images/me.png")}}"></img>
+            </div>
+            <div class="column">
+            <p>
                In 2017 I finished my Masters at the 
                <a href="http://www.ed.ac.uk/informatics" target="_blank">University of Edinburgh</a>
                where I specialised in Natural Language Processing and applied Machine Learning.
@@ -45,14 +49,12 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-sm-3 text-center">
+            <div class="column text-center">
               <h4>Stack trace</h4>
             </div>
-            <div class="col-sm-9">
-	    </div>
           </div>
           <div class="row">
-            <div class="col-sm-2">
+            <div class="column column-10">
               <div class="stack-label-parent">
                 <div class="stack-label-circle">
                   <p class="stack-label">
@@ -61,13 +63,13 @@
                 </div>
               </div>
             </div>
-            <div class="col-sm-10">
+            <div class="column">
 		    <p> After my M.Sc. I was an R&amp;D Data Scientist at <a href="https://mudano.com/" target="_blank">Mudano</a>, where
 		    I prototyped NLP &amp; ML algorithms supervised by <a href="https://twitter.com/euanwielewski?lang=en" target="_blank">Euan Wielewski</a>.</p>
             </div>
           </div>
           <div class="row">
-            <div class="col-sm-2">
+            <div class="column column-10">
               <div class="stack-label-parent">
                 <div class="stack-label-circle">
                   <p class="stack-label">
@@ -76,7 +78,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-sm-10">
+            <div class="column">
               <p> Before my M.Sc. I was a research assistant at
              <a href="http://persona.iit.demokritos.gr" target="_blank"> NCSR Demokritos</a>
              under the supervision of
@@ -92,7 +94,7 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-sm-2">
+            <div class="column column-10">
               <div class="stack-label-parent">
                 <div class="stack-label-circle">
                   <p class="stack-label">
@@ -101,21 +103,21 @@
                 </div>
               </div>
             </div>
-            <div class="col-sm-10">
+            <div class="column">
               <p>Before that I worked on Named Entity Recognition
               for Greek and Serbian under the supervision of
               <a href="https://www.dit.hua.gr/~varlamis/" target="_blank">Iraklis Varlamis</a>.</p>
             </div>
           </div>
           <div class="row">
-            <div class="col-sm-2">
+            <div class="column column-10">
               <div class="stack-label-parent">
                 <div class="stack-label-circle">
                   <p class="stack-label"> 3 </p>
                 </div>
               </div>
             </div>
-            <div class="col-sm-10">
+            <div class="column">
               <p>I graduated from <a href="https://www.dit.hua.gr/index.php/en/" target="_blank">
                 Harokopio University of Athens</a> in 2014.
                 For my B.Sc. dissertation, supervised by Rania Hatzi, Mara Nikolaidou
@@ -132,7 +134,7 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-sm-2">
+            <div class="column column-10">
               <div class="stack-label-parent">
                 <div class="stack-label-circle">
                   <p class="stack-label">
@@ -141,7 +143,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-sm-10">
+            <div class="column">
               I did my internship in 2013 at 
               <a href="http://www.scify.gr/site/el/" target="_blank">Scify</a> under the supervision of 
               <a href="http://users.iit.demokritos.gr/~ggianna/" target="_blank">George Giannakopoulos</a>,
@@ -149,12 +151,12 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-sm-12 text-center">
+            <div class="column well">
               <h4>More text/code with low perplexity under my language model</h4>
             </div>
           </div>
           <div class="row">
-            <div class="col-sm-12">
+            <div class="column">
               <div class="well cv">
                 <!-- You can download my B.Sc. Thesis in Greek <a href="/sentencealignment.pdf">here</a>.<br> -->
                 {# <p>You can download my CV <a href="/andreas-grivas.pdf">here</a>.</p> #}
@@ -171,5 +173,5 @@
           </div>
         </div>
       </div>
-    </div><!-- /.main -->
+    </section>
 {% endblock %}

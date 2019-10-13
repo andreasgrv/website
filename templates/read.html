@@ -1,29 +1,22 @@
 {% extends "base.html" %}
 {% block title %}read{% endblock %}
 
-{# {% block alerts %} #}
-{#     <div class="alert alert-dismissable alert-warning"> #}
-{#       <button type="button" class="close" data-dismiss="alert"><i class="fa fa-times-circle"></i></button> #}
-{#       <strong>Disclaimer:</strong> This page may contain nerdy and incomprehensible content. #}
-{#     </div> #}
-{# {% endblock %} #}
-
 {% block content %}
-    <div class="main">
-      <div class="row">
-        <div class="col-lg-2">
-        </div>
+    <header class="header">
+      <section class="container">
         <div class="col-lg-8">
           <div class="page-header text-center">
-            <h3 class="mytitle">A sample of my sillyness<sup><a href="#fnote1">[1]</a></sup></h3>
+            <h3>A sample of my sillyness<sup><a href="#fnote1">[1]</a></sup></h3>
           </div>
         </div>
         <div class="col-lg-2">
         </div>
-      </div>
+      </section>
+    </header>
+    <section class="container">
       <div class="bs-docs-section">
         <div class="row">
-          <div class="col-sm-12 col-md-6 col-lg-4 col-lg-offset-2">
+          <div class="column">
             <div class="bs-component grvtext">
               <h3>Benedictus</h3><br>
 	      <p>I once found a little owl<br> playing amongst the thicket<br>
@@ -53,7 +46,7 @@
 	      and if by chance you are a bee<br> you are a true believer</p>
             </div>
           </div>
-          <div class="col-sm-12 col-md-6 col-lg-4 col-lg-offset-1">
+          <div class="column">
             <div class="bs-component grvtext">
               <h3>The ostentatious cucumber</h3><br>
               "<i>All vegetables are immortal</i>". <br>
@@ -129,11 +122,11 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-sm-12 col-lg-8 col-lg-offset-2">
-          <div class="bs-component grvtext">
+        <div class="column">
+          <div class="grvtext">
             <p id="fnote1">[1] If <a href="https://en.wikipedia.org/wiki/Lewis_Carroll" target="_blank">Lewis Caroll</a> was allowed to be silly, I don't see why I should be serious.</p>
           </div>
         </div>
       </div><!-- /.main -->
-    </div><!-- /.main -->
+    <section>
 {% endblock %}

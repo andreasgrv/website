@@ -2,29 +2,31 @@
 {% block title %}~grv{% endblock %}
 
 {% block content %}
-    <div class="main">
-      <div class="row">
-        <div class="col-lg-8 col-lg-offset-2">
-          <div class="page-header">
-            <span class="mytitle"><h3>Some texts from my language model</h3></span>
-          </div>
+  <header class="header">
+    <section class="container">
+      <div class="column">
+        <div class="page-header">
+          <span class="mytitle"><h3>Some texts from my language model</h3></span>
         </div>
       </div>
-      <div class="row">
-        <div class="col-sm-10 col-sm-offset-1">
-          {% for index, post in enumerate(posts) %}
-          <div class="row post-entry">
-            <div class="col-sm-6 col-lg-8">
-              <a class="post-title" href="{{ url_for('post', name=post.path) }}">
-                {{ post.title }}
-              </a>
-            </div>
-            <div class="col-sm-6 col-lg-4">
-                <small>{{ post.date }}</small>
-            </div>
+    </section>
+  </header>
+  <section class="container">
+    <div class="row">
+      <div class="column">
+        {% for index, post in enumerate(posts) %}
+        <div class="row post-entry">
+          <div class="column column-66">
+            <a class="post-title" href="{{ url_for('post', name=post.path) }}">
+              {{ post.title }}
+            </a>
           </div>
-          {% endfor %}
+          <div class="column">
+              <span class="post-date">{{ post.date }}</span>
+          </div>
         </div>
+        {% endfor %}
       </div>
-    </div><!-- /.main -->
+    </div>
+  <section>
 {% endblock %}
