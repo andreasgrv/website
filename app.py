@@ -47,9 +47,19 @@ music_files = [f.split('.')[0] for f in os.listdir(music_dir)
 
 @app.route('/')
 def homepage():
+    return render_template('about.html')
+
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+
+@app.route('/log')
+def log():
     posts = [p for p in flatpages]
     posts.sort(key=lambda item: datetime.strptime(item['date'], TIME_FORMAT), reverse=True)
-    return render_template('homepage.html', posts=posts, enumerate=enumerate)
+    return render_template('log.html', posts=posts, enumerate=enumerate)
 
 
 @app.route('/posts/<name>')
@@ -63,11 +73,6 @@ def post(name):
     print(name)
     post = flatpages.get_or_404(name)
     return render_template('post.html', post=post)
-
-
-@app.route('/about')
-def about():
-    return render_template('about.html')
 
 
 @app.route('/read')

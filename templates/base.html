@@ -1,26 +1,39 @@
 <html>
   <head>
     <title>{% block title %}{% endblock %}</title>
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Dosis:200,300,400,500,600|Life+Savers">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700|Life+Savers">
+    <link rel="stylesheet" href="{{ url_for('.static', filename="css/font-awesome.min.css") }}">
     <link rel="stylesheet" href="{{ url_for('.static', filename="css/normalize.css") }}">
     <link rel="stylesheet" href="{{ url_for('.static', filename="css/milligram.css") }}">
     <link rel="stylesheet" href="{{ url_for('.static', filename="css/style.css") }}">
     <link rel="stylesheet" href="{{ url_for('.static', filename="css/code.css") }}">
-    {# <link href="https://fonts.googleapis.com/css?family=Fira+Sans+Condensed:300|Londrina+Solid|Life+Savers" rel="stylesheet"> #}
-    {# <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> #}
   </head>
   <body>
     <main class="wrapper">
       {% block navbar %}
         <nav class="navigation">
           <section class="container">
-            <a class="navigation-title brand" href="/">andreasgrv@website</a>
+            <div class="navigation-title">
+              <a class="brand" href="/">Andreas Grivas</a>
+              <span class="brand-links brand">
+                <a class="brand" href="https://github.com/andreasgrv" target="_blank">
+                  <i class="fab fa-github mylink"></i>
+                </a>
+                <a class="brand" href="https://www.linkedin.com/in/andreas-grivas" target="_blank">
+                  <i class="fab fa-linkedin mylink"></i>
+                </a>
+                <a class="brand" href="https://stackoverflow.com/users/4363401/andreas-grivas" target="_blank">
+                  <i class="fab fa-stack-overflow mylink"></i>
+                </a>
+              </span>
+            </div>
             <ul class="navigation-list float-right">
-              <li class="navigation-item {%if request.path == '/' or '/posts' in request.path %}active{% endif %}">
-                <a class="navigation-link" href="/">Log</a>
-              </li>
-              <li class="navigation-item {%if request.path == '/about' %}active{% endif %}">
+              <li class="navigation-item {%if request.path == '/about' or request.path == '/' %}active{% endif %}">
                 <a class="navigation-link" href="/about">About</a>
+              </li>
+              <li class="navigation-item {%if request.path == '/log' or '/posts' in request.path %}active{% endif %}">
+                <a class="navigation-link" href="/log">Log</a>
               </li>
               <li class="navigation-item {%if request.path == '/read' %}active{% endif %}">
                 <a class="navigation-link" href="/read">Read</a>
@@ -54,5 +67,6 @@
       </section>
     </footer>
   {% endblock footer %}
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
   </body>
 </html>
