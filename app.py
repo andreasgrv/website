@@ -1,5 +1,4 @@
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
+#!.env/bin/python
 # based on flask examples
 # static blog example below:
 # http://www.jamesharding.ca/posts/simple-static-markdown-blog-in-flask/
