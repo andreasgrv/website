@@ -2,13 +2,12 @@
 .wrapper> .container{padding-bottom:7.5rem;padding-top:7.5rem}
 .header{
     background-color: #efefef;
-    padding-top: 1rem;
+    padding-top: 5rem;
 }
 .navigation {
-    font-weight: 500;
+    font-weight: 400;
 }
-@media(min-width:40rem){.header{padding-top:5rem}}
-.header+section{border-top:0}
+/* .header+section{border-top:0} */
 .header .container{border-top:0;padding-bottom:6.0rem;padding-top:6.0rem;position:relative;text-align:center}
 /* .header .title{font-family:Gotham Rounded A,Gotham Rounded B,Helvetica Neue,Arial,sans-serif} */
 .header .button{margin-bottom:4rem;margin-top:2rem}
@@ -19,14 +18,70 @@
 .navigation{background:#f4f5f6;border-bottom:.1rem solid #d1d1d1;display:block;height:5.2rem;left:0;max-width:100%;position:fixed;right:0;top:0;width:100%;z-index:1}
 .navigation .container{padding-bottom:0;padding-top:0}
 .navigation .navigation-list{list-style:none}
-@media(min-width:80rem){.navigation .navigation-list{margin-right:0}}
-.navigation .navigation-item{float:left;margin-bottom:0;margin-left:2.5rem;position:relative;list-style-type: none;}
+.navigation .navigation-item {
+    float: left;
+    margin-bottom: 0;
+    margin-left: 1.0rem;
+    position: relative;
+    list-style-type: none;
+}
 .navigation .img{fill:#9b4dca;height:2rem;position:relative;top:.3rem}
 .navigation .navigation-link, .navigation .navigation-title, .navigation .title{display:inline;font-size:110%;line-height:5.2rem;padding:0;text-decoration:none}
+
+.navigation .brand {
+    font-size: 1.8rem;
+    font-weight: 600;
+    font-family: 'Life Savers', cursive;
+    padding: 2px;
+}
+
+.brand-links {
+    margin-left: 10px;
+    display: none;
+}
+
+.brand-links a i {
+    font-size: 0rem;
+    padding: 0px;
+    margin: 0px;
+}
+
+.brand-links a {
+    font-size: 0rem;
+    padding: 0px;
+    margin: 0px;
+}
+
+.wrapper > .container {
+    padding-top: 5.5rem;
+}
+
+@media(min-width:40rem){
+    .navigation-list .navigation-item {
+        margin-left: 2.5rem;
+    }
+    .brand-links {
+        display: inline-block;
+        margin-left: 2.5rem;
+    }
+    .brand-links a i {
+        font-size: 1.8rem;
+    }
+}
+
+@media(min-width:80rem){
+    .navigation .navigation-list {
+        margin-right: 0;
+    }
+}
 
 .page-header > h1, h2, h3, h4, h5, h6 {
     color: #5a5a5a;
     font-weight: 200;
+}
+
+.page-header > h3 {
+    font-size: 2.5rem;
 }
 
 .post-entry {
@@ -38,12 +93,6 @@
 .post-title {
     font-weight: 500;
     /* font-family: 'Life Savers', cursive; */
-}
-
-.navigation .brand {
-    font-size: 120%;
-    font-weight: 600;
-    font-family: 'Life Savers', cursive;
 }
 
 .post-date {
@@ -92,12 +141,6 @@
     width: 100%;
 }
 
-html{
-    height: 100%;
-    width: 100%;
-    background-color: #fff9f9;
-}
-
 body{
     /* font-size: 1.8rem; */
     min-height: 100%;
@@ -106,6 +149,7 @@ body{
     font-style: normal;
     font-family: 'Dosis', 'Helvetica', sans-serif;
     font-size: 1.6rem;
+    background-color: #fff9f9;
     /* color: #1a7cd2; */
 }
 
