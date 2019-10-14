@@ -12,21 +12,17 @@
     </section>
   </header>
   <section class="container">
-    <div class="row">
+    {% for index, post in enumerate(posts) %}
+    <div class="row post-entry">
+      <div class="column column-66">
+        <a class="post-title" href="{{ url_for('post', name=post.path) }}">
+          {{ post.title }}
+        </a>
+      </div>
       <div class="column">
-        {% for index, post in enumerate(posts) %}
-        <div class="row post-entry">
-          <div class="column column-66">
-            <a class="post-title" href="{{ url_for('post', name=post.path) }}">
-              {{ post.title }}
-            </a>
-          </div>
-          <div class="column">
-              <span class="post-date">{{ post.date }}</span>
-          </div>
-        </div>
-        {% endfor %}
+          <span class="post-date">{{ post.date }}</span>
       </div>
     </div>
+    {% endfor %}
   <section>
 {% endblock %}
