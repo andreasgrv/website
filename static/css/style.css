@@ -46,10 +46,8 @@
     margin: 0px;
 }
 
-.brand-links a {
-    font-size: 0rem;
-    padding: 0px;
-    margin: 0px;
+.brand-links a i {
+    font-size: 1.8rem;
 }
 
 .wrapper > .container {
@@ -63,9 +61,6 @@
     .brand-links {
         display: inline-block;
         margin-left: 2.5rem;
-    }
-    .brand-links a i {
-        font-size: 1.8rem;
     }
 }
 
@@ -138,6 +133,11 @@
     position: absolute;
     bottom: 0;
     height: 75px;
+    width: 100%;
+}
+
+html {
+    height: 100%;
     width: 100%;
 }
 
