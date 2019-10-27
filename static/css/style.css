@@ -130,6 +130,7 @@ html {
 }
 
 body {
+    min-height: 100%;
     /* font-size: 1.8rem; */
     position: relative;
     font-style: normal;

@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{{ url_for('.static', filename="css/milligram.css") }}">
     <link rel="stylesheet" href="{{ url_for('.static', filename="css/style.css") }}">
     <link rel="stylesheet" href="{{ url_for('.static', filename="css/code.css") }}">
+    <link rel="stylesheet" type="text/css" href="http://tikzjax.com/v1/fonts.css">
   </head>
   <body>
     <main class="wrapper">
@@ -69,6 +70,30 @@
       </section>
     </footer>
   {% endblock footer %}
+  <script src="https://use.fontawesome.com/1bd086eb11.js"></script>
+  <script src="http://tikzjax.com/v1/tikzjax.js"></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+                        tex2jax: {
+                              inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                                    processEscapes: true},
+                        TeX: { extensions: ["boldsymbol.js"],
+                               Augment: {
+                                 Definitions: {macros: {
+                                   bm: 'myBoldSwitch'
+                                 }},
+                                 Parse: {prototype: {
+                                   myBoldSwitch: function (name) {
+                                     this.stack.env.boldsymbol = true;
+                                   }
+                                 }}
+                               }
+                              }
+                       });
+    MathJax.Hub.Register.StartupHook("TeX color Ready", function() {
+         MathJax.Extension["TeX/color"].colors["red"] = '#2B2B2B';
+    });
+  </script>
   </body>
 </html>
