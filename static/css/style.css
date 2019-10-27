@@ -9,7 +9,6 @@
 }
 /* .header+section{border-top:0} */
 .header .container{border-top:0;padding-bottom:6.0rem;padding-top:6.0rem;position:relative;text-align:center}
-/* .header .title{font-family:Gotham Rounded A,Gotham Rounded B,Helvetica Neue,Arial,sans-serif} */
 .header .button{margin-bottom:4rem;margin-top:2rem}
 /* .footer .copyright{padding-right:6rem} */
 /* .footer .nav .link{display:inline-block;margin-left:1.2rem;padding:0} */
@@ -31,23 +30,12 @@
 .navigation .brand {
     font-size: 1.8rem;
     font-weight: 600;
-    font-family: 'Life Savers', cursive;
     padding: 2px;
 }
 
 .brand-links {
     margin-left: 10px;
     display: none;
-}
-
-.brand-links a i {
-    font-size: 0rem;
-    padding: 0px;
-    margin: 0px;
-}
-
-.brand-links a i {
-    font-size: 1.8rem;
 }
 
 .wrapper > .container {
@@ -141,11 +129,9 @@ html {
     width: 100%;
 }
 
-body{
+body {
     /* font-size: 1.8rem; */
-    min-height: 100%;
     position: relative;
-    font-weight: 200;
     font-style: normal;
     font-family: 'Dosis', 'Helvetica', sans-serif;
     font-size: 1.6rem;
