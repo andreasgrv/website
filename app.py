@@ -7,8 +7,9 @@ import os
 import argparse
 from datetime import datetime
 from glob import glob
-from flask import Flask, render_template, send_from_directory
+from flask import Flask, render_template, send_from_directory, render_template_string
 from flask_flatpages import FlatPages
+from flask_flatpages.utils import pygmented_markdown
 from flask_frozen import Freezer
 
 
@@ -21,7 +22,8 @@ FLATPAGES_ROOT = 'content/posts'
 BOOTSTRAP_SERVE_LOCAL = True
 FLATPAGES_MARKDOWN_EXTENSIONS = ['markdown.extensions.fenced_code',
                                  'markdown.extensions.codehilite',
-                                 'markdown.extensions.footnotes']
+                                 'markdown.extensions.footnotes',
+                                 'markdown.extensions.tables']
 
 # calculate most recent modification to files
 HTML_FILES = 'templates/*'
@@ -37,6 +39,24 @@ flatpages = FlatPages(app)
 freezer = Freezer(app)
 
 app.config.from_object(__name__)
+
+# Below stolen from
+# https://gist.github.com/chrisma/dad9e71de343b4cd6e5c
+@app.template_filter()
+def hex_to_rgb(hexcode, format_string='{r},{g},{b}'):
+    """Returns the RGB value of a hexadecimal color"""
+    hexcode = hexcode.replace('#', '')
+    out = {	'r':int(hexcode[0:2], 16),
+            'g':int(hexcode[2:4], 16),
+            'b':int(hexcode[4:6], 16)}
+    return format_string.format(**out)
+
+def my_renderer(text):
+    prerendered_body = render_template_string(text)
+    return pygmented_markdown(prerendered_body, flatpages)
+
+
+app.config['FLATPAGES_HTML_RENDERER'] = my_renderer
 
 # music_dir = 'files/music'
 music_dir = 'static/music'

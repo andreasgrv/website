@@ -70,7 +70,6 @@
       </section>
     </footer>
   {% endblock footer %}
-  <script src="https://use.fontawesome.com/1bd086eb11.js"></script>
   <script src="http://tikzjax.com/v1/tikzjax.js"></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
   <script type="text/x-mathjax-config">
@@ -78,7 +77,7 @@
                         tex2jax: {
                               inlineMath: [ ['$','$'], ["\\(","\\)"] ],
                                     processEscapes: true},
-                        TeX: { extensions: ["boldsymbol.js"],
+                        TeX: { extensions: ["boldsymbol.js", "color.js"],
                                Augment: {
                                  Definitions: {macros: {
                                    bm: 'myBoldSwitch'
