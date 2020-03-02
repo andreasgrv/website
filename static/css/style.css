@@ -183,3 +183,39 @@ ol li::before {
     text-align: center;
     font-size: 1.4em;
 }
+
+.badge {
+    display: inline-block;
+    color: #222;
+    border: 1px solid #222;
+    padding: 0.2rem 0.2rem 0.2rem 0.2rem;
+    margin: 0.2rem;
+    border-radius: 1rem;
+    background-color: #a6cee3;
+    font-weight: 400;
+    opacity: .9;
+}
+
+.cyan {
+    background-color: #a6cee3;
+}
+
+.blue {
+    background-color: #1f78b4;
+}
+
+.green {
+    background-color: #33a02c;
+}
+
+.olive {
+    background-color: #b2df8a;
+}
+
+.red {
+    background-color: #fb9a99;
+}
+
+.orange {
+    background-color: #fdbf6f;
+}
