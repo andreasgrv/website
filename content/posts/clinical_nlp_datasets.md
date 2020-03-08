@@ -1,5 +1,5 @@
 title: Clinical NLP datasets
-date: Sunday, 1 March 2020 at 23:59
+date: Sunday, 8 March 2020 at 22:58
 
 ### Datasets useful for clinical Natural Language Processing (NLP)
 
@@ -47,7 +47,7 @@ This is a subpart of the i2b2 data annotated for constituency parsing, as descri
 
 * [n2c2](https://n2c2.dbmi.hms.harvard.edu/track3)
 <span class="badge olive">Named Entities</span>
-n2c2 dataset: extension to i2b2 dataset that links entity spans to UMLS concepts
+An extension to the i2b2 dataset that links entity spans to UMLS concepts
 released as part of the 2019 n2c2 challenge on clinical concept normalisation. The data should be available on request (at some point in 2020).
 
 * [Bioscope](https://rgai.inf.u-szeged.hu/node/105)
@@ -57,10 +57,15 @@ The dataset is constructed from 3 different sources: Abstracts of the Genia corp
 Clinical free-texts. The radiology report corpus used was from the [CMC clinical coding challenge](https://ncc.cchmc.org/prod/pestianlabdata/request.do).
 
 * [MIMIC-III](https://mimic.physionet.org/)
-<span class="badge" style="background-color: #fdbf6f">Raw text</span>
-MIMIC contains some annotations relating to medication and time series data - though I'm not certain of the details.
+<span class="badge orange">Raw text</span>
+<span class="badge purple">Document labels</span>
+MIMIC, in addition to a lot of clinical raw text contains documents annotated with ICD-9 codes.
 
 * [MIMIC-CXR](https://physionet.org/content/mimic-cxr/2.0.0/)
-<span class="badge" style="background-color: #fdbf6f">Raw text</span>
+<span class="badge orange">Raw text</span>
 This release contains radiology reports with their corresponding images.
 Some relevant code resources are available on [github](https://github.com/MIT-LCP/mimic-cxr).
+
+Additional resources can be found on the [Clinical NLP Workshop page](https://clinical-nlp.github.io/2019/resources.html).
+
+Thanks to [Hang Dong](https://www.ed.ac.uk/profile/hang-dong) for his feedback and for pointing out additional resources.

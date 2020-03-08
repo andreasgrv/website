@@ -120,7 +120,7 @@
     background-color:#efefef;
     position: absolute;
     bottom: 0;
-    height: 75px;
+    height: 60px;
     width: 100%;
 }
 
@@ -189,7 +189,7 @@ ol li::before {
     color: #222;
     border: 1px solid #222;
     padding: 0.2rem 0.2rem 0.2rem 0.2rem;
-    margin: 0.2rem;
+    margin: 0.25rem;
     border-radius: 1rem;
     background-color: #a6cee3;
     font-weight: 400;
@@ -218,4 +218,12 @@ ol li::before {
 
 .orange {
     background-color: #fdbf6f;
+}
+
+.purple {
+    background-color: #cab2d6;
+}
+
+.badge::before {
+    content: "+";
 }
