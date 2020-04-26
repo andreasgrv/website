@@ -68,4 +68,4 @@ Some relevant code resources are available on [github](https://github.com/MIT-LC
 
 Additional resources can be found on the [Clinical NLP Workshop page](https://clinical-nlp.github.io/2019/resources.html).
 
-Thanks to [Hang Dong](https://www.ed.ac.uk/profile/hang-dong) for his feedback and for pointing out additional resources.
+Thanks to [Hang Dong](https://cgi.csc.liv.ac.uk/~hang/) for his feedback and for pointing out additional resources.
