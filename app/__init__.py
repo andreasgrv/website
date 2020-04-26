@@ -1,4 +1,3 @@
-#!.env/bin/python
 # based on flask examples
 # static blog example below:
 # http://www.jamesharding.ca/posts/simple-static-markdown-blog-in-flask/
@@ -11,34 +10,54 @@ from flask import Flask, render_template, send_from_directory, render_template_s
 from flask_flatpages import FlatPages
 from flask_flatpages.utils import pygmented_markdown
 from flask_frozen import Freezer
+from flask_migrate import Migrate
+
+from methinks.db import db
+from app.methinks import methinks_routes
 
 
-# global options
-DEBUG = True
-FLATPAGES_AUTO_RELOAD = DEBUG
-FLATPAGES_EXTENSION = '.md'
-FLATPAGES_ROOT = 'content/posts'
-# serve bootstrap locally
-BOOTSTRAP_SERVE_LOCAL = True
-FLATPAGES_MARKDOWN_EXTENSIONS = ['markdown.extensions.fenced_code',
-                                 'markdown.extensions.codehilite',
-                                 'markdown.extensions.footnotes',
-                                 'markdown.extensions.tables']
-
-# calculate most recent modification to files
-HTML_FILES = 'templates/*'
 TIME_FORMAT = '%A, %d %B %Y at %H:%M'
-MODIFIED = sorted(map(os.path.getmtime, glob(HTML_FILES)))[-1]
-LAST_EDITED = datetime.fromtimestamp(int(MODIFIED)).strftime(TIME_FORMAT)
+DB_URI = 'postgresql://%s:%s@localhost/%s' % (os.environ['METHINKS_DB_USER'],
+                                              os.environ['METHINKS_DB_PASSWD'],
+                                              os.environ['METHINKS_DB_NAME'])
+
+
+def create_app():
+    APP_ROOT = '/home/grv/website'
+    TEMPLATE_FOLDER = '%s/templates' % APP_ROOT
+    STATIC_FOLDER = '%s/static' % APP_ROOT
+
+    app = Flask(__name__,
+                template_folder=TEMPLATE_FOLDER,
+                static_folder=STATIC_FOLDER)
+
+    app.config['APP_ROOT'] = APP_ROOT
+    app.config['SQLALCHEMY_DATABASE_URI'] = DB_URI
+    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+    app.config['FLATPAGES_EXTENSION'] = '.md'
+    app.config['FLATPAGES_ROOT'] = '%s/content/posts' % APP_ROOT
+    app.config['FLATPAGES_MARKDOWN_EXTENSIONS'] = ['markdown.extensions.fenced_code',
+                                                   'markdown.extensions.codehilite',
+                                                   'markdown.extensions.footnotes',
+                                                   'markdown.extensions.tables']
+    # calculate most recent modification to files
+    HTML_FILES = '%s/templates/*' % APP_ROOT
+    MODIFIED = sorted(map(os.path.getmtime, glob(HTML_FILES)))[-1]
+    app.config['LAST_EDITED'] = datetime.fromtimestamp(int(MODIFIED)).strftime(TIME_FORMAT)
+
+    app.register_blueprint(methinks_routes, url_prefix='/methinks')
+
+    db.init_app(app)
+    migrate = Migrate(app, db)
+    return app
+
 
 # create our application :)
-app = Flask(__name__)
+app = create_app()
 # use flatpages for blog
 flatpages = FlatPages(app)
 # apply freezer to generate static pages
 freezer = Freezer(app)
-
-app.config.from_object(__name__)
 
 # Below stolen from
 # https://gist.github.com/chrisma/dad9e71de343b4cd6e5c
@@ -57,9 +76,11 @@ def my_renderer(text):
 
 
 app.config['FLATPAGES_HTML_RENDERER'] = my_renderer
+app.register_blueprint(methinks_routes, url_prefix='/methinks')
+
 
 # music_dir = 'files/music'
-music_dir = 'static/music'
+music_dir = '%s/static/music' % app.config['APP_ROOT']
 music_files = [f.split('.')[0] for f in os.listdir(music_dir)
                if f.endswith('.mp3')]
 
