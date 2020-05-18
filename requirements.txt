@@ -6,3 +6,4 @@ Markdown==2.3.1
 MarkupSafe==0.23
 PyYAML==4.2b1
 Pygments==1.6
+markdown-checklist==0.4.1

@@ -20,6 +20,7 @@ from app.methinks import methinks_routes
 
 
 TIME_FORMAT = '%A, %d %B %Y at %H:%M'
+DATE_FORMAT = '%A, %d %B %Y'
 DB_URI = 'postgresql://%s:%s@localhost/%s' % (os.environ['METHINKS_DB_USER'],
                                               os.environ['METHINKS_DB_PASSWD'],
                                               os.environ['METHINKS_DB_NAME'])
@@ -132,9 +133,14 @@ def diary(date):
     entry = dict()
     if r['status']:
         data = r['data']
-        entry['html'] = markdown.markdown(data['text'])
-        entry['date'] = data['date']
-        entry['last_edited'] = data['last_edited']
+        entry['html'] = markdown.markdown(data['text'],
+                                          extensions=['markdown_checklist.extension'])
+
+        date = datetime.strptime(data['date'], '%c').date()
+        entry['date'] = date.strftime(DATE_FORMAT)
+
+        last_edited = datetime.strptime(data['last_edited'], '%c')
+        entry['last_edited'] = last_edited.strftime(TIME_FORMAT)
     return render_template('diary.html', entry=entry)
 
 
