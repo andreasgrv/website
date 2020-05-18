@@ -4,9 +4,12 @@
 
 import os
 import argparse
+import requests
+import markdown
 from datetime import datetime
 from glob import glob
-from flask import Flask, render_template, send_from_directory, render_template_string
+from flask import Flask, render_template, url_for, request
+from flask import send_from_directory, render_template_string
 from flask_flatpages import FlatPages
 from flask_flatpages.utils import pygmented_markdown
 from flask_frozen import Freezer
@@ -113,6 +116,26 @@ def post(name):
     print(name)
     post = flatpages.get_or_404(name)
     return render_template('post.html', post=post)
+
+
+@app.route('/diary/<date>')
+def diary(date):
+    """A page for diary entries
+
+    :date: The date of the entry
+    :returns: The rendered page of this post
+
+    """
+    url = url_for('methinks_routes.get_entry', date=date)
+    methinks_endpoint = 'https://grv.overfit.xyz%s?token=%s' % (url, request.args.get('token', ''))
+    r = requests.get(methinks_endpoint).json()
+    entry = dict()
+    if r['status']:
+        data = r['data']
+        entry['html'] = markdown.markdown(data['text'])
+        entry['date'] = data['date']
+        entry['last_edited'] = data['last_edited']
+    return render_template('diary.html', entry=entry)
 
 
 @app.route('/read')

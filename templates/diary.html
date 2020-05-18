@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+  {% if entry %}
+    <header class="header">
+      <section class="container">
+        <div class="column text-center">
+          <span><h3>{{ entry['date'] }}</h3></span>
+          <span><h6>{{ entry['last_edited'] }}</h6></span>
+        </div>
+      </section>
+    </header>
+    <section class="container">
+      <div class="row">
+        <div class="column">
+          {{ entry['html']|safe }}
+        </div>
+      </div>
+    </section>
+  {% endif %}
+  {{super()}}
+{% endblock %}
