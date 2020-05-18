@@ -3,9 +3,21 @@
   {% if entry %}
     <header class="header">
       <section class="container">
-        <div class="column text-center">
-          <span><h3>{{ entry['date'] }}</h3></span>
-          <span><h6>{{ entry['last_edited'] }}</h6></span>
+        <div class="row">
+          <div class="column column-25 text-center">
+            {% if entry['prev'] %}
+              <a href="{{ entry['prev'] }}"><i class="fa fa-angle-left fa-3x"></i></a>
+            {% endif %}
+          </div>
+          <div class="column column-50 text-center">
+            <span><h3>{{ entry['date'] }}</h3></span>
+            <span><h6>Last modified on {{ entry['last_edited'] }}</h6></span>
+          </div>
+          <div class="column column-25 text-center">
+            {% if entry['next'] %}
+              <a href="{{ entry['next'] }}"><i class="fa fa-angle-right fa-3x"></i></a>
+            {% endif %}
+          </div>
         </div>
       </section>
     </header>

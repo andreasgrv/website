@@ -6,7 +6,7 @@ import os
 import argparse
 import requests
 import markdown
-from datetime import datetime
+from datetime import datetime, timedelta
 from glob import glob
 from flask import Flask, render_template, url_for, request
 from flask import send_from_directory, render_template_string
@@ -141,6 +141,22 @@ def diary(date):
 
         last_edited = datetime.strptime(data['last_edited'], '%c')
         entry['last_edited'] = last_edited.strftime(TIME_FORMAT)
+
+        yesterday = date - timedelta(days=1)
+        yesterday = yesterday.strftime('%Y-%m-%d-%a')
+        url = url_for('methinks_routes.get_entry', date=yesterday)
+        methinks_endpoint = 'https://grv.overfit.xyz%s?token=%s' % (url, request.args.get('token', ''))
+        r = requests.get(methinks_endpoint).json()
+        methinks_endpoint = methinks_endpoint.replace('/methinks/entries', '/diary')
+        entry['prev'] = methinks_endpoint if r['data'] else False
+
+        tomorrow = date + timedelta(days=1)
+        tomorrow = tomorrow.strftime('%Y-%m-%d-%a')
+        url = url_for('methinks_routes.get_entry', date=tomorrow)
+        methinks_endpoint = 'https://grv.overfit.xyz%s?token=%s' % (url, request.args.get('token', ''))
+        r = requests.get(methinks_endpoint).json()
+        methinks_endpoint = methinks_endpoint.replace('/methinks/entries', '/diary')
+        entry['next'] = methinks_endpoint if r['data'] else False
     return render_template('diary.html', entry=entry)
 
 
