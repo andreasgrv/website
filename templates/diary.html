@@ -4,16 +4,16 @@
     <header class="header">
       <section class="container">
         <div class="row">
-          <div class="column column-25 text-center">
+          <div class="column column-10 text-center">
             {% if entry['prev'] %}
               <a href="{{ entry['prev'] }}"><i class="fa fa-angle-left fa-3x"></i></a>
             {% endif %}
           </div>
-          <div class="column column-50 text-center">
-            <span><h3>{{ entry['date'] }}</h3></span>
+          <div class="column column-80 text-center">
+            <span><h1 style="padding-bottom: 0.5em;">{{ entry['date'] }}</h1></span>
             <span><h6>Last modified on {{ entry['last_edited'] }}</h6></span>
           </div>
-          <div class="column column-25 text-center">
+          <div class="column column-10 text-center">
             {% if entry['next'] %}
               <a href="{{ entry['next'] }}"><i class="fa fa-angle-right fa-3x"></i></a>
             {% endif %}
@@ -21,11 +21,16 @@
         </div>
       </section>
     </header>
-    <section class="container">
-      <div class="row">
-        <div class="column">
+    <section class="container" id="diary-container">
+      <div class="row diary-contents">
+        <div class="column column-30">
+        </div>
+        <div class="column column-40" id="diary-main">
           {{ entry['html']|safe }}
         </div>
+        <nav class="column column-30" id="diary-side">
+          {{ entry['toc']|safe }}
+        </nav>
       </div>
     </section>
   {% endif %}

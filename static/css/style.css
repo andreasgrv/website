@@ -33,6 +33,43 @@
     padding: 2px;
 }
 
+#diary-side {
+    overflow: visible;
+    position: sticky;
+    top: 30%;
+    align-self: start;
+}
+
+#diary-container {
+    max-width: none;
+}
+
+.diary-main > h1 {
+    padding-top: 6rem;
+    margin-top: 0rem;
+}
+
+.toc {
+    margin-left: 6rem;
+}
+
+hr {
+    border-top: 1px solid #888;
+}
+
+h1 + hr {
+    margin-top: -1rem;
+}
+
+/* .toclink { */
+/*     position: absolute; */
+/*     left: 0px; */
+/*     top: -60px; */
+/* } */
+dl dl, dl ol, dl ul, ol dl, ol ol, ol ul, ul dl, ul ol, ul ul {
+    font-size: 95%;
+}
+
 .brand-links {
     margin-left: 10px;
     display: none;
@@ -59,7 +96,6 @@
 }
 
 .page-header > h1, h2, h3, h4, h5, h6 {
-    color: #5a5a5a;
     font-weight: 200;
 }
 
@@ -135,30 +171,34 @@ body {
     position: relative;
     font-style: normal;
     font-family: 'Dosis', 'Helvetica', sans-serif;
-    font-size: 1.6rem;
+    font-size: 1.7rem;
     background-color: #fff9f9;
     /* color: #1a7cd2; */
 }
 
-ul li {
-    list-style-type: disc;
+ul, li > input {
+    list-style: none;
 }
 
-ul li p {
-    display: inline;
-    white-space: normal;
-}
+/* ul li { */
+/*     list-style-type: disc; */
+/* } */
 
-ol li p {
-    display: inline;
-    white-space: normal;
-}
-
-ol li::before {
-  content: "";
-  width: 5px;
-  display: inline-block;
-}
+/* ul li p { */
+/*     display: inline; */
+/*     white-space: normal; */
+/* } */
+/*  */
+/* ol li p { */
+/*     display: inline; */
+/*     white-space: normal; */
+/* } */
+/*  */
+/* ol li::before { */
+/*   content: ""; */
+/*   width: 5px; */
+/*   display: inline-block; */
+/* } */
 
 .navigation-list > .active > a {
     padding-bottom: 2px;
