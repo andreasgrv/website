@@ -7,7 +7,7 @@ import argparse
 import requests
 import markdown
 from markdown.extensions.toc import TocExtension
-from mdx_gfm import GithubFlavoredMarkdownExtension
+from gfm import TaskListExtension, AutolinkExtension, AutomailExtension
 from datetime import datetime, timedelta
 from glob import glob
 from flask import Flask, render_template, url_for, request
@@ -135,13 +135,17 @@ def diary(date):
     entry = dict()
     if r['status']:
         data = r['data']
-        md = markdown.Markdown(extensions=[GithubFlavoredMarkdownExtension(),
+        md = markdown.Markdown(extensions=[# GithubFlavoredMarkdownExtension(),
+                                           TaskListExtension(),
+                                           AutolinkExtension(),
+                                           AutomailExtension(),
                                            'markdown.extensions.fenced_code',
                                            'markdown.extensions.codehilite',
                                            'markdown.extensions.footnotes',
                                            'markdown.extensions.tables',
                                            TocExtension(anchorlink=True),
-                                           'mdx_truly_sane_lists'])
+                                           'mdx_truly_sane_lists',
+                                           ])
         entry['html'] = md.convert(data['text'])
         # Table of contents (relies on markdown.extensions.toc)
         entry['toc'] = md.toc
