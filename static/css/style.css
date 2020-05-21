@@ -70,6 +70,16 @@ dl dl, dl ol, dl ul, ol dl, ol ol, ol ul, ul dl, ul ol, ul ul {
     font-size: 95%;
 }
 
+ol {
+    list-style: decimal;
+}
+
+ol li {
+    float: left;
+    margin: 0 10px;
+    padding: 0 10px;
+}
+
 .brand-links {
     margin-left: 10px;
     display: none;
