@@ -23,6 +23,9 @@ from app.methinks import methinks_routes
 
 TIME_FORMAT = '%A, %d %B %Y at %H:%M'
 DATE_FORMAT = '%A, %d %B %Y'
+DATE_URL_FORMAT = '%Y-%m-%d-%a'
+
+
 DB_URI = 'postgresql://%s:%s@localhost/%s' % (os.environ['METHINKS_DB_USER'],
                                               os.environ['METHINKS_DB_PASSWD'],
                                               os.environ['METHINKS_DB_NAME'])
@@ -129,6 +132,9 @@ def diary(date):
     :returns: The rendered page of this post
 
     """
+    if date == 'today':
+        date = datetime.strftime(datetime.today(), DATE_URL_FORMAT)
+
     url = url_for('methinks_routes.get_entry', date=date)
     methinks_endpoint = 'https://grv.overfit.xyz%s?token=%s' % (url, request.args.get('token', ''))
     r = requests.get(methinks_endpoint).json()
@@ -157,7 +163,7 @@ def diary(date):
         entry['last_edited'] = last_edited.strftime(TIME_FORMAT)
 
         yesterday = date - timedelta(days=1)
-        yesterday = yesterday.strftime('%Y-%m-%d-%a')
+        yesterday = yesterday.strftime(DATE_URL_FORMAT)
         url = url_for('methinks_routes.get_entry', date=yesterday)
         methinks_endpoint = 'https://grv.overfit.xyz%s?token=%s' % (url, request.args.get('token', ''))
         r = requests.get(methinks_endpoint).json()
@@ -165,7 +171,7 @@ def diary(date):
         entry['prev'] = methinks_endpoint if r['data'] else False
 
         tomorrow = date + timedelta(days=1)
-        tomorrow = tomorrow.strftime('%Y-%m-%d-%a')
+        tomorrow = tomorrow.strftime(DATE_URL_FORMAT)
         url = url_for('methinks_routes.get_entry', date=tomorrow)
         methinks_endpoint = 'https://grv.overfit.xyz%s?token=%s' % (url, request.args.get('token', ''))
         r = requests.get(methinks_endpoint).json()
