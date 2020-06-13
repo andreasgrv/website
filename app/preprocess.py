@@ -1,7 +1,7 @@
 import re
 
 
-MATHJAX = re.compile(r'(?P<all>\$\$(?P<math>.*?)\$\$)')
+MATHJAX = re.compile(r'(?P<all>\$\$(?P<math>.*?)\$\$)', flags=re.DOTALL)
 ESCAPE_CHARS = '\\`*_{}[]()#+-.!'
 
 
