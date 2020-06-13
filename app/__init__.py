@@ -19,6 +19,7 @@ from flask_migrate import Migrate
 
 from methinks.db import db
 from app.methinks import methinks_routes
+from app.preprocess import escape_jax_for_markdown
 
 
 TIME_FORMAT = '%A, %d %B %Y at %H:%M'
@@ -141,6 +142,7 @@ def diary(date):
     entry = dict()
     if r['status']:
         data = r['data']
+        markdown_text = escape_jax_for_markdown(data['text'])
         md = markdown.Markdown(extensions=[# GithubFlavoredMarkdownExtension(),
                                            TaskListExtension(),
                                            AutolinkExtension(),
@@ -152,7 +154,7 @@ def diary(date):
                                            TocExtension(anchorlink=True),
                                            'mdx_truly_sane_lists',
                                            ])
-        entry['html'] = md.convert(data['text'])
+        entry['html'] = md.convert(markdown_text)
         # Table of contents (relies on markdown.extensions.toc)
         entry['toc'] = md.toc
 
