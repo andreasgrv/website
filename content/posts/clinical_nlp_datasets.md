@@ -66,6 +66,15 @@ MIMIC, in addition to a lot of clinical raw text contains documents annotated wi
 This release contains radiology reports with their corresponding images.
 Some relevant code resources are available on [github](https://github.com/MIT-LCP/mimic-cxr).
 
+* [IU radiology report dataset](https://openi.nlm.nih.gov/imgs/collections/NLMCXR_reports.tgz)
+<span class="badge orange">Raw text</span>
+This is a dataset of chest radiology reports from the Indiana University hospital network. There is also a dataset of images [available](https://openi.nlm.nih.gov/faq#collection).
+
+* [Kim et al.](https://doi.org/10.1371/journal.pone.0212778.s002)
+<span class="badge orange">Raw text</span>
+<span class="badge purple">Document labels</span>
+A dataset of brain radiology reports labelled for acute ischemic stroke. The dataset was published along with their paper: [Natural language processing and machine learning algorithm to identify brain MRI reports with acute ischemic stroke](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0212778).
+
 Additional resources can be found on the [Clinical NLP Workshop page](https://clinical-nlp.github.io/2019/resources.html).
 
 Thanks to [Hang Dong](https://cgi.csc.liv.ac.uk/~hang/) for his feedback and for pointing out additional resources.
