@@ -481,8 +481,7 @@ ul {
 .button,
 button,
 dd,
-dt,
-li {
+dt {
   margin-bottom: 1.0rem;
 }
 

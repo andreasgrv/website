@@ -24,6 +24,10 @@
     position: relative;
     list-style-type: none;
 }
+.navigation .navigation-item::before {
+    margin-left: 0.0em;
+    content: none;
+}
 .navigation .img{fill:#9b4dca;height:2rem;position:relative;top:.3rem}
 .navigation .navigation-link, .navigation .navigation-title, .navigation .title{display:inline;font-size:110%;line-height:5.2rem;padding:0;text-decoration:none}
 
@@ -66,16 +70,15 @@ h1 + hr {
 /*     left: 0px; */
 /*     top: -60px; */
 /* } */
-dl dl, dl ol, dl ul, ol dl, ol ol, ol ul, ul dl, ul ol, ul ul {
-    font-size: 95%;
-}
+/* dl dl, dl ol, dl ul, ol dl, ol ol, ol ul, ul dl, ul ol, ul ul { */
+/*     font-size: 95%; */
+/* } */
 
 ol {
     list-style: decimal;
 }
 
 ol li {
-    float: left;
     margin: 0 10px;
     padding: 0 10px;
 }
@@ -186,13 +189,25 @@ body {
     /* color: #1a7cd2; */
 }
 
+.wrapper .markdown-body {
+    font-family: 'Dosis', 'Helvetica', sans-serif;
+}
+
 ul, li > input {
     list-style: none;
 }
 
-/* ul li { */
-/*     list-style-type: disc; */
-/* } */
+ul li::before{
+    float: left;
+    margin-left: -1.0em;
+    font-family: "FontAwesome";
+    content: "\f105";
+}
+
+.task-list li::before {
+    margin-left: 0.0em;
+    content: none;
+}
 
 /* ul li p { */
 /*     display: inline; */
