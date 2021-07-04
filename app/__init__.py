@@ -6,6 +6,8 @@ import os
 import argparse
 import requests
 import markdown
+import mimetypes
+
 from markdown.extensions.toc import TocExtension
 from gfm import TaskListExtension, AutolinkExtension, AutomailExtension
 from datetime import datetime, timedelta
@@ -20,6 +22,9 @@ from flask_migrate import Migrate
 from methinks.db import db
 from app.methinks import methinks_routes
 from app.preprocess import escape_jax_for_markdown
+
+
+mimetypes.add_type('application/wasm', '.wasm')
 
 
 TIME_FORMAT = '%A, %d %B %Y at %H:%M'
