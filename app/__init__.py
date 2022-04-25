@@ -3,6 +3,8 @@
 # http://www.jamesharding.ca/posts/simple-static-markdown-blog-in-flask/
 
 import os
+import json
+import urllib
 import argparse
 import requests
 import markdown
@@ -22,6 +24,10 @@ from flask_migrate import Migrate
 from methinks.db import db
 from app.methinks import methinks_routes
 from app.preprocess import escape_jax_for_markdown
+
+from emojivote.sources import ArxivParser
+from emojivote.formatter import SlackFormatter
+
 
 
 mimetypes.add_type('application/wasm', '.wasm')
@@ -203,6 +209,16 @@ def download_file(fname):
     return send_from_directory(directory='files',
                                filename=fname,
                                as_attachment=False)
+
+
+@app.route('/papervote', methods=['POST'])
+def papervote():
+    data = request.get_data().decode()
+    data_dict = urllib.parse.parse_qs(data)
+    text = data_dict['text'][0]
+    urls = text.split()
+    items = [ArxivParser.process(url) for url in urls]
+    return repr(SlackFormatter(items))
 
 
 if __name__ == '__main__':
