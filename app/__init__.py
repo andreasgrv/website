@@ -11,7 +11,7 @@ import markdown
 import mimetypes
 
 from markdown.extensions.toc import TocExtension
-from gfm import TaskListExtension, AutolinkExtension, AutomailExtension
+# from gfm import TaskListExtension, AutolinkExtension, AutomailExtension
 from datetime import datetime, timedelta
 from glob import glob
 from flask import Flask, render_template, url_for, request
@@ -21,12 +21,12 @@ from flask_flatpages.utils import pygmented_markdown
 from flask_frozen import Freezer
 from flask_migrate import Migrate
 
-from methinks.db import db
-from app.methinks import methinks_routes
-from app.preprocess import escape_jax_for_markdown
+# from methinks.db import db
+# from app.methinks import methinks_routes
+# from app.preprocess import escape_jax_for_markdown
 
-from emojivote.sources import ArxivParser
-from emojivote.formatter import SlackFormatter
+# from emojivote.sources import ArxivParser
+# from emojivote.formatter import SlackFormatter
 
 
 
@@ -38,13 +38,13 @@ DATE_FORMAT = '%A, %d %B %Y'
 DATE_URL_FORMAT = '%Y-%m-%d-%a'
 
 
-DB_URI = 'postgresql://%s:%s@localhost/%s' % (os.environ['METHINKS_DB_USER'],
-                                              os.environ['METHINKS_DB_PASSWD'],
-                                              os.environ['METHINKS_DB_NAME'])
+# DB_URI = 'postgresql://%s:%s@localhost/%s' % (os.environ['METHINKS_DB_USER'],
+#                                               os.environ['METHINKS_DB_PASSWD'],
+#                                               os.environ['METHINKS_DB_NAME'])
 
 
 def create_app():
-    APP_ROOT = '/home/grv/website'
+    APP_ROOT = '/home/grv/Stable/website'
     TEMPLATE_FOLDER = '%s/templates' % APP_ROOT
     STATIC_FOLDER = '%s/static' % APP_ROOT
 
@@ -53,8 +53,8 @@ def create_app():
                 static_folder=STATIC_FOLDER)
 
     app.config['APP_ROOT'] = APP_ROOT
-    app.config['SQLALCHEMY_DATABASE_URI'] = DB_URI
-    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+    # app.config['SQLALCHEMY_DATABASE_URI'] = DB_URI
+    # app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     app.config['FLATPAGES_EXTENSION'] = '.md'
     app.config['FLATPAGES_ROOT'] = '%s/content/posts' % APP_ROOT
     app.config['FLATPAGES_MARKDOWN_EXTENSIONS'] = ['markdown.extensions.fenced_code',
@@ -66,10 +66,10 @@ def create_app():
     MODIFIED = sorted(map(os.path.getmtime, glob(HTML_FILES)))[-1]
     app.config['LAST_EDITED'] = datetime.fromtimestamp(int(MODIFIED)).strftime(TIME_FORMAT)
 
-    app.register_blueprint(methinks_routes, url_prefix='/methinks')
+    # app.register_blueprint(methinks_routes, url_prefix='/methinks')
 
-    db.init_app(app)
-    migrate = Migrate(app, db)
+    # db.init_app(app)
+    # migrate = Migrate(app, db)
     return app
 
 
@@ -97,7 +97,7 @@ def my_renderer(text):
 
 
 app.config['FLATPAGES_HTML_RENDERER'] = my_renderer
-app.register_blueprint(methinks_routes, url_prefix='/methinks')
+# app.register_blueprint(methinks_routes, url_prefix='/methinks')
 
 
 # music_dir = 'files/music'
@@ -136,61 +136,61 @@ def post(name):
     return render_template('post.html', post=post)
 
 
-@app.route('/diary/<date>')
-def diary(date):
-    """A page for diary entries
-
-    :date: The date of the entry
-    :returns: The rendered page of this post
-
-    """
-    if date == 'today':
-        date = datetime.strftime(datetime.today(), DATE_URL_FORMAT)
-
-    url = url_for('methinks_routes.get_entry', date=date)
-    methinks_endpoint = 'https://grv.overfit.xyz%s?token=%s' % (url, request.args.get('token', ''))
-    r = requests.get(methinks_endpoint).json()
-    entry = dict()
-    if r['status']:
-        data = r['data']
-        markdown_text = escape_jax_for_markdown(data['text'])
-        md = markdown.Markdown(extensions=[# GithubFlavoredMarkdownExtension(),
-                                           TaskListExtension(),
-                                           AutolinkExtension(),
-                                           AutomailExtension(),
-                                           'markdown.extensions.fenced_code',
-                                           'markdown.extensions.codehilite',
-                                           'markdown.extensions.footnotes',
-                                           'markdown.extensions.tables',
-                                           TocExtension(anchorlink=True),
-                                           'mdx_truly_sane_lists',
-                                           ])
-        entry['html'] = md.convert(markdown_text)
-        # Table of contents (relies on markdown.extensions.toc)
-        entry['toc'] = md.toc
-
-        date = datetime.strptime(data['date'], '%c').date()
-        entry['date'] = date.strftime(DATE_FORMAT)
-
-        last_edited = datetime.strptime(data['last_edited'], '%c')
-        entry['last_edited'] = last_edited.strftime(TIME_FORMAT)
-
-        yesterday = date - timedelta(days=1)
-        yesterday = yesterday.strftime(DATE_URL_FORMAT)
-        url = url_for('methinks_routes.get_entry', date=yesterday)
-        methinks_endpoint = 'https://grv.overfit.xyz%s?token=%s' % (url, request.args.get('token', ''))
-        r = requests.get(methinks_endpoint).json()
-        methinks_endpoint = methinks_endpoint.replace('/methinks/entries', '/diary')
-        entry['prev'] = methinks_endpoint if r['data'] else False
-
-        tomorrow = date + timedelta(days=1)
-        tomorrow = tomorrow.strftime(DATE_URL_FORMAT)
-        url = url_for('methinks_routes.get_entry', date=tomorrow)
-        methinks_endpoint = 'https://grv.overfit.xyz%s?token=%s' % (url, request.args.get('token', ''))
-        r = requests.get(methinks_endpoint).json()
-        methinks_endpoint = methinks_endpoint.replace('/methinks/entries', '/diary')
-        entry['next'] = methinks_endpoint if r['data'] else False
-    return render_template('diary.html', entry=entry)
+# @app.route('/diary/<date>')
+# def diary(date):
+#     """A page for diary entries
+#
+#     :date: The date of the entry
+#     :returns: The rendered page of this post
+#
+#     """
+#     if date == 'today':
+#         date = datetime.strftime(datetime.today(), DATE_URL_FORMAT)
+#
+#     url = url_for('methinks_routes.get_entry', date=date)
+#     methinks_endpoint = 'https://grv.overfit.xyz%s?token=%s' % (url, request.args.get('token', ''))
+#     r = requests.get(methinks_endpoint).json()
+#     entry = dict()
+#     if r['status']:
+#         data = r['data']
+#         markdown_text = escape_jax_for_markdown(data['text'])
+#         md = markdown.Markdown(extensions=[# GithubFlavoredMarkdownExtension(),
+#                                            TaskListExtension(),
+#                                            AutolinkExtension(),
+#                                            AutomailExtension(),
+#                                            'markdown.extensions.fenced_code',
+#                                            'markdown.extensions.codehilite',
+#                                            'markdown.extensions.footnotes',
+#                                            'markdown.extensions.tables',
+#                                            TocExtension(anchorlink=True),
+#                                            'mdx_truly_sane_lists',
+#                                            ])
+#         entry['html'] = md.convert(markdown_text)
+#         # Table of contents (relies on markdown.extensions.toc)
+#         entry['toc'] = md.toc
+#
+#         date = datetime.strptime(data['date'], '%c').date()
+#         entry['date'] = date.strftime(DATE_FORMAT)
+#
+#         last_edited = datetime.strptime(data['last_edited'], '%c')
+#         entry['last_edited'] = last_edited.strftime(TIME_FORMAT)
+#
+#         yesterday = date - timedelta(days=1)
+#         yesterday = yesterday.strftime(DATE_URL_FORMAT)
+#         url = url_for('methinks_routes.get_entry', date=yesterday)
+#         methinks_endpoint = 'https://grv.overfit.xyz%s?token=%s' % (url, request.args.get('token', ''))
+#         r = requests.get(methinks_endpoint).json()
+#         methinks_endpoint = methinks_endpoint.replace('/methinks/entries', '/diary')
+#         entry['prev'] = methinks_endpoint if r['data'] else False
+#
+#         tomorrow = date + timedelta(days=1)
+#         tomorrow = tomorrow.strftime(DATE_URL_FORMAT)
+#         url = url_for('methinks_routes.get_entry', date=tomorrow)
+#         methinks_endpoint = 'https://grv.overfit.xyz%s?token=%s' % (url, request.args.get('token', ''))
+#         r = requests.get(methinks_endpoint).json()
+#         methinks_endpoint = methinks_endpoint.replace('/methinks/entries', '/diary')
+#         entry['next'] = methinks_endpoint if r['data'] else False
+#     return render_template('diary.html', entry=entry)
 
 
 @app.route('/read')
@@ -207,18 +207,18 @@ def listen():
 @app.route('/<fname>')
 def download_file(fname):
     return send_from_directory(directory='files',
-                               filename=fname,
+                               path=fname,
                                as_attachment=False)
 
 
-@app.route('/papervote', methods=['POST'])
-def papervote():
-    data = request.get_data().decode()
-    data_dict = urllib.parse.parse_qs(data)
-    text = data_dict['text'][0]
-    urls = text.split()
-    items = [ArxivParser.process(url) for url in urls]
-    return repr(SlackFormatter(items))
+# @app.route('/papervote', methods=['POST'])
+# def papervote():
+#     data = request.get_data().decode()
+#     data_dict = urllib.parse.parse_qs(data)
+#     text = data_dict['text'][0]
+#     urls = text.split()
+#     items = [ArxivParser.process(url) for url in urls]
+#     return repr(SlackFormatter(items))
 
 
 if __name__ == '__main__':

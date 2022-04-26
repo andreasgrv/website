@@ -1,4 +1,4 @@
-.wrapper .container{max-width:80rem}
+.wrapper .container{max-width:90rem}
 .wrapper> .container{padding-bottom:7.5rem;padding-top:7.5rem}
 .header{
     background-color: #efefef;
@@ -259,6 +259,14 @@ ul li::before{
     background-color: #a6cee3;
     font-weight: 400;
     opacity: .9;
+}
+
+.highlight {
+    font-weight: 500;
+}
+
+.paper {
+    padding-bottom: 1rem;
 }
 
 .cyan {
