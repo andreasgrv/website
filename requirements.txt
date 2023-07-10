@@ -1,10 +1,11 @@
 Flask==2.0.1
 Flask-FlatPages==0.6
 Frozen-Flask==0.11
-Jinja2==2.10.1
+Jinja2
 Markdown==2.6.11
-MarkupSafe==0.23
+MarkupSafe
 py-gfm==0.1.4
 mdx-truly-sane-lists==1.2
 PyYAML==4.2b1
 Pygments==1.6
+Flask-Migrate
