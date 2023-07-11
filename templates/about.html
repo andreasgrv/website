@@ -8,8 +8,8 @@
           <div class="column">
             <div class="page-header text-center">
               <h4><p class="title">
-                I am a PhD student at the <a href="http://web.inf.ed.ac.uk/ilcc" target="_blank">Institute for Language, Cognition and Computation (ILCC)</a> in Edinburgh, supervised by <a href="https://alopez.github.io/" target="_blank">Adam Lopez</a> and <a href="http://nolovedeeplearning.com/" target="_blank">Antonio Vergari</a>.
-                My work focusses on understanding constraints that arise in neural network models and asserting to what extent we can control these constraints and exploit them for our own purposes.</h4>
+                I am a Machine Learning Researcher and final year PhD student at the <a href="http://web.inf.ed.ac.uk/ilcc" target="_blank">ILCC</a> in Edinburgh, supervised by <a href="https://alopez.github.io/" target="_blank">Adam Lopez</a> and <a href="http://nolovedeeplearning.com/" target="_blank">Antonio Vergari</a>.
+                My research focusses on making AI more trustworthy and efficient by understanding and exploiting geometric constraints that arise in neural network models.</h4>
             </div>
           </div>
         </div>
@@ -19,13 +19,21 @@
       <div class="row about-main">
         <div class="column">
           <div class="row">
-            <div class="column">
+            <div class="column column-sm-33 column-xs-75">
               <img class="wally"  src="{{url_for('.static', filename="images/me2021.jpg")}}"></img>
             </div>
             <div class="column">
-              Alongside my PhD, I am also a part-time Research Assistant on Information Extraction from clinical text under the supervision of <a href="http://homepages.inf.ed.ac.uk/balex/" target="_blank">Beatrice Alex</a>.
-              Here is a <a href="http://jekyll.inf.ed.ac.uk/edieviz" target="_blank">demo</a> of our Named Entity Recognition and Negation Detection models for identifying findings (eg. stroke and tumours) from radiology reports.
+              <p>
+                More specifically, my research highlights how low-rank parametrisations used in neural networks impose <b>geometric constraints</b> that make a subset of outputs <b>impossible to predict</b>; such outputs are termed <a href="https://unargmaxable.ai" target="blank_"><b>unargmaxable</b></a>.
+                This raises the following questions:
+                <li>Can we provide formal guarantees about which outputs our models can predict?</li>
+                <li> Can we engineer these constraints to encode inductive biases of interest? </li>
               </p>
+              <p> More generally, I find structure beautiful and enjoy searching for it to better understand problems. Geometric structure can be so intuitive and illuminating when you can see the pattern, and so obscure and baffling before it clicks. I enjoy training my eye by creating interactive visualisations of geometric representations I am learning about, you can find some <a href="/viz">examples here</a>.</p>
+              {# <p> #}
+              Alongside my PhD, I was also a part-time Research Assistant on Information Extraction from news articles and clinical text under the supervision of <a href="http://homepages.inf.ed.ac.uk/balex/" target="_blank">Beatrice Alex</a>.
+              {# Here is a <a href="http://jekyll.inf.ed.ac.uk/edieviz" target="_blank">demo</a> of our Named Entity Recognition and Negation Detection models for identifying findings (eg. stroke and tumours) from radiology reports. #}
+              {# </p> #}
             </div>
           </div>
           <div class="row">
