@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block title %}~grv{% endblock %}
+
+{% block content %}
+
+    <header class="header">
+      <section class="container">
+        <div class="col-lg-8">
+          <div class="page-header text-center">
+            <h3>Some interactive visualisations in Machine Learning ∩ Geometry</h3>
+          </div>
+        </div>
+        <div class="col-lg-2">
+        </div>
+      </section>
+    </header>
+    <section class="container">
+
+          <div class="row row-responsive row-center paper">
+            <div class="column column-sm-33 column-xs-75">
+            </div>
+            <div class="column column-sm-66">
+              <h4><a href="{{ url_for('static', filename='files/softmax/index.html') }}" target="_blank">Low-Rank Softmax Decision Boundaries</a></h4>
+            </div>
+          </div>
+          <div class="row row-responsive row-center paper">
+            <div class="column column-sm-33 column-xs-75">
+            </div>
+            <div class="column column-sm-66">
+              <h4><a href="{{ url_for('static', filename='files/barycentric-v5/index.html') }}" target="_blank">Barycentric Subdivision of the Simplex</a></h4>
+            </div>
+          </div>
+          <div class="row row-responsive row-center paper">
+            <div class="column column-sm-33 column-xs-75">
+            </div>
+            <div class="column column-sm-66">
+              <h4><a href="{{ url_for('static', filename='files/permutations/index.html') }}" target="_blank">Geometric Permutation Representations</a></h4>
+            </div>
+          </div>
+          <div class="row row-responsive row-center paper">
+            <div class="column column-sm-33 column-xs-75">
+            </div>
+            <div class="column column-sm-66">
+              <h4><a href="{{ url_for('static', filename='files/braid-slice/index.html') }}" target="_blank">Slicing the Braid Hyperplane Arrangement</a></h4>
+            </div>
+          </div>
+          <div class="row row-responsive row-center paper">
+            <div class="column column-sm-33 column-xs-75">
+            </div>
+            <div class="column column-sm-66">
+              <h4><a href="{{ url_for('static', filename='files/permutohedron-tiling/index.html') }}" target="_blank">Permutohedron Tiling of 3D Space</a></h4>
+            </div>
+          </div>
+          <div class="row row-responsive row-center paper">
+            <div class="column column-sm-33 column-xs-75">
+            </div>
+            <div class="column column-sm-66">
+              <h4><a href="{{ url_for('static', filename='files/cheby-v1/index.html') }}" target="_blank">Chebyshev Balls</a></h4>
+            </div>
+          </div>
+    </section>
+{% endblock %}

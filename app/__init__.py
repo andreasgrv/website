@@ -198,6 +198,11 @@ def reading():
     return render_template('read.html')
 
 
+@app.route('/viz')
+def viz():
+    return render_template('viz.html')
+
+
 @app.route('/listen')
 def listen():
     return render_template('playlist.html', music_dir=music_dir,

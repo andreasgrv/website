@@ -41,6 +41,9 @@
               <li class="navigation-item {%if request.path == '/about' or request.path == '/' %}active{% endif %}">
                 <a class="navigation-link" href="/about">About</a>
               </li>
+              <li class="navigation-item {%if request.path == '/viz' %}active{% endif %}">
+                <a class="navigation-link" href="/viz">Interact</a>
+              </li>
               <li class="navigation-item {%if request.path == '/log' or '/posts' in request.path %}active{% endif %}">
                 <a class="navigation-link" href="/log">Log</a>
               </li>
