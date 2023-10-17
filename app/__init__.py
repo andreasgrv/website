@@ -44,7 +44,7 @@ DATE_URL_FORMAT = '%Y-%m-%d-%a'
 
 
 def create_app():
-    APP_ROOT = '/home/grv/Stable/website'
+    APP_ROOT = '/home/grv/website'
     TEMPLATE_FOLDER = '%s/templates' % APP_ROOT
     STATIC_FOLDER = '%s/static' % APP_ROOT
 
