@@ -301,3 +301,11 @@ ul li::before{
 .badge::before {
     content: "+";
 }
+
+.title b {
+    font-weight: 400;
+}
+
+p b {
+    font-weight: 500;
+}
