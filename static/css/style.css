@@ -1,8 +1,17 @@
 .wrapper .container{max-width:90rem}
 .wrapper> .container{padding-bottom:7.5rem;padding-top:7.5rem}
 .header{
-    background-color: #efefef;
+    /* background-color: #efefef; */
+    /* background-color: #136086; */
+    background-color: #053c57;
     padding-top: 5rem;
+    color: white;
+}
+.header a {
+    color: #17d2fd;
+}
+.header a:hover {
+    color: #ffffee;
 }
 .navigation {
     font-weight: 400;
@@ -14,7 +23,7 @@
 /* .footer .nav .link{display:inline-block;margin-left:1.2rem;padding:0} */
 /* .footer .nav .icon{fill:#9b4dca;height:2rem} */
 /* .footer .nav .icon:hover{fill:#606c76} */
-.navigation{background:#f4f5f6;border-bottom:.1rem solid #d1d1d1;display:block;height:5.2rem;left:0;max-width:100%;position:fixed;right:0;top:0;width:100%;z-index:1}
+.navigation{background:#fff9f9;border-bottom:.1rem solid #d1d1d1;display:block;height:5.2rem;left:0;max-width:100%;position:fixed;right:0;top:0;width:100%;z-index:1}
 .navigation .container{padding-bottom:0;padding-top:0}
 .navigation .navigation-list{list-style:none}
 .navigation .navigation-item {
@@ -165,11 +174,15 @@ ol li {
     font-size: 120%;
 }
 
-.footer{
-    background-color:#efefef;
+.footer {
+    background-color: #fff9f9;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: #ccc9c9;
+    padding-top: 5px;
     position: absolute;
     bottom: 0;
-    height: 60px;
+    height: 70px;
     width: 100%;
 }
 

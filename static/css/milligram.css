@@ -441,7 +441,8 @@ input[type='radio'] {
 }
 
 a {
-  color: #2e6adc;
+  /* color: #2e6adc; */
+  color: #226db1;
   text-decoration: none;
 }
 
