@@ -39,16 +39,24 @@
             </div>
             <ul class="navigation-list float-right">
               <li class="navigation-item {%if request.path == '/about' or request.path == '/' %}active{% endif %}">
-                <a class="navigation-link" href="/about">Research</a>
+                <a class="navigation-link" href="/about">
+                  <i class="fa fa-flask"></i>
+                  <span class="text-label">Research</span></a>
               </li>
               <li class="navigation-item {%if request.path == '/viz' %}active{% endif %}">
-                <a class="navigation-link" href="/viz">Interact</a>
+                <a class="navigation-link" href="/viz">
+                  <i class="fa fa-cube"></i>
+                  <span class="text-label">Interact</span></a>
               </li>
               <li class="navigation-item {%if request.path == '/log' or '/posts' in request.path %}active{% endif %}">
-                <a class="navigation-link" href="/log">Log</a>
+                <a class="navigation-link" href="/log">
+                  <i class="fa fa-book"></i>
+                  <span class="text-label">Log</span></a>
               </li>
               <li class="navigation-item {%if request.path == '/read' %}active{% endif %}">
-                <a class="navigation-link" href="/read">Read</a>
+                <a class="navigation-link" href="/read">
+                  <i class="fa fa-file-text-o"></i>
+                  <span class="text-label">Read</span></a>
               </li>
               {# <li class="navigation-item {%if request.path == '/listen' %}active{% endif %}"> #}
               {#   <a href="/listen"> #}
