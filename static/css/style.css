@@ -40,6 +40,10 @@
 .navigation .img{fill:#9b4dca;height:2rem;position:relative;top:.3rem}
 .navigation .navigation-link, .navigation .navigation-title, .navigation .title{display:inline;font-size:110%;line-height:5.2rem;padding:0;text-decoration:none}
 
+.navigation-list .navigation-item .navigation-link .text-label {
+    font-size: 0;
+}
+
 .navigation .brand {
     font-size: 1.8rem;
     font-weight: 600;
@@ -101,13 +105,16 @@ ol li {
     padding-top: 5.5rem;
 }
 
-@media(min-width:40rem){
+@media(min-width:45rem){
     .navigation-list .navigation-item {
         margin-left: 2.5rem;
     }
     .brand-links {
         display: inline-block;
         margin-left: 2.5rem;
+    }
+    .navigation-list .navigation-item .navigation-link .text-label {
+        font-size: 100%;
     }
 }
 
@@ -206,6 +213,10 @@ body {
     font-family: 'Dosis', 'Helvetica', sans-serif;
 }
 
+ul {
+    margin-left: 2em;
+}
+
 ul, li > input {
     list-style: none;
 }
@@ -220,6 +231,18 @@ ul li::before{
 .task-list li::before {
     margin-left: 0.0em;
     content: none;
+}
+
+.wip::before {
+    float: left;
+    margin-left: .5em;
+    font-family: "FontAwesome";
+    content: "\f071";
+}
+
+.wip {
+    color: orange;
+    font-size: 150%;
 }
 
 /* ul li p { */
