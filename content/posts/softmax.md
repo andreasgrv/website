@@ -1,5 +1,5 @@
-title: Softmax Layers are invertible unless overparametrised
-date: Sunday, 25 January 2024 at 18:38
+title: Softmax Layers can and should be invertible
+date: Sunday, 30 January 2024 at 23:32
 
 $$
 \newcommand{\R}{\mathbb{R}}
@@ -8,13 +8,16 @@ $$
 \newcommand{\sigmoid}[1]{\operatorname{\sigma}\left( #1 \right)}
 \newcommand{\softmax}[1]{\operatorname{softmax}\left( #1 \right)}
 $$
-In this note, I want to clarify that there is no reason why softmax layers cannot be invertible.
-By invertible, I mean that given the output I can tell you what the input to the layer was.
 
-But wait, I hear you say, the softmax function is not invertible - are we not doomed?
-If you can use the implementation of the layer I specify below, no.[^1]
 
-Below is a proof by code, read on for an explanation.
+<span class="wip">Work in Progress</span>
+# Invertible Softmax Layers
+
+Suppose I tell you the parameters of a linear softmax layer and a vector of output probabilities, can you invert the layer to reconstruct its inputs?
+It is commonly assumed that since the softmax function is not invertible, a softmax layer cannot be invertible.
+In this note, I want to highlight that this is not true: the softmax layer implementation below is invertible and can be fully expressive.[^1]
+
+### **TL;DR;** The softmax layer below is invertible, read on for the derivation.
 
 ```python
 import torch
@@ -74,9 +77,29 @@ if __name__ == "__main__":
     # NOTE: Pytorch not as accurate as numpy:
     assert torch.allclose(xx, xxp[1:], atol=1e-4)
 ```
-## Recap: Softmax function is not invertible
 
-Recall the softmax function defined on a vector of logits $\vv{z}$:
+# Introduction
+
+## Scenario
+We are doing multi-class classification over $n$ output classes.
+We have a linear softmax output layer, parametrised by $\vv{W} \in \R^{n \times d}$, that takes a $d$-dimensional feature vector $\vv{x} \in \R^d$ as input and outputs $P(\vv{y} \mid \vv{x}) = \softmax{\vv{Wx}}$, a categorical distribution over the classes. We limit our analysis to the common case where $d < n$.
+
+### Problem Statement
+<!-- Suppose you have a linear softmax layer parametrised by $\vv{W},\, \vv{W} \in \R^{n \times d}$, which computes the output probabilities over the classes $\vv{y}$ as $P(\vv{y} \mid \vv{x})=\softmax{\vv{Wx}}$. -->
+> You are given $P(\vv{y} \mid \vv{x}')$ computed from some unknown $\vv{x}'$, as well as $\vv{W}$, which has rank $d,\, d < n$. Can you tell me what $\vv{x}'$ was?
+
+### Result
+A softmax layer parametrised by $\vv{W} \in \R^{n \times d},\, d < n$ is invertible if the constant vector $\begin{bmatrix}1 & 1 & \ldots & 1 \end{bmatrix}^\top$ is not in the columnspace of $\vv{W}$.
+
+Two comments:
+
+* For a random matrix, the constant column is not in the columnspace with probability 1.
+* We can always parametrise $\vv{W}$ such that the above criterion holds, see code above. 
+
+# Derivation
+## Recap: The softmax function is not invertible
+
+Recall that the softmax function defined on a vector of logits $\vv{z}$:
 $$
 \softmax{\vv{z}}_i = \frac{e^{\vv{z}_i}}{\sum_j e^{\vv{z}_j}}
 $$
@@ -86,48 +109,42 @@ $$
 \frac{e^{\vv{z}_i+c}}{\sum_j e^{\vv{z}_j+c}}=
 \frac{e^{c}e^{\vv{z}_i}}{e^{c}\sum_j e^{\vv{z}_j}}=
 \frac{e^{\vv{z}_i}}{\sum_j e^{\vv{z}_j}}=
-\softmax{\vv{z}}
+\softmax{\vv{z}}_i
 $$
-If we want to invert a single softmax output, we could take the log:
+This means that given a vector of output probabilities, we can only distinguish the inputs up to a scalar offset, and as such the softmax function is not invertible.
+However, it is "nearly" invertible. There is one degree of freedom (the offset) which we cannot pin down.
+We will show how to engineer the softmax parametrisation, $\vv{W}$, such that we can pin this offset down.
+
+## Where can the constant $c$ come from?
+"But what offset $c$?", I hear you say. "We computed $\vv{z} = \vv{Wx}$, there is no $c$ we need to worry about!".
+
+Well, sometimes this is true, but what if $\vv{W}$ is a full-rank matrix?
+Via a change of basis we can obtain a parametrisation that has a constant column $\vv{W}' = \begin{bmatrix}\vv{W_{:,:d-1}'} & 1\end{bmatrix}$, and then we have:
 $$
-\log \softmax{\vv{z}}_i=\log e^{\vv{z}_i} - \log \sum_j e^{\vv{z}_j} = \vv{z}_i - \log \sum_j e^{\vv{z}_j}
+\vv{W}'\vv{x} = \begin{bmatrix}\vv{W_{:,:d-1}'} & 1 \end{bmatrix} \vv{x} = \vv{W_{:,:d-1}'}\vv{x} + \vv{x}_1
 $$
 
-But, we need to take account of the offset $c$.
+I.e., for such a matrix with a constant column, an input feature acts as an offset!
+**Constants $c$ arise when the "constant" vector is in the columnspace of $\vv{W}$.**
+As we saw, these constants do not change the softmax output, and as such the constant column vector of parameters is redundant (see also [redundant parameters](https://mlpr.inf.ed.ac.uk/2023/notes/w6c_softmax_regression.html)).
+In other words, using a full-rank matrix for softmax is an overparametrisation, and it actually breaks invertability.
 
-Is there an input to the layer that when changed in isolation does not change the softmax output? Well, if the constant vector is in the columnspace, then yes. This is true if $\vv{W} \in \R^{n \times n}$ and is full rank. Softmax in this case is overparametrised: we can we rewrite $\vv{W}$ to have a columnvector of constant parameters - this column vector is redundant (see also [redundant parameters](https://mlpr.inf.ed.ac.uk/2023/notes/w6c_softmax_regression.html)).
 
-Solution: We can remove that direction from $\vv{W}$, i.e. make all columns perpendicular to the constant vector. How? A simple way is to subtract from each column its mean.
-
-## Claim: We can construct softmax layers such that they are invertible
-
-A linear softmax layer is invertible when done right. It should have n rows and n-1 columns. While the constant vector will not be in the columnspace by chance, we can guarantee it is not in the columnspace by subtracting off the mean of each column of W after each update.
-### Scenario
-We are doing multi-class classification over $n$ output classes.
-We have a linear softmax output layer, parametrised by $\vv{W} \in \R^{n \times d}$, that takes a $d$ dimensional feature vector $\vv{x} \in \R^d$ as input and outputs a categorical distribution over the classes $P(\vv{y} \mid \vv{x}) = \softmax{\vv{Wx}}$.
-
-### Precise claim
-Given $\vv{W} \in \R^{n \times d},\, d \leq n-1$ and $P(\vv{y} \mid \vv{x})$ we can recompute $\vv{x}$.
-
-### Solution
-Consider the function $f(\vv{x}) = \vv{Wx},\, \vv{W} \in \R^{n \times d}$. $f$ is a low-rank linear function, which means that its image is a subspace of $n$ dimensional space.
-
-My claim, more precisely, is that if you tell me the parametrisation of the softmax layer, $\vv{W}$, and you give me the output probabilities over the classes $\vv{y}$, i.e. $P(\vv{y} \mid \vv{x})$ , I can tell you what the input feature vector, $\vv{x}$, was.
-
-Up until very recently, if you asked me if a Softmax layer is invertible, I would have answered: No, the softmax function is not invertible, and therefore softmax layers cannot be invertible.
-
-Here is why I would have been wrong.
-### Softmax
-Consider a linear softmax layer parametrised by $\vv{W} \in \R^{n \times d}$.
+## Let's invert the softmax layer anyway
+We set $\vv{z}' = \vv{z} + c$ for some unknown constant offset $c$.
+How can we attempt to invert softmax? Well, we can expose each logit by taking the log:
 $$
-P(\vv{y}_i \mid \vv{x}) = \softmax{\vv{Wx}}_i = \frac{e^{\vv{w}_i\T\vv{x}}}{\mathcal{Z}}
+\log \softmax{\vv{z}'}_i=\log e^{\vv{z}'_i} - \log \sum_j e^{\vv{z}'_j} = \vv{z}'_i - \log \sum_j e^{\vv{z}'_j}
 $$
-where $\mathcal{Z}=\sum_i e^{\vv{w}_i\T\vv{x}}$.
+where $\log \sum_j e^{\vv{z}'_j}$ is the log of the normalising constant which is the same for all logits.
+Here is where knowing $\vv{W}$ can make a difference.
+**Observation**: if the logits had $d \leq n-1$ degrees of freedom, we could recover the normalising constant and the input $\vv{x}$ by solving the following linear system:
 
-It is straightforward to invert the last step from probabilities to log probabilities:
-$$
-\log P(\vv{y}_i \mid \vv{x}) = \vv{w}_i\T\vv{x} - \log \mathcal{Z}
-$$
-Note that each log probability is the logit offset by the log normalisation term.
+$$\begin{bmatrix}\vv{W} & 1 \end{bmatrix}\vv{x} = \log \softmax{\vv{z}}$$
 
-[^1]: Also, if the softmax layer you are using has less inputs than outputs (i.e. the parametrisation is low rank), then again, probably no. The constant vector is unlikely to be in the columnspace of your classifier.
+## Solution by construction: Remove the constant direction from $\vv{W}$
+
+We can remove the constant direction from $\vv{W}$, i.e. make all columns perpendicular to the constant vector. How? We can subtract from each column its mean (see code).
+
+[^1]: By fully expressive, I mean that any categorical distribution over its support can be produced.
+[^2]: Also, if the softmax layer you are using has less inputs than outputs (i.e. the parametrisation is low rank), then again, probably no. The constant vector is unlikely to be in the columnspace of your classifier.
