@@ -170,7 +170,7 @@ input[type='submit'].button-clear[disabled]:hover {
 }
 
 code {
-  background: #f4f5f6;
+  background: #272822;
   border-radius: .4rem;
   font-size: 86%;
   margin: 0 .2rem;
@@ -179,7 +179,7 @@ code {
 }
 
 pre {
-  background: #f4f5f6;
+  background: #272822;
   border-left: 0.3rem solid #2e6adc;
   overflow-y: hidden;
 }
@@ -193,7 +193,7 @@ pre > code {
 
 hr {
   border: 0;
-  border-top: 0.1rem solid #f4f5f6;
+  border-top: 0.1rem solid #272822;
   margin: 3.0rem 0;
 }
 
