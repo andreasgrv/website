@@ -24,14 +24,19 @@
             </div>
             <div class="column">
               <p>
-                More specifically, my research highlights how low-rank parametrisations used in neural networks impose <b>geometric constraints</b> that make a subset of outputs <b>impossible to predict</b>; such outputs are termed <a href="https://unargmaxable.ai" target="blank_"><b>unargmaxable</b></a>.
-                This raises the following questions:
-                <li>Can we provide formal guarantees about which outputs our models can predict?</li>
-                <li> Can we engineer these constraints to encode inductive biases of interest? </li>
-              </p>
-              <p> More generally, I find <a href="{{ url_for('static', filename='files/permutohedron-tiling/index.html') }}" target="_blank">structure beautiful</a> and enjoy searching for it to <a href="{{ url_for('static', filename='files/alternating/index.html') }}" target="_blank">better understand problems</a>. Geometric structure can be so intuitive and illuminating when you can see the pattern, and so obscure and baffling before it clicks. I enjoy training my eye by creating interactive visualisations of geometric representations I am learning about, you can find some <a href="/viz">more examples here</a>.</p>
+              More specifically, I study the output layer of deep neural networks that have a large number of outputs, e.g. Large Language Models (LLMs).
+              Any such output layer that has more outputs than inputs unavoidably has outputs that are <b>impossible to predict</b>.
+              I call such outputs <a href="https://unargmaxable.ai" target="blank_"><b>unargmaxable</b></a>.
+              My research identifies unargmaxable outputs in <a href="https://arxiv.org/abs/2203.06462" target="_blank">L<b>LMs</b></a> and <a href="https://arxiv.org/abs/2310.10443" target="_blank">Clinical NLP models</a> and proposes replacement layers which guarantee that outputs of interest can be predicted.</p>
+              {# <p>I am interested in the following questions: #}
+              {#   <li>Can we provide formal guarantees about which outputs our models can predict?</li> #}
+              {#   <li> Can we engineer existing geometric constraints to encode inductive biases of interest?</li> #}
+              {# </p> #}
               {# <p> #}
-              Alongside my PhD, I was also a part-time Research Assistant on Information Extraction from news articles and clinical text under the supervision of <a href="http://homepages.inf.ed.ac.uk/balex/" target="_blank">Beatrice Alex</a>.
+              {# I find <a href="{{ url_for('static', filename='files/permutohedron-tiling/index.html') }}" target="_blank">structure beautiful</a> and enjoy searching for it to <a href="{{ url_for('static', filename='files/alternating/index.html') }}" target="_blank">better understand problems</a>. Geometric structure can be so intuitive and illuminating when you can see the pattern, and so obscure and baffling before it clicks. #}
+              More generally, I have a soft spot for language and structure and I enjoy creating interactive visualisations of geometric representations I am learning about; here are <a href="/viz">some examples</a>.</p>
+              {# <p> #}
+              Alongside my PhD, I have also been a part-time Research Assistant on Information Extraction from news articles and clinical text under the supervision of <a href="http://homepages.inf.ed.ac.uk/balex/" target="_blank">Beatrice Alex</a>.
               {# Here is a <a href="http://jekyll.inf.ed.ac.uk/edieviz" target="_blank">demo</a> of our Named Entity Recognition and Negation Detection models for identifying findings (eg. stroke and tumours) from radiology reports. #}
               {# </p> #}
             </div>
@@ -49,7 +54,8 @@
               <h5><a href="https://arxiv.org/abs/2310.10443" target="_blank">Taming the Sigmoid Bottleneck: Provably Argmaxable Sparse Multi-Label Classification.</a>
                 <span class="highlight">Andreas Grivas</span>,
               Antonio Vergari and Adam Lopez. Accepted at AAAI 2024.</h5>
-              See also: <a href="{{ url_for('static', filename='posters/sigmoid-bottleneck.pdf') }}" target="_blank">Poster</a>, <a href="{{ url_for('static', filename='files/alternating/index.html') }}" target="_blank">Interactive visualisation</a>
+              See also: <a class="brand" href="https://github.com/andreasgrv/sigmoid-bottleneck" target="_blank"> <i class="fa fa-github"></i> </a>, <a href="{{ url_for('static', filename='posters/sigmoid-bottleneck.pdf') }}" target="_blank">Poster</a>, <a href="{{ url_for('static', filename='files/alternating/index.html') }}" target="_blank">Interactive visualisation (i)</a>, <a href="{{ url_for('static', filename='files/duality/index.html') }}" target="_blank">Interactive visualisation (ii)</a>
+
             </div>
           </div>
           <div class="row row-responsive row-center paper">
@@ -60,7 +66,7 @@
               <h5><a href="https://arxiv.org/abs/2203.06462" target="_blank">Low-Rank Softmax Can Have Unargmaxable Classes in Theory but Rarely in Practice.</a>
                 <span class="highlight">Andreas Grivas</span>,
               Nikolay Bogoychev and Adam Lopez. ACL 2022 (Oral Presentation)</h5>
-              See also: <a href="{{ url_for('static', filename='posters/softmax-bottleneck.pdf') }}" target="_blank">Poster</a>, <a href="https://unargmaxable.ai" target="_blank">Interactive visualisation</a> 
+              See also: <a class="brand" href="https://github.com/andreasgrv/unargmaxable" target="_blank"> <i class="fa fa-github"></i> </a>, <a href="{{ url_for('static', filename='posters/softmax-bottleneck.pdf') }}" target="_blank">Poster</a>, <a href="https://unargmaxable.ai" target="_blank">Interactive visualisation</a> 
             </div>
           </div>
           <div class="row row-responsive row-center paper">
@@ -69,6 +75,7 @@
             </div>
             <div class="column column-sm-66">
               <h5><a href="https://aclanthology.org/2020.louhi-1.4/" target="_blank">Not a cute stroke: Analysis of Rule-and Neural Network-based Information Extraction Systems for Brain Radiology Reports.</a> <span class="highlight">Andreas Grivas</span>, Beatrice Alex, Claire Grover, Richard Tobin and William Whiteley. LOUHI 2020</h5>
+              See also: <a class="brand" href="https://github.com/edinburgh-ltg/edieviz" target="_blank"> <i class="fa fa-github"></i> </a>
             </div>
           </div>
           <div class="row row-responsive row-center paper">
