@@ -8,10 +8,10 @@
           <div class="column">
             <div class="page-header text-center">
               <h4><p class="title">
-                I am a <b>Postdoctoral Machine Learning Researcher</b> at the <a href="http://web.inf.ed.ac.uk" target="_blank">University of Edinburgh</a>, co-supervised by 
-                <a href="http://nolovedeeplearning.com/" target="_blank">Antonio</a> <a href="https://april-tools.github.io/" target="_blank">Vergari</a>
-                and <a href="https://ducdauge.github.io/" target="_blank">Edoardo Ponti</a>.
-                My research focusses on <b>making AI more reliable, interpretable and efficient</b> by understanding and exploiting geometric constraints that arise in neural network models.</h4>
+                I am a <b>Postdoctoral Machine Learning Researcher</b> at the <a href="http://maths.ed.ac.uk" target="_blank">University of Edinburgh</a>, working with <a href="https://webhomes.maths.ed.ac.uk/~dhigham/" target="_blank">Desmond Higham</a>.
+                {# <a href="http://nolovedeeplearning.com/" target="_blank">Antonio</a> <a href="https://april-tools.github.io/" target="_blank">Vergari</a> #}
+                {# and <a href="https://ducdauge.github.io/" target="_blank">Edoardo Ponti</a>. #}
+                My research focusses on <b>making AI more reliable and efficient</b> by understanding and exploiting geometric constraints that arise in neural network models.</h4>
             </div>
           </div>
         </div>
@@ -29,7 +29,7 @@
               More specifically, I study the output layer of deep neural networks that have a large number of outputs, e.g. Large Language Models (LLMs).
               Any such output layer that has more outputs than inputs unavoidably has outputs that are <b>impossible to predict</b>.
               I call such outputs <a href="https://unargmaxable.ai" target="blank_"><b>unargmaxable</b></a>.
-              My research identifies unargmaxable outputs in <a href="https://arxiv.org/abs/2203.06462" target="_blank">L<b>LMs</b></a> and <a href="https://arxiv.org/abs/2310.10443" target="_blank">Clinical NLP models</a> and proposes replacement layers which guarantee that outputs of interest can be predicted.</p>
+              My research identifies unargmaxable outputs in <a href="https://arxiv.org/abs/2203.06462" target="_blank"><b>LLMs</b></a> and <a href="https://arxiv.org/abs/2310.10443" target="_blank">Clinical NLP models</a> and proposes replacement layers which guarantee that outputs of interest can be predicted.</p>
               {# <p>I am interested in the following questions: #}
               {#   <li>Can we provide formal guarantees about which outputs our models can predict?</li> #}
               {#   <li> Can we engineer existing geometric constraints to encode inductive biases of interest?</li> #}
@@ -51,13 +51,24 @@
           </div>
           <div class="row row-responsive row-center paper">
             <div class="column column-sm-33 column-xs-75">
+              <img class="img"  src="{{url_for('.static', filename="images/mtpc.png")}}"></img>
+            </div>
+            <div class="column column-sm-66">
+              <h5><a href="https://arxiv.org/abs/2511.11346" target="_blank">Fast and Expressive Multi-Byte Prediction with Probabilistic Circuits.</a>
+                <span class="highlight">Andreas Grivas</span>,
+                Lorenzo Loconte, Emile van Krieken, Piotr Nawrot, Yu Zhao, Euan Wielewski, Pasquale Minervini, Edoardo Ponti and Antonio Vergari, <span class="highlight">ICML 2026</span>.</h5>
+              <a class="brand" href="https://github.com/april-tools/mtpc" target="_blank">Code <i class="fa fa-github"></i> </a>, <a href="{{ url_for('static', filename='posters/mtpc-poster.pdf') }}" target="_blank">Poster</a>
+            </div>
+          </div>
+          <div class="row row-responsive row-center paper">
+            <div class="column column-sm-33 column-xs-75">
               <img class="img"  src="{{url_for('.static', filename="images/unargmaxable-2.png")}}"></img>
             </div>
             <div class="column column-sm-66">
               <h5><a href="https://arxiv.org/abs/2310.10443" target="_blank">Taming the Sigmoid Bottleneck: Provably Argmaxable Sparse Multi-Label Classification.</a>
                 <span class="highlight">Andreas Grivas</span>,
-              Antonio Vergari and Adam Lopez. Accepted at AAAI 2024.</h5>
-              See also: <a class="brand" href="https://github.com/andreasgrv/sigmoid-bottleneck" target="_blank"> <i class="fa fa-github"></i> </a>, <a href="{{ url_for('static', filename='posters/sigmoid-bottleneck.pdf') }}" target="_blank">Poster</a>, <a href="{{ url_for('static', filename='files/alternating/index.html') }}" target="_blank">Interactive visualisation (i)</a>, <a href="{{ url_for('static', filename='files/duality/index.html') }}" target="_blank">Interactive visualisation (ii)</a>
+                Antonio Vergari and Adam Lopez, <span class="highlight">AAAI 2024</span>.</h5>
+              <a class="brand" href="https://github.com/andreasgrv/sigmoid-bottleneck" target="_blank">Code <i class="fa fa-github"></i> </a>, <a href="{{ url_for('static', filename='posters/sigmoid-bottleneck.pdf') }}" target="_blank">Poster</a>, <a href="{{ url_for('static', filename='files/alternating/index.html') }}" target="_blank">Interactive visualisation (i)</a>, <a href="{{ url_for('static', filename='files/duality/index.html') }}" target="_blank">Interactive visualisation (ii)</a>
 
             </div>
           </div>
@@ -68,8 +79,8 @@
             <div class="column column-sm-66">
               <h5><a href="https://arxiv.org/abs/2203.06462" target="_blank">Low-Rank Softmax Can Have Unargmaxable Classes in Theory but Rarely in Practice.</a>
                 <span class="highlight">Andreas Grivas</span>,
-              Nikolay Bogoychev and Adam Lopez. ACL 2022 (Oral Presentation)</h5>
-              See also: <a class="brand" href="https://github.com/andreasgrv/unargmaxable" target="_blank"> <i class="fa fa-github"></i> </a>, <a href="{{ url_for('static', filename='posters/softmax-bottleneck.pdf') }}" target="_blank">Poster</a>, <a href="https://unargmaxable.ai" target="_blank">Interactive visualisation</a> 
+                Nikolay Bogoychev and Adam Lopez, <span class="highlight">ACL 2022 (Oral Presentation)</span>.</h5>
+              <a class="brand" href="https://github.com/andreasgrv/unargmaxable" target="_blank">Code <i class="fa fa-github"></i> </a>, <a href="{{ url_for('static', filename='posters/softmax-bottleneck.pdf') }}" target="_blank">Poster</a>, <a href="https://unargmaxable.ai" target="_blank">Interactive visualisation</a> 
             </div>
           </div>
           <div class="row row-responsive row-center paper">
@@ -77,8 +88,8 @@
               <img class="img"  src="{{url_for('.static', filename="images/acute.png")}}"></img>
             </div>
             <div class="column column-sm-66">
-              <h5><a href="https://aclanthology.org/2020.louhi-1.4/" target="_blank">Not a cute stroke: Analysis of Rule-and Neural Network-based Information Extraction Systems for Brain Radiology Reports.</a> <span class="highlight">Andreas Grivas</span>, Beatrice Alex, Claire Grover, Richard Tobin and William Whiteley. LOUHI 2020</h5>
-              See also: <a class="brand" href="https://github.com/edinburgh-ltg/edieviz" target="_blank"> <i class="fa fa-github"></i> </a>
+              <h5><a href="https://aclanthology.org/2020.louhi-1.4/" target="_blank">Not a cute stroke: Analysis of Rule-and Neural Network-based Information Extraction Systems for Brain Radiology Reports.</a> <span class="highlight">Andreas Grivas</span>, Beatrice Alex, Claire Grover, Richard Tobin and William Whiteley, <span class="highlight">EMNLP LOUHI Workshop 2020</span>.</h5>
+              <a class="brand" href="https://github.com/edinburgh-ltg/edieviz" target="_blank">Code <i class="fa fa-github"></i> </a>
             </div>
           </div>
           <div class="row row-responsive row-center paper">
@@ -86,7 +97,7 @@
               <img class="img"  src="{{url_for('.static', filename="images/dep2.png")}}"></img>
             </div>
             <div class="column column-sm-66">
-              <h5><a href="https://aclanthology.org/D18-1278/" target="_blank">What do Character-level Models Learn About Morphology? The Case of Dependency Parsing.</a> Clara Vania, <span class="highlight">Andreas Grivas</span>, and Adam Lopez. EMNLP 2018</h5>
+              <h5><a href="https://aclanthology.org/D18-1278/" target="_blank">What do Character-level Models Learn About Morphology? The Case of Dependency Parsing.</a> Clara Vania, <span class="highlight">Andreas Grivas</span>, and Adam Lopez, <span class="highlight">EMNLP 2018</span>.</h5>
             </div>
           </div>
           <div class="row row-center paper">
