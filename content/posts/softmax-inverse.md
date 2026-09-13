@@ -93,7 +93,7 @@ A softmax layer parametrised by $\vv{W} \in \R^{n \times d},\, d < n$ is inverti
 
 Two comments:
 
-* For a random matrix, the constant column is not in the columnspace with probability 1.
+* For a random matrix, the constant column is almost surely not in the columnspace.
 * We can always parametrise $\vv{W}$ such that the above criterion holds, see code above. 
 
 # Derivation
