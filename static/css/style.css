@@ -167,6 +167,10 @@ ol li {
     margin: 20px;
 }
 
+.well h3 {
+    font-size: 3.36rem; /* 20% larger than milligram's h3 (2.8rem) */
+}
+
 .footer-text {
     margin: 8px;
     font-size: 80%;
@@ -344,4 +348,38 @@ ul li::before{
 
 p b {
     font-weight: 500;
+}
+
+/* Talks: a title heading (linked to slides when available), then one row per occasion (date, venue) */
+.talk-title {
+    font-size: 2.16rem; /* 20% larger than milligram's h5 (1.8rem) */
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.3rem;
+    border-bottom: 0.1rem solid #e1e1e1;
+    width: fit-content; /* border only as wide as the title text */
+}
+
+.talk {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    padding: 0.3rem 0 0.3rem 1em;
+}
+
+.talk-date {
+    font-weight: 200;
+    margin-right: 1rem;
+}
+
+.talk-venue {
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+@media (min-width: 40rem) {
+    .talk-date {
+        flex: 0 0 11rem;
+        margin-right: 0;
+    }
 }

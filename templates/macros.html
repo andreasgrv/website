@@ -1,0 +1,16 @@
+{# Heading for a talk; the title links to the slides when `slides` (a URL) is given.
+   Follow it with one talk() line per occasion. #}
+{% macro talk_title(title, slides=None) %}
+<h5 class="talk-title">
+  {%- if slides -%}<a href="{{ slides }}" target="_blank">{{ title }}</a>
+  {%- else -%}{{ title }}{%- endif -%}
+</h5>
+{% endmacro %}
+
+{# One occasion of a talk: date and venue. #}
+{% macro talk(date, venue) %}
+<div class="talk">
+  <span class="talk-date">{{ date }}</span>
+  <span class="talk-venue">{{ venue }}</span>
+</div>
+{% endmacro %}
